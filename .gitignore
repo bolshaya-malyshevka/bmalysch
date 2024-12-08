@@ -110,9 +110,11 @@ site/assets/plugins/tinymce4/tinymce/plugins/*
 site/assets/templates/*
 
 # Custom Templates
+# Данный шаблон имеет свой репозиторий
+site/assets/templates/comingsoon
+# Шаблон сайта
 !site/assets/templates/.*
 !site/assets/templates/projectsoft
-!site/assets/templates/comingsoon
 
 # TV
 site/assets/tvs/*
