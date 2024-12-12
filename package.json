@@ -1,12 +1,11 @@
 {
-	"name": "bmalysh",
+	"name": "bmalysch",
 	"version": "1.0.3",
-	"description": "Сайт ГБОУ ООШ с. Большая Малышевка м. р. Кинельский Самарской области",
+	"description": "ГБОУ ООШ с. Большая Малышевка",
 	"main": "Grunfile.js",
 	"scripts": {
-		"inst": "npm i --legacy-peer-deps",
+		"inst": "npm i",
 		"build": "grunt -v",
-		"watch": "grunt -v watch",
 		"preinstall": "npm i -g less less-plugin-sass2less pug-cli bower && bower install && npm run convert",
 		"convert": "sass2less bower_components/button-visually-impaired-javascript/src/scss/**/*.scss src/less/bvi/dist/{dir}/{name}.less && copy /Y bower_components\\button-visually-impaired-javascript\\dist\\img src\\img"
 	},

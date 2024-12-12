@@ -1,0 +1,27 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	include inc/head.pug
+	body
+		.body.bvi-no-styles
+			include inc/eya.pug
+			header#masthead(role="banner")
+				|{{@FILE assets/templates/projectsoft/tpl/header.html}}
+			.main
+				.primary
+					#content(role="main")
+						article(id!="page-[*id*]" class!="page page-[*id*] type-page")
+							header.entry-header
+								h1.entry-title
+									|[*longtitle:ifempty=`[*pagetitle*]`*]
+							.entry-content
+								|[*content*]
+								|[*EvoVideo:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/get_evo_video.html}}`*]
+								|[[PageBuilder]]
+						include inc/share.pug
+				.secondary#secondary(role="complementary")
+					|{{@FILE assets/templates/projectsoft/tpl/widgets.html}}
+				.main-footer
+					|{{@FILE assets/templates/projectsoft/tpl/sites_link.html}}
+				|{{@FILE assets/templates/projectsoft/tpl/sendbot.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		include inc/body_close.pug

@@ -1,0 +1,46 @@
+body {
+	background-color: @bgcolor;
+}
+.body {
+	max-width: 1140px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	min-height: ~'calc(100vh - 80px)';
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	> header,
+	> fotter {
+		flex: 0 0 auto;
+	}
+	> .main {
+		flex: 1 0 auto;
+		padding-top: 30px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	@media screen and (max-width: 910px) {
+		margin-top: unset;
+		margin-bottom: unset;
+		min-height: 100vh;
+		> .main {
+			padding-left: unset;
+			padding-right: unset;
+		}
+	}
+}
+.bvi-active {
+	.body {
+		margin-top: unset;
+		margin-bottom: unset;
+	}
+	.bvi-panel {
+		margin-bottom: 0;
+	}
+}
+body .bvi-body {
+	padding: 0;
+}

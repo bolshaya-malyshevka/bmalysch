@@ -171,10 +171,9 @@ module.exports = function(grunt) {
 					'bower_components/slick-carousel/slick/slick.js',
 					'bower_components/js-cookie/src/js.cookie.js',
 					'bower_components/jquery.cookie/jquery.cookie.js',
-					'bower_components/inputmask/dist/jquery.inputmask.js',
-					'bower_components/button-visually-impaired-javascript/dist/js/bvi.js'
+					'bower_components/inputmask/dist/jquery.inputmask.js'
 				],
-				dest: 'test/js/appjs.js'
+				dest: '<%= globalConfig.gosave %>/js/appjs.js'
 			},
 			main: {
 				src: [
@@ -182,13 +181,7 @@ module.exports = function(grunt) {
 					'bower_components/button-visually-impaired-javascript/dist/js/bvi.js',
 					'src/js/main.js'
 				],
-				dest: 'test/js/main.js'
-			},
-			prism: {
-				src: [
-					'src/js/prism.js'
-				],
-				dest: 'test/js/prism.js'
+				dest: '<%= globalConfig.gosave %>/js/main.js'
 			}
 		},
 		uglify: {
@@ -204,9 +197,8 @@ module.exports = function(grunt) {
 						expand: true,
 						flatten : true,
 						src: [
-							'test/js/appjs.js',
-							'test/js/prism.js',
-							'test/js/main.js'
+							'<%= globalConfig.gosave %>/js/appjs.js',
+							'<%= globalConfig.gosave %>/js/main.js'
 						],
 						dest: '<%= globalConfig.gosave %>/js',
 						filter: 'isFile',
@@ -355,15 +347,6 @@ module.exports = function(grunt) {
 						],
 						dest: '<%= globalConfig.gosave %>/css/',
 						filter: 'isFile'
-					},
-					{
-						expand: true,
-						flatten : true,
-						src: [
-							'src/less/prism.css'
-						],
-						dest: '<%= globalConfig.gosave %>/css/',
-						filter: 'isFile'
 					}
 				]
 			},
@@ -378,7 +361,6 @@ module.exports = function(grunt) {
 					'<%= globalConfig.gosave %>/css/main.min.css' : ['test/css/replace/main.css'],
 					'<%= globalConfig.gosave %>/css/tinymce.min.css' : ['test/css/replace/tinymce.css'],
 					'<%= globalConfig.gosave %>/css/bvi.min.css' : ['<%= globalConfig.gosave %>/css/bvi.css'],
-					'<%= globalConfig.gosave %>/css/prism.min.css' : ['<%= globalConfig.gosave %>/css/prism.css'],
 				}
 			},
 		},

@@ -1,0 +1,41 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	include inc/head.pug
+	body
+		.body.bvi-no-styles
+			include inc/eya.pug
+			header#masthead(role="banner")
+				|{{@FILE assets/templates/projectsoft/tpl/header.html}}
+			.main
+				.primary
+					#content(role="main")
+						article(id!="page-[*id*]" class!="page page-[*id*] type-page")
+							header.entry-header
+								h1.entry-title
+									|[*longtitle:ifempty=`[*pagetitle*]`*]
+							.entry-content
+								|[*content*]
+								|[!evoSearch?
+								|	&display=`16`
+								|	&paginate=`pages`
+								|	&statTpl= `<p class="srch_res_info">По запросу <strong>[+stat_request+]</strong> найдено <strong>[+stat_total+]</strong> документов.</p>`
+								|	&noResult=`<p class="srch_res_info">По запросу <u>[+stat_request+]</u> ничего не найдено. Смягчите условия поиска</p>`
+								|	&ownerTPL=`@CODE: <div class="srch_res">[+dl.wrap+]</div>`
+								|	&tpl=`@CODE: <article class="srch_res_one"><header><h4><a href="[+url+]">[+title+]</a></h4></header><div class="srch_res_one_content"><p class="srch_ext">[+extract+]</p></div></article>`
+								|	&TplNextP=``
+								|	&TplPrevP=``
+								|	&TplPage=`@CODE: <li><a href="[+link+]">[+num+]</a></li>`
+								|	&TplCurrentPage=`@CODE: <li class="active"><a href="[+link+]">[+num+]</a></li>`
+								|	&TplWrapPaginate=`@CODE: <div class="pagination"><ul>[+wrap+]</ul></div>`
+								|   &mysqlVersion=`8`
+								|!]
+								|[+pages+]
+								|[*EvoVideo:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/get_evo_video.html}}`*]
+								|[[PageBuilder]]
+				.secondary#secondary(role="complementary")
+					|{{@FILE assets/templates/projectsoft/tpl/widgets.html}}
+				.main-footer
+					|{{@FILE assets/templates/projectsoft/tpl/sites_link.html}}
+				|{{@FILE assets/templates/projectsoft/tpl/sendbot.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		include inc/body_close.pug

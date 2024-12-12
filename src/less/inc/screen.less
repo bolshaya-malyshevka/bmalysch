@@ -1,0 +1,38 @@
+body {
+	&.screen {
+		overflow: hidden;
+		position: relative;
+		&::before {
+			content: "";
+			position: fixed;
+			display: block;
+			background-color: rgba(0, 0, 0, .8);
+			z-index: 9999999999;
+			width: 100vw;
+			height: 100vh;
+			top: 0;
+			left: 0;
+			right: 0;
+			left: 0;
+		}
+		&::after {
+			position: fixed;
+			display: block;
+			z-index: 99999999999;
+			background-size: contain;
+			background-position: center bottom;
+			background-repeat: no-repeat;
+			background-image: data-uri('../images/preload.svg');
+			aspect-ratio: 1 / 1;
+			max-width: 200px;
+			text-align: center;
+			content: "Пожалуйста подождитв...";
+			width: 200px;
+			height: 220px;
+			top: 50%;
+			left: 50%;
+			color: #fff;
+			transform: translateX(-150px) translateY(-150px);
+		}
+	}
+}

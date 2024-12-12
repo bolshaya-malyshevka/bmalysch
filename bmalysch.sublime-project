@@ -7,6 +7,8 @@
 		}
 	],
 	"settings":  {
+		"default_line_ending": "unix",
+		"show_line_endings": true,
 		"font_size": 12,
 		"tab_size": 4
 	},
@@ -15,6 +17,11 @@
 			"name": "Build Site Project",
 			"working_dir": "${project_path}",
 			"shell_cmd": "npm run build"
+		},
+		{
+			"name": "Site Project Install",
+			"working_dir": "${project_path}",
+			"shell_cmd": "npm run inst"
 		}
 	]
 }

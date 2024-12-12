@@ -1,0 +1,37 @@
+head
+	base(href="[(site_url)]")
+	meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=EmulateIE9")
+	meta(name="viewport" content="width=device-width, initial-scale=1")
+	meta(name="cmsmagazine" content="d8e7426ec72ad3e4ea38b09ebf01284")
+	meta(name="SKYPE_TOOLBAR" content ="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+	meta(name="yandex-verification" content="[(yandex_verification)]")
+	meta(name="color-scheme" content="only light")
+	meta(name="theme-color" content="#ffffff")
+	title
+		|[*titl*]
+	|[*noIndex*]
+	meta(name="title" content="[*pagetitle:notags:strip*]")
+	meta(name="description" content="[*desc:notags:strip*]")
+	meta(name="keywords" content="[*keyw:notags:strip*]")
+	meta(name="author" content="[(site_name)]")
+	// Open Graph
+	meta(name="og:url" content="[(site_url)][~[*id*]~]")
+	meta(property="og:type" content="website")
+	meta(name="og:title" content="[*pagetitle:notags:strip*]")
+	meta(name="og:description" content="[*desc:notags:strip*]")
+	meta(name="image" content!="[*imageSoc*]")
+	meta(name="vk:image" content!="[[phpthumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
+	meta(name="og:image" content!="[[phpthumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
+	meta(name="og:image:width" content="1144")
+	meta(name="og:image:height" content="509")
+	meta(name="og:image:type" content="image/jpeg")
+	meta(name="twitter:card" content="summary_large_image")
+	include ../inc/favicon.pug
+	|{{@FILE assets/templates/projectsoft/tpl/style.html}}
+	// RSS
+	link(rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="rss.xml")
+	|<@IF:[*id:is(2)*]>
+	// Canonical
+	link(rel="canonical" href="[(site_url)][~[*id*]~]")
+	|<@ENDIF>

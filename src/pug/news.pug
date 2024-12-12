@@ -1,0 +1,55 @@
+doctype html
+html(lang="ru" prefix="og: http://ogp.me/ns#")
+	include inc/head.pug
+	body
+		.body.bvi-no-styles
+			include inc/eya.pug
+			header#masthead(role="banner")
+				|{{@FILE assets/templates/projectsoft/tpl/header.html}}
+			.main
+				.primary
+					#content(role="main")
+						article(id!="page-[*id*]" class!="page page-[*id*] type-page")
+							header.entry-header
+								h1.entry-title
+									|[*pagetitle*]
+							.entry-content
+								|[*content*]
+								//- Новости
+							|[[DocLister?
+							|   &parents=`[*id*]`
+							|   &display=`[(news_count)]`
+							|   &tvList=`imageSoc, news_date`
+							|   &tvPrefix=``
+							|   &orderBy=`news_date DESC`
+							|   &sortBy=`news_date`
+							|   &sortDir=`DESC`
+							|   &tvSortType=`TVDATETIME`
+							|   &prepare=`\ProjectSoft\PrepareDL::prepareItem`
+							|   &noneTPL=``
+							|   &ownerTPL=`@FILE:projectsoft/tpl/news_outer`
+							|   &tpl=`@FILE:projectsoft/tpl/news_tpl`
+							|   &showParent=`0`
+							|   &urlScheme=`full`
+							|   &noneWrapOuter=`0`
+							|   &PrevNextAlwaysShow=`1`
+							|   &paginate=`pages`
+							|   &paginationMeta=`1`
+							|   &TplWrapPaginate=`@CODE: <div class="paginate text-center"><ul class="pagination pagination--list">[+wrap+]</ul></div>`
+							|   &TplNextP=`@CODE: <li class="pagination--list--item next"><a role="button" class="icon-next" href="[+link+]"></a></li>`
+							|   &TplNextI=`@CODE: <li class="pagination--list--item next disabled"><span role="button" class="icon-next"></span></li>`
+							|   &TplPrevP=`@CODE: <li class="pagination--list--item prev"><a role="button" class="icon-prev" href="[+link+]"></a></li>`
+							|   &TplPrevI=`@CODE: <li class="pagination--list--item prev disabled"><span role="button" class="icon-prev"></span></li>`
+							|   &TplPage=`@CODE: <li class="pagination--list--item"><a role="button" href="[+link+]">[+num+]</a></li>`
+							|   &TplCurrentPage=`@CODE: <li class="pagination--list--item active"><span role="button">[+num+]</span></li>`
+							|   &TplDotsPage=`@CODE:<li class="pagination--list--item dots"><span role="button">...</span></li>`
+							|]]
+							|[+pages+]
+						include inc/share.pug
+				.secondary#secondary(role="complementary")
+					|{{@FILE assets/templates/projectsoft/tpl/widgets.html}}
+				.main-footer
+					|{{@FILE assets/templates/projectsoft/tpl/sites_link.html}}
+				|{{@FILE assets/templates/projectsoft/tpl/sendbot.html}}
+			|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+		include inc/body_close.pug

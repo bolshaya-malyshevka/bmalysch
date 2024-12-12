@@ -1,6 +1,6 @@
 {
-	"name": "bmalysh",
-	"description": "Сайт ГБОУ ООШ с. Большая Малышевка м. р. Кинельский Самарской области",
+	"name": "bmalysch",
+	"description": "ГБОУ ООШ с. Большая Малышевка",
 	"main": "Grunfile.js",
 	"authors": [
 		"ProjectSoft <projectsoft2009@yandex.ru>"
