@@ -42,8 +42,8 @@ module.exports = function(grunt) {
 			//"ttf2eot",
 			"ttf2woff",
 			"ttf2woff2",
-			"imagemin",
-			"tinyimg",
+			//"imagemin",
+			//"tinyimg",
 			"copy"
 		],
 		less: [
