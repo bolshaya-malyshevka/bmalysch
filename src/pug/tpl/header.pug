@@ -9,10 +9,11 @@
 					|[(site_name)]
 				|<@ENDIF>
 			p.site-description
-				|Мы рады видеть Вас на официальном сайте государственного бюджетного общеобразовательного учреждения основной общеобразовательной школы с. Большая Малышевка муниципального района Кинельский Самарской области
+				|[(site_description)]
 			#search
 				form#search-form(action="/search/" method="GET")
 					input(type="text" name="search" value="[!$_GET['search']!]" placeholder="Поиск" required)
+					button.btn.icon-search(type="submit")
 	.header-slick
 		|[[multiTV?
 		|	&fromJson=`[(sliders)]`

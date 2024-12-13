@@ -143,3 +143,10 @@ site/food/*.xlsx
 !site/.editorconfig
 !.gitignore
 !site/.htaccess
+
+site/viewer/*
+!site/viewer/.*
+site/food/*
+!site/food/.htaccess
+site/food-individual/*
+!site/food-individual/.htaccess

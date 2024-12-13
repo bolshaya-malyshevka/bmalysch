@@ -2089,13 +2089,13 @@
 		ZOOM: "Увеличить"
 	};
 	$.fancybox.defaults.onInit = function(instance, slide) {
-		if(!$.fancybox.isMobile && document.body.scrollHeight > window.innerHeight) {
-			let wr = window.innerWidth - (document.body.clientWidth - 2);
-			$style.innerText = `body.fancybox-active.compensate-for-scrollbar .bodywrapp::after {background-position: calc(100% - ${wr}px) 0;}`;
-		}
+		//if(!$.fancybox.isMobile && document.body.scrollHeight > window.innerHeight) {
+		//	let wr = window.innerWidth - (document.body.clientWidth - 2);
+		//	$style.innerText = `body.fancybox-active.compensate-for-scrollbar .bodywrapp::after {background-position: calc(100% - ${wr}px) 0;}`;
+		//}
 	};
 	$.fancybox.defaults.beforeShow = function(instance, slide) {
-		console.log(slide);
+		//console.log(slide);
 	};
 	$.fancybox.defaults.afterClose = function(instance, slide) {
 		$style.innerText = ``;
@@ -2262,7 +2262,7 @@
 						break;
 				}
 			}else {
-				console.log("NO Test");
+				//console.log("NO Test");
 				e.preventDefault();
 				window.open(href);
 				return !1;
@@ -2342,8 +2342,8 @@
 				};
 			})
 			.fail(function(a, b, c, d) {
-				console.log('fail');
-				console.log(arguments);
+				//console.log('fail');
+				//console.log(arguments);
 			})
 			.always(function() {
 				$("body").removeClass('formSend');
@@ -2433,7 +2433,7 @@
 				jq_xhr = $.ajax({
 					url: window.location.origin + '/screenshot/',
 					type: 'POST',
-					data: 'shot=' + link + '&title=' + download,
+					data: 'shot=' + encodeURIComponent(link) + '&title=' + download,
 					responseType: 'blob',
 					processData: false,
 					xhr:function(){
@@ -2458,6 +2458,7 @@
 					}
 				).fail(
 					function(){
+						console.log(arguments);
 						$("body").removeClass('screen');
 						setTimeout(function(){
 							alert("Не удалось обработать операцию");

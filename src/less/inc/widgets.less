@@ -1,13 +1,13 @@
 .widgets {
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: @pd;
+	padding-right: @pd;
 	.widget {
-		padding-left: 15px;
-		padding-right: 15px;
+		padding-left: @pd;
+		padding-right: @pd;
 		padding-top: 12px;
 		font-size: .9em;
 		box-shadow: 0 0 1px #000;
-		margin-bottom: 15px;
+		margin-bottom: @pd;
 		.clearfix();
 		h1,
 		h2,
@@ -40,13 +40,14 @@
 				display: block;
 				right: auto;
 				top: auto;
+				.text-center();
 				a {
 					position: relative;
 					display: block;
 					background-color: #d41317;
 					color: #fff;
-					padding-left: 15px;
-					padding-right: 15px;
+					padding-left: @pd;
+					padding-right: @pd;
 					padding-top: 12px;
 					padding-bottom: 12px;
 					margin-left: 0;
@@ -54,6 +55,9 @@
 					font-size: 18px !important;
 					&:hover {
 						background-color: #ff0000;
+					}
+					@media screen and (max-width: 910px) {
+						display: inline-flex;
 					}
 				}
 			}

@@ -19,9 +19,9 @@
 			"shell_cmd": "npm run build"
 		},
 		{
-			"name": "Site Project Install",
+			"name": "Build Site Project Speed",
 			"working_dir": "${project_path}",
-			"shell_cmd": "npm run inst"
+			"shell_cmd": "grunt -v speed"
 		}
 	]
 }

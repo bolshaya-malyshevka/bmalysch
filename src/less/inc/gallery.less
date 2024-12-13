@@ -1,8 +1,8 @@
 .gallery {
 	.gallery {
 		&-title {
-			padding-left: 15px;
-			padding-right: 15px;
+			padding-left: @pd;
+			padding-right: @pd;
 		}
 		&--list {
 			margin: 0;
@@ -11,8 +11,8 @@
 			display: flex;
 			flex-direction: row;
 			flex-wrap: wrap;
-			margin-left: -15px;
-			margin-right: -15px;
+			margin-left: -1 * @pd;
+			margin-right: -1 * @pd;
 			margin-top: 30px;
 			justify-content: center;
 			&-item {
@@ -20,9 +20,9 @@
 				max-width: 260px;
 				width: 260px;
 				list-style: none;
-				padding-left: 15px;
-				padding-right: 15px;
-				margin-bottom: 30px;
+				padding-left: @pd;
+				padding-right: @pd;
+				margin-bottom: 2 * @pd;
 				&-link {
 					overflow: hidden;
 					&,

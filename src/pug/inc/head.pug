@@ -21,13 +21,15 @@ head
 	meta(name="og:title" content="[*pagetitle:notags:strip*]")
 	meta(name="og:description" content="[*desc:notags:strip*]")
 	meta(name="image" content!="[*imageSoc*]")
-	meta(name="vk:image" content!="[[phpthumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
-	meta(name="og:image" content!="[[phpthumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
+	meta(name="vk:image" content!="[[thumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
+	meta(name="og:image" content!="[[thumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
 	meta(name="og:image:width" content="1144")
 	meta(name="og:image:height" content="509")
 	meta(name="og:image:type" content="image/jpeg")
 	meta(name="twitter:card" content="summary_large_image")
 	include ../inc/favicon.pug
+	link(type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?" + hash)
+	link(type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?" + hash)
 	|{{@FILE assets/templates/projectsoft/tpl/style.html}}
 	// RSS
 	link(rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="rss.xml")

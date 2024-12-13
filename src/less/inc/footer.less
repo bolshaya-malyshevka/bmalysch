@@ -19,16 +19,16 @@ footer {
 			}
 		}
 		@media screen and (max-width: 810px) {
-			padding-top: 15px;
-			padding-bottom: 15px;
+			padding-top: @pd;
+			padding-bottom: @pd;
 		}
 	}
 	&.footer{}
 }
 .footer{
 	&-row {
-		margin-left: -15px;
-		margin-right: -15px;
+		margin-left: -1 * @pd;
+		margin-right: -1 * @pd;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
@@ -42,8 +42,8 @@ footer {
 		&-left,
 		&-center,
 		&-right {
-			padding-left: 15px;
-			padding-right: 15px;
+			padding-left: @pd;
+			padding-right: @pd;
 		}
 		&-left,
 		&-right {
@@ -67,8 +67,8 @@ footer {
 		}
 	}
 	@media screen and (max-width: 1170px) {
-		//margin-left: -15px;
-		//margin-right: -15px;
+		//margin-left: -1 * @pd;
+		//margin-right: -1 * @pd;
 	}
 	@media screen and (max-width: 810px) {
 		&-row {

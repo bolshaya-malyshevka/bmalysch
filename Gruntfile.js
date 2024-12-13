@@ -31,6 +31,11 @@ module.exports = function(grunt) {
 		default: [
 			"clean:all",
 			"webfont",
+			//"ttf2eot",
+			"ttf2woff",
+			"ttf2woff2",
+			//"imagemin",
+			//"tinyimg",
 			"concat",
 			"uglify",
 			"less",
@@ -39,70 +44,7 @@ module.exports = function(grunt) {
 			"replace",
 			"cssmin",
 			"pug",
-			//"ttf2eot",
-			"ttf2woff",
-			"ttf2woff2",
-			//"imagemin",
-			//"tinyimg",
 			"copy"
-		],
-		less: [
-			//"clean:all",
-			"less",
-			"autoprefixer",
-			"group_css_media_queries",
-			"replace",
-			"cssmin",
-			"pug"
-		],
-		js: [
-			//"clean:all",
-			"concat",
-			"uglify",
-			"copy:js",
-			"pug"
-		],
-		pug: [
-			//"clean:all",
-			"pug"
-		],
-		images: [
-			"imagemin",
-			"tinyimg",
-			"less",
-			"autoprefixer",
-			"group_css_media_queries",
-			"replace",
-			"cssmin",
-			"copy",
-			"pug"
-		],
-		fonts: [
-			//"clean:all",
-			//"ttf2eot",
-			"ttf2woff",
-			"ttf2woff2",
-			"less",
-			"autoprefixer",
-			"group_css_media_queries",
-			"replace",
-			"cssmin",
-			"copy:fonts",
-			"pug"
-		],
-		glyph: [
-			//"clean:all",
-			"webfont",
-			//"ttf2eot",
-			"ttf2woff",
-			"ttf2woff2",
-			"less",
-			"autoprefixer",
-			"group_css_media_queries",
-			"replace",
-			"cssmin",
-			"copy:fonts",
-			"pug"
 		],
 		speed: [
 			//"clean:all",
@@ -159,15 +101,20 @@ module.exports = function(grunt) {
 			appjs: {
 				src: [
 					'bower_components/jquery/dist/jquery.js',
-					"bower_components/fancybox/src/js/core.js",
+
+					//"bower_components/fancybox/src/js/core.js",
+
 					//"bower_components/fancybox/src/js/media.js",
-					'src/js/media.js',
-					"bower_components/fancybox/src/js/guestures.js",
-					"bower_components/fancybox/src/js/slideshow.js",
-					"bower_components/fancybox/src/js/fullscreen.js",
-					"bower_components/fancybox/src/js/thumbs.js",
-					"bower_components/fancybox/src/js/hash.js",
-					"bower_components/fancybox/src/js/wheel.js",
+
+					//'src/js/media.js',
+
+					//"bower_components/fancybox/src/js/guestures.js",
+					//"bower_components/fancybox/src/js/slideshow.js",
+					//"bower_components/fancybox/src/js/fullscreen.js",
+					//"bower_components/fancybox/src/js/thumbs.js",
+					//"bower_components/fancybox/src/js/hash.js",
+					//"bower_components/fancybox/src/js/wheel.js",
+
 					'bower_components/slick-carousel/slick/slick.js',
 					'bower_components/js-cookie/src/js.cookie.js',
 					'bower_components/jquery.cookie/jquery.cookie.js',
@@ -493,4 +440,5 @@ module.exports = function(grunt) {
 		},
 	});
 	grunt.registerTask('default',	gc.default);
+	grunt.registerTask('speed',	gc.speed);
 };

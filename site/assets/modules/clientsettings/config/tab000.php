@@ -3,14 +3,12 @@ return array (
 	'caption' => 'ДИРЕКТОР/ШКОЛА',
 	'introtext' => '<b style="color: red">Настройки для Школы</b>',
 	'settings' => array (
-		/**
-		'logotip' => array (
-			'caption' => 'Логотип<br><span style="color: red;">К размеру 210x210</span>',
-			'type' => 'image',
-			'note' => '',
-			'default_text' => 'assets/templates/projectsoft/images/logo.png',
+		'site_description' => array (
+			'caption' => 'Описание сайта',
+			'type' => 'textareamini',
+			'note' => 'Отображается в шапке сайта',
+			'default_text' => 'Мы рады видеть Вас на официальном сайте',
 		),
-		*/
 		'org_date' => array(
 			'caption' => 'Год основания',
 			'type' => 'date',
