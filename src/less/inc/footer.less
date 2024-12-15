@@ -48,22 +48,27 @@ footer {
 		&-left,
 		&-right {
 			width: 80%;
-			&,
-			a {
-				font-size: 16px !important;
-			}
 		}
 		&-center {
 			width: 20%;
 		}
 		&-left {
 			text-align: left;
+			&,
+			a {
+				font-size: 16px !important;
+			}
 		}
 		&-center {
 			text-align: center;
 		}
 		&-right {
 			text-align: right;
+			align-self: flex-end;
+			&,
+			a {
+				font-size: 12px !important;
+			}
 		}
 	}
 	@media screen and (max-width: 1170px) {
@@ -73,6 +78,7 @@ footer {
 	@media screen and (max-width: 810px) {
 		&-row {
 			flex-direction: column;
+			margin-top: 10px;
 		}
 		&-col {
 			&-left,
@@ -92,10 +98,14 @@ footer {
 body .bvi-body {
 	.footer {
 		&-col {
-			&-left,
-			&-right {
+			&-left {
 				.bvi-no-styles {
 					font-size: 16px !important;
+				}
+			}
+			&-right {
+				.bvi-no-styles {
+					font-size: 12px !important;
 				}
 			}
 		}

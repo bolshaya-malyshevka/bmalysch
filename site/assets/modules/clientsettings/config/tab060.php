@@ -9,5 +9,11 @@ return array (
 			'note' => 'Подтверждение прав на ' . $_SERVER['HTTP_X_FORWARDED_PROTO'] . '://' . $_SERVER['HTTP_HOST'] . '/',
 			'default_text' => '',
 		),
+		'yandex_metrika' => array(
+			'caption' => 'ID счётчика Yandex',
+			'type' => 'text',
+			'note' => '',
+			'default_text' => '',
+		)
 	),
 );

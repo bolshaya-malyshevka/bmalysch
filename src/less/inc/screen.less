@@ -1,4 +1,4 @@
-body {
+/*body {
 	&.screen {
 		overflow: hidden;
 		position: relative;
@@ -26,7 +26,7 @@ body {
 			aspect-ratio: 1 / 1;
 			max-width: 200px;
 			text-align: center;
-			content: "Пожалуйста подождитв...";
+			content: "Пожалуйста подождите...";
 			width: 200px;
 			height: 220px;
 			top: 50%;
@@ -34,5 +34,73 @@ body {
 			color: #fff;
 			transform: translateX(-150px) translateY(-150px);
 		}
+	}
+}*/
+body {
+	.preloader {
+		background-color: rgba(0, 0, 0, .8);
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		position: fixed;
+		visibility: hidden;
+		transition: opacity .3s ease;
+		z-index: -1;
+		.loader {
+			display: block;
+			position: relative;
+			left: 50%;
+			top: 50%;
+			width: 150px;
+			height: 150px;
+			margin: -75px 0 0 -75px;
+			border-radius: 50%;
+			border: 3px solid transparent;
+			border-top-color: #fff;
+			z-index: 1001;
+			animation: spin 2s linear infinite;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				right: 5px;
+				bottom: 5px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #0000ff;
+				animation: spin 3s linear infinite;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				left: 15px;
+				bottom: 15px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #ff0000;
+				animation: spin 1.5s linear infinite;
+			}
+		}
+	}
+	&.screen {
+		.preloader {
+			opacity: 1;
+			visibility: visible;
+			transition: opacity .3s ease;
+			z-index: 999999999999;
+		}
+	}
+}
+@keyframes spin {
+	0%   {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

@@ -7,11 +7,6 @@ use ProjectSoft\Video;
 $e =& $modx->event;
 $params = $e->params;
 $regexp = '/^((?:https?:\/\/(?:www\.)?(?:rutube|youtube|youtu)\.(?:com|ru)\/))/i';
-if(!function_exists("readVideoRequest")):
-	function readVideoRequest($arr){
-		return json_encode($arr);
-	}
-endif;
 switch ($e->name) {
 	case 'OnBeforeDocFormSave':
 		/**
@@ -20,7 +15,6 @@ switch ($e->name) {
 		 * assets/cache/images/video очистить вручную
 		**/
 		$vd = new Video(null, true);
-
 		foreach($_POST as $key=>$value):
 			if(is_string($value)):
 				$url = trim($value);
@@ -37,6 +31,7 @@ switch ($e->name) {
 			endif;
 			if(is_array($value)):
 				$vds = json_encode($value);
+				file_put_contents(dirname(__FILE__) . "/evovideo.txt", print_r($vds, true));
 				$re = '/\\\\/i';
 				$result = preg_replace($re, "", $vds);
 				$re = '/((?:https?:\/\/(?:www\.)?(?:rutube|youtube|youtu)\.(?:com|ru)\/.+))(?:")/iU';

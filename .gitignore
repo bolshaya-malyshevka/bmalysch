@@ -73,6 +73,7 @@ site/assets/plugins/*
 !site/assets/plugins/EvoVideo
 !site/assets/plugins/help_widget
 !site/assets/plugins/mcecss
+!site/assets/plugins/dashboard_widgets
 
 # Plugin PageBuilder
 !site/assets/plugins/pagebuilder
