@@ -437,6 +437,64 @@ module.exports = function(grunt) {
 					}
 				]
 			},
+			sitemap: {
+				options: {
+					doctype: 'html',
+					client: false,
+					pretty: '\t',
+					separator:  '\n',
+					data: function(dest, src) {
+						return {
+							"base": "[(site_url)]",
+							"tem_path" : "/assets/templates/projectsoft",
+							"img_path" : "assets/templates/projectsoft/images/",
+							"site_name": "[(site_name)]",
+							"hash": uniqid(),
+							"hash_css": uniqid(),
+							"hash_js": uniqid(),
+							"hash_appjs": uniqid(),
+						}
+					}
+				},
+				files: [
+					{
+						expand: true,
+						dest: __dirname + '/<%= globalConfig.gosave %>/sitemap/',
+						cwd:  __dirname + '/src/pug/sitemap/',
+						src: 'sitemap.pug',
+						ext: '.html'
+					}
+				]
+			},
+			stylesheet: {
+				options: {
+					doctype: 'XML',
+					client: false,
+					pretty: '\t',
+					separator:  '\n',
+					data: function(dest, src) {
+						return {
+							"base": "[(site_url)]",
+							"tem_path" : "/assets/templates/projectsoft",
+							"img_path" : "assets/templates/projectsoft/images/",
+							"site_name": "[(site_name)]",
+							"hash": uniqid(),
+							"hash_css": uniqid(),
+							"hash_js": uniqid(),
+							"hash_appjs": uniqid(),
+						}
+					}
+				},
+				files: [
+					{
+						expand: true,
+						dest: __dirname + '/<%= globalConfig.gosave %>/sitemap/',
+						cwd:  __dirname + '/src/pug/sitemap/',
+						src: 'stylesheet.pug',
+						ext: '.html'
+					}
+				]
+			},
 		},
 	});
 	grunt.registerTask('default',	gc.default);

@@ -56,6 +56,11 @@ site/assets/snippets/phpthumb/*
 !site/assets/snippets/GetScreenShot
 !site/assets/snippets/FileExt
 
+!site/assets/snippets/DocLister
+site/assets/snippets/DocLister/*
+!site/assets/snippets/DocLister/snippet.DLSitemapPS.php
+
+
 # Modules
 site/assets/modules/*
 

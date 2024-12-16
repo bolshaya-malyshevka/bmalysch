@@ -48,42 +48,51 @@ body {
 		visibility: hidden;
 		transition: opacity .3s ease;
 		z-index: -1;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		display: flex;
 		.loader {
+			animation-duration: 2s;
 			display: block;
 			position: relative;
-			left: 50%;
-			top: 50%;
+			//left: 50%;
+			//top: 50%;
 			width: 150px;
 			height: 150px;
-			margin: -75px 0 0 -75px;
-			border-radius: 50%;
-			border: 3px solid transparent;
-			border-top-color: #fff;
+			//margin: -75px 0 0 -75px;
+			border-top-color: #fff !important;
 			z-index: 1001;
-			animation: spin 2s linear infinite;
-			&:before {
+			&,
+			&::before,
+			&::after {
+				animation-name: spin;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				border: 3px solid transparent;
+				border-radius: 50% !important;
+			}
+			&::before,
+			&::after {
 				content: "";
 				position: absolute;
+
+			}
+			&::before {
+				animation-duration: 3s;
 				top: 5px;
 				left: 5px;
 				right: 5px;
 				bottom: 5px;
-				border-radius: 50%;
-				border: 3px solid transparent;
-				border-top-color: #0000ff;
-				animation: spin 3s linear infinite;
+				border-top-color: #0000ff !important;
 			}
-			&:after {
-				content: "";
-				position: absolute;
+			&::after {
+				animation-duration: 1.5s;
 				top: 15px;
 				right: 15px;
 				left: 15px;
 				bottom: 15px;
-				border-radius: 50%;
-				border: 3px solid transparent;
-				border-top-color: #ff0000;
-				animation: spin 1.5s linear infinite;
+				border-top-color: #ff0000 !important;
 			}
 		}
 	}

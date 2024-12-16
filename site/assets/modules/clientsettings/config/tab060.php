@@ -14,6 +14,12 @@ return array (
 			'type' => 'text',
 			'note' => '',
 			'default_text' => '',
+		),
+		'sitemap_stylesheet' => array(
+			'caption' => 'ID ресурса оформления sitemap.xml',
+			'type' => 'number',
+			'note' => '',
+			'default_text' => '',
 		)
 	),
 );

@@ -22,7 +22,7 @@ $settings['templates'] = array(
 </div>',
 	'rowTpl' => '
 	<div class="slick-item">
-		<img src="[[thumb? &input=`[+image+]` &options=`w=1140,h=380,zc=C`]]" alt="[+title+]">
+		<img src="[[thumb? &input=`[+image+]` &options=`w=1140,h=380,zc=C`]]" alt="[+title+]" />
 		<span class="bvi-caption-alt">[+title+]</span>
 	</div>'
 );
