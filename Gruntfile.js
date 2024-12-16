@@ -44,7 +44,8 @@ module.exports = function(grunt) {
 			"replace",
 			"cssmin",
 			"pug",
-			"copy"
+			"copy",
+			"lineending"
 		],
 		speed: [
 			//"clean:all",
@@ -56,7 +57,8 @@ module.exports = function(grunt) {
 			"replace",
 			"cssmin",
 			"copy",
-			"pug"
+			"pug",
+			"lineending"
 		]
 	};
 	NpmImportPlugin = require("less-plugin-npm-import");
@@ -310,6 +312,21 @@ module.exports = function(grunt) {
 					'<%= globalConfig.gosave %>/css/bvi.min.css' : ['<%= globalConfig.gosave %>/css/bvi.css'],
 				}
 			},
+		},
+		lineending: {
+			dist: {
+				options: {
+					eol: 'lf'
+				},
+				files: [
+					{
+						expand: true,
+						cwd: '<%= globalConfig.gosave %>/css',
+						src: ['**/*'],
+						dest: '<%= globalConfig.gosave %>/css/'
+					}
+				]
+			}
 		},
 		imagemin: {
 			options: {
