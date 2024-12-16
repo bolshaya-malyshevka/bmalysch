@@ -321,9 +321,15 @@ module.exports = function(grunt) {
 				files: [
 					{
 						expand: true,
-						cwd: '<%= globalConfig.gosave %>/css',
-						src: ['**/*'],
-						dest: '<%= globalConfig.gosave %>/css/'
+						cwd: 'site/assets',
+						src: ['**/*.{css,js.php,json,html}'],
+						dest: 'site/assets'
+					},
+					{
+						expand: true,
+						cwd: 'site/comon',
+						src: ['**/*.{css,js.php,json,html}'],
+						dest: 'site/comon'
 					}
 				]
 			}
