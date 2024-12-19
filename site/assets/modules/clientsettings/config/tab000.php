@@ -112,6 +112,13 @@ return array (
 			'note' => 'Точка на карте Google',
 			'default_text' => '',
 		),
+		'group_org' => array (
+			'caption' => 'Группы в социальных сетях',
+			'type' => 'custom_tv:multitv',
+			'note' => '',
+			'elements' => '',
+			'default_text' => '[]',
+		),
 		'univers' => array (
 			'caption' => 'Университеты',
 			'type' => 'custom_tv:multitv',

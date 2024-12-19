@@ -14,14 +14,16 @@
 	},
 	"build_systems": [
 		{
-			"name": "Build Site Project",
+			"name": "Запуск полной сборки проекта",
 			"working_dir": "${project_path}",
-			"shell_cmd": "npm run build"
+			"cmd": ["start", "/wait", "grunt", "-v", "default"],
+			"shell": true
 		},
 		{
-			"name": "Build Site Project Speed",
+			"name": "Запуск скоростной сборки проекта",
 			"working_dir": "${project_path}",
-			"shell_cmd": "grunt -v speed"
+			"cmd": ["start", "/wait", "grunt", "-v", "speed"],
+			"shell": true
 		}
 	]
 }

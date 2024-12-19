@@ -26,3 +26,7 @@ $settings['templates'] = array(
 		<span class="bvi-caption-alt">[+title+]</span>
 	</div>'
 );
+$settings['configuration'] = array(
+	'enablePaste' => false,
+	'csvseparator' => ';'
+);

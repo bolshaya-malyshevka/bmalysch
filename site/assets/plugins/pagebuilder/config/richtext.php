@@ -29,6 +29,7 @@
 			'text' => [
 				'caption' => 'Название блока (необязательно)',
 				'type'    => 'text',
+				'evoSearchIndex' => true,
 			],
 			'documents' => [
 				'caption' => 'Текстовые блоки',
@@ -37,10 +38,12 @@
 					'title' => [
 						'caption' => 'Заголовок блока (необязательно)',
 						'type'    => 'text',
+						'evoSearchIndex' => true,
 					],
 					'richtext' => [
 						'caption' => 'Текст',
 						'type'    => 'richtext',
+						'evoSearchIndex' => true,
 					]
 				]
 			]

@@ -60,6 +60,9 @@ site/assets/snippets/phpthumb/*
 site/assets/snippets/DocLister/*
 !site/assets/snippets/DocLister/snippet.DLSitemapPS.php
 
+!site/assets/snippets/pageBuilderToEvoSearch
+!site/assets/snippets/evoSearch
+
 
 # Modules
 site/assets/modules/*
@@ -138,6 +141,7 @@ site/assets/tvs/multitv/configs/*
 !site/assets/tvs/multitv/configs/widgets*
 !site/assets/tvs/multitv/configs/sliders*
 !site/assets/tvs/multitv/configs/share*
+!site/assets/tvs/multitv/configs/group_org*
 
 # Files
 site/.*

@@ -32,6 +32,7 @@
 			'text' => [
 				'caption' => 'Название блока (необязательно)',
 				'type'    => 'text',
+				'evoSearchIndex' => true,
 			],
 			'documents' => [
 				'caption' => 'Документы',
@@ -40,6 +41,7 @@
 					'text' => [
 						'caption' => 'Название',
 						'type'    => 'text',
+						'evoSearchIndex' => true,
 					],
 					'file' => [
 						'caption' => 'Файл',

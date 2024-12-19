@@ -61,8 +61,11 @@
 						i.icon-home
 						a(href="[(site_url)]" target="_blank")
 							|[(site_url)]
-					// Добавить в модуль группы!!!
-					p
-						i.icon-vk
-						a(href="https://vk.com/club196971711" target="_blank")
-							|Группа в ВКонтакте
+				|[[multiTV?
+				|	&fromJson=`[(group_org)]`
+				|	&tvName=`group_org`
+				|	&display=`all`
+				|]]
+			p.text-center
+				button.callme-btn.btn.btn-default(type="button" data-trigger="sendbot")
+					|ФОРМА ОБРАТНОЙ СВЯЗИ

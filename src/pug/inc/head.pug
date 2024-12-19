@@ -11,21 +11,16 @@ head
 	title
 		|[*titl*]
 	|[*noIndex*]
-	meta(name="title" content="[*pagetitle:notags:strip*]")
+	meta(name="title" content="[*titl:notags:strip*]")
 	meta(name="description" content="[*desc:notags:strip*]")
 	meta(name="keywords" content="[*keyw:notags:strip*]")
 	meta(name="author" content="[(site_name)]")
 	// Open Graph
 	meta(name="og:url" content="[(site_url)][~[*id*]~]")
 	meta(property="og:type" content="website")
-	meta(name="og:title" content="[*pagetitle:notags:strip*]")
+	meta(name="og:title" content="[*titl:notags:strip*]")
 	meta(name="og:description" content="[*desc:notags:strip*]")
-	meta(name="image" content!="[*imageSoc*]")
-	meta(name="vk:image" content!="[[thumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
-	meta(name="og:image" content!="[[thumb? &input=`[*imageSoc*]` $options=`w=1144,h=509,f=jpg,zc=C`]]")
-	meta(name="og:image:width" content="1144")
-	meta(name="og:image:height" content="509")
-	meta(name="og:image:type" content="image/jpeg")
+	|[[ogImage]]
 	meta(name="twitter:card" content="summary_large_image")
 	include ../inc/favicon.pug
 	link(type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?" + hash)
@@ -38,3 +33,4 @@ head
 	// Canonical
 	link(rel="canonical" href="[(site_url)][~[*id*]~]")
 	|<@ENDIF>
+	include style.html

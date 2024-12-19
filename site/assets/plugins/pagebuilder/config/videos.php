@@ -38,6 +38,7 @@
 			'text' => [
 				'caption' => 'Название блока (необязательно)',
 				'type'    => 'text',
+				'evoSearchIndex' => true,
 			],
 			'videos' => [
 				'caption' => 'Видео',
@@ -46,6 +47,7 @@
 					'text' => [
 						'caption' => 'Название',
 						'type'    => 'text',
+						'evoSearchIndex' => true,
 					],
 					'EvoVideo' => [
 						'caption' => 'Видео',

@@ -17,7 +17,7 @@ $settings['fields'] = array(
 );
 
 $settings['templates'] = array(
-	'outerTpl' => '<div class="widgets">[+wrapper+]</div>',
+	'outerTpl' => '[+wrapper+]',
 	'rowTpl' => "
 	<div class=\"widget[+css:ne=``:then=` [+css+]`+]\">
 		<article class=\"widget-article\">
@@ -25,4 +25,9 @@ $settings['templates'] = array(
 			<div class=\"widget-article-content\">[+content+]</div>
 		</article>
 	</div>"
+);
+
+$settings['configuration'] = array(
+	'enablePaste' => false,
+	'csvseparator' => ';'
 );

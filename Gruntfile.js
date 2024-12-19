@@ -106,8 +106,6 @@ module.exports = function(grunt) {
 
 					//"bower_components/fancybox/src/js/core.js",
 
-					//"bower_components/fancybox/src/js/media.js",
-
 					//'src/js/media.js',
 
 					//"bower_components/fancybox/src/js/guestures.js",
@@ -322,13 +320,13 @@ module.exports = function(grunt) {
 					{
 						expand: true,
 						cwd: 'site/assets',
-						src: ['**/*.{css,js.php,json,html}'],
+						src: ['**/*.{css,js,php,json,html}'],
 						dest: 'site/assets'
 					},
 					{
 						expand: true,
 						cwd: 'site/comon',
-						src: ['**/*.{css,js.php,json,html}'],
+						src: ['**/*.{css,js,php,json,html}'],
 						dest: 'site/comon'
 					}
 				]

@@ -34,6 +34,7 @@
 			'text' => [
 				'caption' => 'Название галереи (необязательно)',
 				'type'    => 'text',
+				'evoSearchIndex' => true,
 			],
 			'documents' => [
 				'caption' => 'Изображения',
@@ -42,6 +43,7 @@
 					'text' => [
 						'caption' => 'Название',
 						'type'    => 'text',
+						'evoSearchIndex' => true,
 					],
 					'file' => [
 						'caption' => 'Изображение',

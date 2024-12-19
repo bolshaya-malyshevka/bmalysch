@@ -2069,8 +2069,6 @@
 
 !(function($){
 	// Default fancybox options
-	var $style = $("<style></style>")[0];
-	$("head").append($style);
 	$.fancybox.defaults.parentEl = ".fancybox__wrapper";
 	$.fancybox.defaults.transitionEffect = "circular";
 	$.fancybox.defaults.transitionDuration = 500;
@@ -2088,19 +2086,10 @@
 		SHARE: "Поделиться",
 		ZOOM: "Увеличить"
 	};
-	$.fancybox.defaults.onInit = function(instance, slide) {
-		//if(!$.fancybox.isMobile && document.body.scrollHeight > window.innerHeight) {
-		//	let wr = window.innerWidth - (document.body.clientWidth - 2);
-		//	$style.innerText = `body.fancybox-active.compensate-for-scrollbar .bodywrapp::after {background-position: calc(100% - ${wr}px) 0;}`;
-		//}
-	};
-	$.fancybox.defaults.beforeShow = function(instance, slide) {
-		//console.log(slide);
-	};
-	$.fancybox.defaults.afterClose = function(instance, slide) {
-		$style.innerText = ``;
-	};
 
+	/**
+	 * BVI
+	 */
 	new isvek.Bvi({
 		target: '.eya-panel',
 		builtElements: true,
@@ -2428,12 +2417,15 @@
 		}else if(download) {
 			// Если ссылки нет - скриншот
 			// Запрос на скриншот страницы
+			let ms = (new Date()).getTime();
+			let turl = new URL(link);
+			let sm = turl.search == "" ? `?time=${ms}` : `&time=${ms}`;
 			$("body").addClass('screen');
 			var laad_screen = false,
 				jq_xhr = $.ajax({
 					url: window.location.origin + '/screenshot/',
 					type: 'POST',
-					data: 'shot=' + encodeURIComponent(link) + '&title=' + download,
+					data: 'shot=' + encodeURIComponent(link + sm) + '&title=' + download,
 					responseType: 'blob',
 					processData: false,
 					xhr:function(){
