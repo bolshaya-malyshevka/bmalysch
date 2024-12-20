@@ -2,8 +2,20 @@
 	|<@IF:[*id:is(1)*]>
 	|{{@FILE assets/templates/projectsoft/tpl/widget_director.html}}
 	|<@ENDIF>
+	.widget.eye-widget
+		article.widget-article
+			.widget-article-content
+				p.eya-panel
+					a
+						|Версия для слабовидящих
+	|[[multiTV?
+	|	&fromJson=`[(group_org)]`
+	|	&tvName=`group_org`
+	|	&display=`all`
+	|]]
 	|[[multiTV?
 	|	&fromJson=`[(widgets_bar)]`
 	|	&tvName=`widgets_bar`
 	|	&display=`all`
 	|]]
+

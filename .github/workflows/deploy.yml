@@ -27,7 +27,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.DIRECTORY }}
+          server-dir: ${{ secrets.FTP_DIR }}
           local-dir: ./site/
           state-name: .status.json
           exclude: |
@@ -38,6 +38,6 @@ jobs:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          workingDir: ${{ secrets.DIRECTORY }}
+          workingDir: ${{ secrets.FTP_DIR }}
           remoteFiles: ".status.json;assets/cache/docid_*.php"
           ignoreSSL: 1

@@ -395,4 +395,48 @@
 			return !1;
 		}
 	});
+
+
+	/**
+	** New Year
+	**/
+	(function(){
+		var date = new Date(),
+			day = date.getDate(),
+			month = date.getMonth() + 1;
+		/**
+		 * new_year prazdnik                01
+		 * defender_day prazdnik            23
+		 
+			https://media.tenor.com/xiJZlZtHNrUAAAAM/field-of.gif
+			assets/images/background/0010-bg.jpg
+		 *
+		 **/
+		// Новый год 15.12 - 15.01
+		if((day > 15 && month == 12) || (day < 15 && month == 1)) {
+			$("body").addClass('feast_year');
+		}
+		// Двадцать третье февраля 18.02 - 27.01
+		if((day > 15 && month == 2) || (day < 27 && month == 2)) {
+			$("body").addClass('feast_man');
+		}
+		// Восьмое марта 4.03 - 11.03
+		if((day > 4 && month == 3) || (day < 11 && month == 3)) {
+			$("body").addClass('feast_woman');
+		}
+		// День космонавтики 08.04 - 16.04
+		if((day > 8 && month == 4) || (day < 16 && month == 4)) {
+			$("body").addClass('feast_space');
+		}
+		// Девятое мая 01.05 - 14.05
+		if((day > 1 && month == 5) || (day < 14 && month == 5)) {
+			$("body").addClass('feast_victory');
+		}
+	})();
 }(jQuery));
+/**
+ * 
+ * https://partner.market.yandex.ru/business-accept-invite?digest=7fa59b120675efacc5b3293581aeda&bId=80522589&bName=%D0%9E%D0%9E%D0%9E%20%22%D0%A1%D0%9A%D0%90%D0%A2%22%20%D0%A1%D0%BF%D0%B5%D1%86%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82
+ * https://partner.market.yandex.ru/business-accept-invite?digest=36053d01464b24cf63833916ee80c655&bId=80522589&bName=%D0%9E%D0%9E%D0%9E%20%22%D0%A1%D0%9A%D0%90%D0%A2%22%20%D0%A1%D0%BF%D0%B5%D1%86%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82
+ * 
+ */

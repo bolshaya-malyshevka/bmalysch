@@ -7,7 +7,7 @@ xsl:stylesheet(xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sitemap="h
 			body
 				.body
 					header#masthead(role="banner")
-						|{{@FILE assets/templates/projectsoft/tpl/header.html}}
+						include ../tpl/header.pug
 					.main
 						.primary
 							#content(role="main")
@@ -40,8 +40,8 @@ xsl:stylesheet(xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sitemap="h
 																xsl:value-of(select="sitemap:priority")
 								include ../inc/share.pug
 						.secondary#secondary(role="complementary")
-							|{{@FILE assets/templates/projectsoft/tpl/widgets.html}}
+							include ../tpl/widgets.pug
 						.main-footer
-							|{{@FILE assets/templates/projectsoft/tpl/sites_link.html}}
-					|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+							include ../tpl/sites_link.pug
+					include ../tpl/footer.pug
 				include ../inc/body_close.pug

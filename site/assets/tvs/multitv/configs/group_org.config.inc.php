@@ -18,7 +18,7 @@ $settings['fields'] = array(
 );
 
 $settings['templates'] = array(
-	'outerTpl' => '<dt><p><strong>Мы в социальных сетях:</strong></p></dt><dd>[+wrapper+]</dd>',
+	'outerTpl' => '<div class="widget"><article class="widget_director"><div class="widget_director-content"><dl><dt><p><strong>Мы в социальных сетях:</strong></p></dt><dd>[+wrapper+]</dd></dl></div></article></div>',
 	'rowTpl' => '<p><i class="icon-[+type+]"></i><a href="[+link+]" target="_blank">[+title+]</a></p>'
 );
 

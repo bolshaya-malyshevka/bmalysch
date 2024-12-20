@@ -1,6 +1,10 @@
 <div class="widgets"><@IF:[*id:is(1)*]>
 {{@FILE assets/templates/projectsoft/tpl/widget_director.html}}
-<@ENDIF>
+<@ENDIF><div class="widget eye-widget"><article class="widget-article"><div class="widget-article-content"><p class="eya-panel"><a>Версия для слабовидящих</a></p></div></article></div>[[multiTV?
+	&fromJson=`[(group_org)]`
+	&tvName=`group_org`
+	&display=`all`
+]]
 [[multiTV?
 	&fromJson=`[(widgets_bar)]`
 	&tvName=`widgets_bar`
