@@ -18,7 +18,7 @@ $settings['fields'] = array(
 
 $settings['templates'] = array(
 	'outerTpl' => '[+wrapper+]',
-	'rowTpl' => "div class=\"widget[+css:ne=``:then=` [+css+]`+]\"><article class=\"widget-article\">[+title:ne=``:then=`<header class=\"widget-article-header\"><h3 class=\"widget-article-title\">[+title+]</h3></header>`+]<div class=\"widget-article-content\">[+content+]</div></article></div>"
+	'rowTpl' => "<div class=\"widget[+css:ne=``:then=` [+css+]`+]\"><article class=\"widget-article\">[+title:ne=``:then=`<header class=\"widget-article-header\"><h3 class=\"widget-article-title\">[+title+]</h3></header>`+]<div class=\"widget-article-content\">[+content+]</div></article></div>"
 );
 
 $settings['configuration'] = array(

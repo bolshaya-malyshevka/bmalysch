@@ -23,7 +23,7 @@ $settings['fields'] = array(
 
 $settings['templates'] = array(
 	'outerTpl' => '<div class="images">[+wrapper+]</div>',
-	'rowTpl' => '<div class="image"><a href="[+link+]" title="[+title+]" target="_blank"><img src="[+image+]" alt="[+title+]"></a></div>'
+	'rowTpl' => '<div class="image"><a href="[+link+]" title="[+title+]" target="_blank"><img src="[+image+]" alt="[+title+]" /></a></div>'
 );
 $settings['configuration'] = array(
 	'enablePaste' => false,

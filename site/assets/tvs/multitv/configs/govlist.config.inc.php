@@ -23,5 +23,5 @@ $settings['fields'] = array(
 
 $settings['templates'] = array(
 	'outerTpl' => '<div class="sites">[+wrapper+]</div>',
-	'rowTpl' => '<div class="column sites-link"><a href="[+link+]" title="[+title+]" target="_blank"><img src="[[thumb? &input=`[+image+]` &options=`w=195,h=88,zc=C`]]" alt="[+title+]"><div class="bvi-caption-alt">[+title+]</div></a></div>'
+	'rowTpl' => '<div class="column sites-link"><a href="[+link+]" title="[+title+]" target="_blank"><img src="[[thumb? &input=`[+image+]` &options=`w=195,h=88,zc=C`]]" alt="[+title+]" /><div class="bvi-caption-alt">[+title+]</div></a></div>'
 );
