@@ -11,7 +11,7 @@
 			p.site-description
 				|[(site_description)]
 			#search
-				form#search-form(action="/search/" method="GET")
+				form(action="/search/" method="GET" data-id="search-form")
 					|<input type="text" name="search" value="[!$_GET['search']!]" placeholder="Поиск" required="required" />
 					button.btn.icon-search(type="submit")
 	.header-slick

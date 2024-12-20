@@ -447,7 +447,26 @@ module.exports = function(grunt) {
 				]
 			},
 			tpl: {
-				options: optionsPug,
+				options: {
+					doctype: 'transitional',
+					client: false,
+					pretty: "",//'\t',
+					separator:  "",//'\n',
+					//pretty: '\t',
+					//separator:  '\n',
+					data: function(dest, src) {
+						return {
+							"base": "[(site_url)]",
+							"tem_path" : "/assets/templates/projectsoft",
+							"img_path" : "assets/templates/projectsoft/images/",
+							"site_name": "[(site_name)]",
+							"hash": uniqid(),
+							"hash_css": uniqid(),
+							"hash_js": uniqid(),
+							"hash_appjs": uniqid(),
+						}
+					}
+				},
 				files: [
 					{
 						expand: true,
@@ -460,7 +479,7 @@ module.exports = function(grunt) {
 			},
 			sitemap: {
 				options: {
-					doctype: 'html',
+					doctype: 'xml',
 					client: false,
 					pretty: '\t',
 					separator:  '\n',

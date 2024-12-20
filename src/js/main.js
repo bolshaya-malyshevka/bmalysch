@@ -214,7 +214,7 @@
 	.on("click", '*[data-trigger="sendbot"]', function(e){
 		e.preventDefault();
 		let $this = $(e.target),
-			$data = $("#" + $this.data('trigger'));
+			$data = $('[data-id="' + $this.data('trigger') + '"]');
 		if($data.length){
 			/**/
 			$.fancybox.open($data, {
@@ -234,41 +234,43 @@
 	 * Отправляем ajax только не на поиске
 	 */
 	.on('submit', 'form', function(e){
-		let id = $(e.target).attr("id");
-		if(id != 'search-form') {
-			e.preventDefault();
-			const $form = $(e.target).closest('.modal-form'),
-				data = new FormData(e.target),
-				url = e.target.action,
-				method = e.target.method;
-			$("body").addClass('formSend');
-			$.ajax({
-				url: url,
-				type: method,
-				data: data,
-				async: true,
-				cache: false,
-				contentType: false,
-				processData: false,
-				dataType: 'json'
-			}).done(function(a, b, c) {
-				if(a.forms) {
-					if(a.forms.form) {
-						let form = $(a.forms.form),
-							modal = $('.modal-form', form);
-						$form.html(modal.html());
-						$('input[name="phone"]').inputmask({"mask": "+7(999)999-99-99"});
-					}
-				};
-			})
-			.fail(function(a, b, c, d) {
-				//console.log('fail');
-				//console.log(arguments);
-			})
-			.always(function() {
-				$("body").removeClass('formSend');
-			});
-			return !1;
+		let id = $(e.target).data("modal");
+		switch(id){
+			case "sendbot":
+				e.preventDefault();
+				const $form = $(e.target).closest('.modal-form'),
+					data = new FormData(e.target),
+					url = e.target.action,
+					method = e.target.method;
+				$("body").addClass('screen');
+				$.ajax({
+					url: url,
+					type: method,
+					data: data,
+					async: true,
+					cache: false,
+					contentType: false,
+					processData: false,
+					dataType: 'json'
+				}).done(function(a, b, c) {
+					if(a.forms) {
+						if(a.forms.form) {
+							let form = $(a.forms.form),
+								modal = $('.modal-form', form);
+							$form.html(modal.html());
+							$('input[name="phone"]').inputmask({"mask": "+7(999)999-99-99"});
+						}
+					};
+				})
+				.fail(function(a, b, c, d) {
+					//console.log('fail');
+					//console.log(arguments);
+				})
+				.always(function() {
+					$("body").removeClass('screen');
+				});
+				return !1;
+				break;
 		}
 	})
 	/**
