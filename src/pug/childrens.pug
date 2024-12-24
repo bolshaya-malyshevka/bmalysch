@@ -14,6 +14,7 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 								h1.entry-title
 									|[*longtitle:ifempty=`[*pagetitle*]`*]
 							.entry-content
+								|[*content*]
 								//- Вывод дочерних ресурсов
 								|[[DLMenu?
 								|	&parents=`[*id*]`
@@ -34,7 +35,6 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 								|	&oddClass=``
 								|	&evenClass=``
 								|]]
-								|[*content*]
 								|[*EvoVideo:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/get_evo_video.html}}`*]
 								|[[PageBuilder]]
 						include inc/share.pug
