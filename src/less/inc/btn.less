@@ -1,11 +1,13 @@
 .btn {
 	text-decoration: none !important;
 	transition: color .3s ease, background-color .3s ease;
+	max-width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 	&-default,
 	&.more {
 		position: relative;
-		overflow: hidden;
-		white-space: nowrap;
 		color: @btn-form-color;
 		border: 1px solid @btn-box-shadow-color;
 		background-color: @btn-form-background-color;
