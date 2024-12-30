@@ -26,12 +26,7 @@
 |	&stateClass=`stateClass`
 |	&urlScheme=`full`
 |	&maxDepth=`2`
-|!]
-|<@IF:[*id:neq(1)*]>
-|<@IF:[*parent:neq(3)*]>
-|[!DLCrumbs
+|!]<@IF:[*id:neq(1)*]><@IF:[*parent:neq(3)*]>[!DLCrumbs
 |	&showCurrent=`1`
 |	&ownerTPL=`@CODE:<nav><ul class="breadcrumb bvi-no-styles" aria-label="Breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">[+crumbs.wrap+]</ul></nav>`
-|!]
-|<@ENDIF>
-|<@ENDIF>
+|!]<@ENDIF><@ENDIF>

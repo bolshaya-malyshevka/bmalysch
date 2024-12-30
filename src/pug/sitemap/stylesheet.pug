@@ -38,11 +38,15 @@ xsl:stylesheet(xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sitemap="h
 																xsl:value-of(select="sitemap:changefreq")
 															td.priority
 																xsl:value-of(select="sitemap:priority")
-								include ../inc/share.pug
+						//- Сайтбар
 						.secondary#secondary(role="complementary")
 							include ../tpl/widgets.pug
+						//- Вывод ссылок на Гос. Сайты
 						.main-footer
 							include ../tpl/sites_link.pug
+						//- Форма
 						include ../tpl/sendbot.pug
+					//- Подвал
 					include ../tpl/footer.pug
+				//- Скрипты
 				include ../inc/body_close.pug

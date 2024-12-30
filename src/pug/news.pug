@@ -3,9 +3,8 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 	include inc/head.pug
 	body
 		.body.bvi-no-styles
-			include inc/eya.pug
 			header#masthead(role="banner")
-				|{{@FILE assets/templates/projectsoft/tpl/header.html}}
+				include tpl/header.pug
 			.main
 				.primary
 					#content(role="main")
@@ -43,13 +42,17 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 							|   &TplPage=`@CODE: <li class="pagination--list--item"><a role="button" href="[+link+]">[+num+]</a></li>`
 							|   &TplCurrentPage=`@CODE: <li class="pagination--list--item active"><span role="button">[+num+]</span></li>`
 							|   &TplDotsPage=`@CODE:<li class="pagination--list--item dots"><span role="button">...</span></li>`
-							|]]
-							|[+pages+]
+							|]][+pages+]
 						include inc/share.pug
+				//- Сайтбар
 				.secondary#secondary(role="complementary")
-					|{{@FILE assets/templates/projectsoft/tpl/widgets.html}}
+					include tpl/widgets.pug
+				//- Вывод ссылок на Гос. Сайты
 				.main-footer
-					|{{@FILE assets/templates/projectsoft/tpl/sites_link.html}}
-				|{{@FILE assets/templates/projectsoft/tpl/sendbot.html}}
-			|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+					include tpl/sites_link.pug
+				//- Форма
+				include tpl/sendbot.pug
+			//- Подвал
+			include tpl/footer.pug
+		//- Скрипты
 		include inc/body_close.pug

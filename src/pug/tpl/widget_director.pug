@@ -5,13 +5,11 @@
 			h3.widget_director-title
 				strong
 					|[(director_position)]:
-			|<@ENDIF>
-			|<@IF:[(director:isnotempty)]>
+			|<@ENDIF><@IF:[(director:isnotempty)]>
 			p.widget_director-name
 				strong
 					|[(director)]
-			|<@ENDIF>
-			|<@IF:[(director_photo:isnotempty)]>
+			|<@ENDIF><@IF:[(director_photo:isnotempty)]>
 			p.widget_director-header-img
 				img(src!="[[thumb? &input=`[(director_photo)]` &options=`w=270,h=270,zc=C`]]" alt="[(director)]" loading="lazy")
 				|<@IF:[(director:isnotempty}]>
@@ -30,8 +28,7 @@
 					p
 						i.icon-home
 						|[(address)]
-				|<@ENDIF>
-				|<@IF:[(phones:isnotempty)]>
+				|<@ENDIF><@IF:[(phones:isnotempty)]>
 				dt
 					p
 						strong
@@ -40,8 +37,7 @@
 					p
 						i.icon-phone
 						|[(phones:nl2br)]
-				|<@ENDIF>
-				|<@IF:[(email:isnotempty)]>
+				|<@ENDIF><@IF:[(email:isnotempty)]>
 				dt
 					p
 						strong

@@ -13,6 +13,7 @@ body {
 	flex-direction: column;
 	position: relative;
 	box-shadow: 0 0 0px 1px #84a9e6;
+	transition: margin .3s ease;
 	> header,
 	> fotter {
 		flex: 0 0 auto;
@@ -23,8 +24,9 @@ body {
 		padding-left: @pd;
 		padding-right: @pd;
 		padding-bottom: 2em;
+		transition: padding .3s ease;
 	}
-	@media screen and (max-width: 910px) {
+	@media screen and (max-width: 1140px) {
 		margin-top: unset;
 		margin-bottom: unset;
 		min-height: 100vh;

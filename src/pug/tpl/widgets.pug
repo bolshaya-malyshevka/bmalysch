@@ -1,7 +1,7 @@
 .widgets
 	|<@IF:[*id:is(1)*]>
-	|{{@FILE assets/templates/projectsoft/tpl/widget_director.html}}
-	|<@ENDIF>
+	include widget_director.pug
+	<@ENDIF>
 	.widget.eye-widget
 		article.widget-article
 			.widget-article-content
@@ -12,10 +12,8 @@
 	|	&fromJson=`[(group_org)]`
 	|	&tvName=`group_org`
 	|	&display=`all`
-	|]]
-	|[[multiTV?
+	|]][[multiTV?
 	|	&fromJson=`[(widgets_bar)]`
 	|	&tvName=`widgets_bar`
 	|	&display=`all`
 	|]]
-

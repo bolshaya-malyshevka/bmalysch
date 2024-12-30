@@ -3,9 +3,8 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 	include inc/head.pug
 	body
 		.body.bvi-no-styles
-			include inc/eya.pug
 			header#masthead(role="banner")
-				|{{@FILE assets/templates/projectsoft/tpl/header.html}}
+				include tpl/header.pug
 			.main
 				.primary
 					#content(role="main")
@@ -14,8 +13,7 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 								h1.entry-title
 									|[*longtitle:ifempty=`[*pagetitle*]`*]
 							.entry-content
-								|[*content*]
-								|[!evoSearch?
+								|[*content*][!evoSearch?
 								|	&display=`5`
 								|	&paginate=`pages`
 								|	&statTpl= `<p class="srch_res_info">По запросу <strong>[+stat_request+]</strong> найдено <strong>[+stat_total+]</strong> документов.</p>`
@@ -33,12 +31,16 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 								|   &TplPage=`@CODE: <li class="pagination--list--item"><a role="button" href="[+link+]">[+num+]</a></li>`
 								|   &TplCurrentPage=`@CODE: <li class="pagination--list--item active"><span role="button">[+num+]</span></li>`
 								|   &TplDotsPage=`@CODE:<li class="pagination--list--item dots"><span role="button">...</span></li>`
-								|!]
-								|[+pages+]
+								|!][+pages+]
+				//- Сайтбар
 				.secondary#secondary(role="complementary")
-					|{{@FILE assets/templates/projectsoft/tpl/widgets.html}}
+					include tpl/widgets.pug
+				//- Вывод ссылок на Гос. Сайты
 				.main-footer
-					|{{@FILE assets/templates/projectsoft/tpl/sites_link.html}}
-				|{{@FILE assets/templates/projectsoft/tpl/sendbot.html}}
-			|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+					include tpl/sites_link.pug
+				//- Форма
+				include tpl/sendbot.pug
+			//- Подвал
+			include tpl/footer.pug
+		//- Скрипты
 		include inc/body_close.pug

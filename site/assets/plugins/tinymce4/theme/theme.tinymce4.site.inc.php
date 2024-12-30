@@ -15,12 +15,14 @@
   * $this->modxParams содержит массив фактических настроек Modx/user-settings
   *
   * */
+// Используемые шрифты
+$this->set('font_formats', 'Open Sans=Open Sans;Roboto=Roboto;Ruslan Display=Ruslan Display', 'string');
 
 // Используемые плагины
 $this->set('plugins', 'autolink lists layer table modxlink image emoticons emotic media contextmenu paste visualchars nonbreaking visualblocks charmap wordcount code autoresize template', 'string');
 
 // Первая строка тулбара
-$this->set('toolbar1', 'formatselect | undo redo | cut copy paste pastetext | visualchars | visualblocks | code', 'string');
+$this->set('toolbar1', 'formatselect | fontselect | undo redo | cut copy paste pastetext | visualchars | visualblocks | code', 'string');
 
 // Вторая строка тулбара
 $this->set('toolbar2', 'bold italic underline strikethrough subscript superscript removeformat | alignleft aligncenter alignright alignjustify | bullist numlist | blockquote', 'string');

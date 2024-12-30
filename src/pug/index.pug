@@ -3,9 +3,8 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 	include inc/head.pug
 	body
 		.body.bvi-no-styles
-			include inc/eya.pug
 			header#masthead(role="banner")
-				|{{@FILE assets/templates/projectsoft/tpl/header.html}}
+				include tpl/header.pug
 			.main
 				.primary
 					#content(role="main")
@@ -18,10 +17,7 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 							.entry-content
 								|<@IF:[*id:is(1)*]>
 								include inc/gosuslugi.pug
-								//-|{{@FILE assets/templates/projectsoft/tpl/gosuslugi.html}}
-								|<@ENDIF>
-								|[*content*]
-								|[[PageBuilder]]
+								|<@ENDIF>[*content*][[PageBuilder]]
 								p.clearfix
 						|[[DocLister?
 						|   &parents=`2`
@@ -41,10 +37,15 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 						|   &noneWrapOuter=`0`
 						|]]
 						include inc/share.pug
+				//- Сайтбар
 				.secondary#secondary(role="complementary")
-					|{{@FILE assets/templates/projectsoft/tpl/widgets.html}}
+					include tpl/widgets.pug
+				//- Вывод ссылок на Гос. Сайты
 				.main-footer
-					|{{@FILE assets/templates/projectsoft/tpl/sites_link.html}}
-				|{{@FILE assets/templates/projectsoft/tpl/sendbot.html}}
-			|{{@FILE assets/templates/projectsoft/tpl/footer.html}}
+					include tpl/sites_link.pug
+				//- Форма
+				include tpl/sendbot.pug
+			//- Подвал
+			include tpl/footer.pug
+		//- Скрипты
 		include inc/body_close.pug
