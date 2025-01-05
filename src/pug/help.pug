@@ -16,7 +16,8 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 						.entry-content
 							|<@IF:[*id:is(1)*]>
 							include inc/gosuslugi.pug
-							|<@ENDIF>[*content*][[PageBuilder]]
+							|<@ENDIF>[*content*]
+							script(src="/assets/templates/projectsoft/js/emoji.min.js?" + hash)
 							p.clearfix
 					include inc/share.pug
 				//- Вывод ссылок на Гос. Сайты

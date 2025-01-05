@@ -1331,9 +1331,16 @@
 		const content = document.createElement("div");
 		content.classList.add("emoji-content");
 
-		const frame = document.currentScript.parentNode;
-		if(frame) {
-			frame.append(link);
+		const script = document.currentScript;
+		if(script) {
+			script.insertAdjacentElement("beforebegin", document.createElement("hr"));
+			let h3Title = document.createElement("h3");
+			let pContent = document.createElement("p");
+			h3Title.innerText = "Включена поддержка текстовых EMOJI";
+			pContent.innerText = "Кликните по иконке Emoji и она скопируется в буфер.";
+			h3Title.classList.add("red");
+			script.insertAdjacentElement("beforebegin", h3Title);
+			script.insertAdjacentElement("beforebegin", pContent);
 			let active = !0;
 			for(let index in emojies){
 				let emo = emojies[index];
@@ -1387,7 +1394,8 @@
 			}
 			block.append(tabs);
 			block.append(content);
-			frame.append(block);
+			script.insertAdjacentElement("beforebegin", block);
+			script.insertAdjacentElement("beforebegin", link);
 		}
 
 		/**
@@ -1511,17 +1519,19 @@
 		 */
 		
 		let idHash = window.location.hash;
-		let inp = window.document.querySelector(idHash);
-		if(Boolean(inp)){
-			if(inp.tagName == 'INPUT'){
-				inp.checked = true;
-				let event = new Event('input', {
-					bubbles: true,
-					cancelable: true,
-					target: inp
-				});
-				inp.dispatchEvent(event);
-				//setTimeout(function(){inp.closest('.tabs-item').scrollIntoView({behavior: "smooth"});}, 200);
+		if(idHash){
+			let inp = window.document.querySelector(idHash);
+			if(Boolean(inp)){
+				if(inp.tagName == 'INPUT'){
+					inp.checked = true;
+					let event = new Event('input', {
+						bubbles: true,
+						cancelable: true,
+						target: inp
+					});
+					inp.dispatchEvent(event);
+					//setTimeout(function(){inp.closest('.tabs-item').scrollIntoView({behavior: "smooth"});}, 200);
+				}
 			}
 		}
 	}

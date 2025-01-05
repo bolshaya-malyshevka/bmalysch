@@ -28,15 +28,7 @@ switch($e->name){
 			'cols' => 'col-sm-12',
 			'icon' => 'fa-question-circle',
 			'title' => $ttl,
-			'body' => '<div class="card-body">'.$help_content.'</div>
-			<style>
-				.list-decimal > li {
-					list-style: decimal;
-				}
-				h3, .h3 {
-					color: red;
-				}
-			</style>'
+			'body' => '<div class="card-body">'.$help_content.'<script src="/assets/templates/projectsoft/js/emoji.min.js?' . filemtime(MODX_BASE_PATH . 'assets/templates/projectsoft/js/emoji.min.js') . '"></script></div>'
 		);
 		$modx->event->output(serialize($widgets));
 		break;

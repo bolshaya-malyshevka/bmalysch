@@ -29,8 +29,8 @@
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
 				<meta name="apple-mobile-web-app-title" content="[(site_name)]"></meta>
 				<link rel="manifest" href="/site.webmanifest"></link>
-				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?b553a853efd6bb890e66d6831c0f4954"></link>
-				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?b553a853efd6bb890e66d6831c0f4954"></link><@IF:[*template:neq(11)*]>
+				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?83417466c112579970f956db469fbb31"></link>
+				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?83417466c112579970f956db469fbb31"></link><@IF:[*template:neq(11)*]>
 				<link rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="rss.xml"></link><@ENDIF><@IF:[*id:is(2)*]>
 				<link rel="canonical" href="[(site_url)][~[*id*]~]"></link><@ENDIF>
 			</head>
@@ -50,10 +50,10 @@
 								</div>
 							</div>
 							<div class="header-slick">
-								[[multiTV?
+								<@IF:[*template:neq(13)*]>[[multiTV?
 									&fromJson=`[(sliders)]`
 									&tvName=`sliders`
-								]]<@IF:[*id:neq(31)*]>
+								]]<@ENDIF><@IF:[*id:neq(31)*]>
 								[!DLMenu?
 									&outerTpl=`@CODE: <div class="header-navigation bvi-no-styles"><nav class="bvi-no-styles" role="navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><button type="button" class="bvi-no-styles"><i class="icon-menu-open bvi-no-styles"></i></button><ul class="[+classNames+] bvi-no-styles" itemprop="about" itemscope itemtype="http://schema.org/ItemList">[+wrap+]</ul></nav></div>`
 									&rowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]">[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
@@ -257,9 +257,9 @@
 					</footer>
 					<div class="fancybox__wrapper"></div>
 				</div>
-				<script src="assets/templates/projectsoft/js/appjs.min.js?b553a853efd6bb890e66d6831c0f4954"></script>
-				<script src="viewer/fancybox.min.js?b553a853efd6bb890e66d6831c0f4954"></script>
-				<script src="assets/templates/projectsoft/js/main.min.js?b553a853efd6bb890e66d6831c0f4954"></script><style>body:not(.feast) {background-color: [(background_color)];<@IF:[(background_image:isnotempty)]>background-image: url([(background_image)]);<@ENDIF><@IF:[(background_attachment:neq(" "))]>background-attachment: [(background_attachment)];<@ENDIF><@IF:[(background_position:neq(" "))]>[(background_position)]<@ENDIF><@IF:[(background_repeat:neq(" "))]>[(background_repeat)]<@ENDIF><@IF:[(background_size:neq(" "))]>[(background_size)]<@ENDIF>}</style><@IF:[*id:neq(31)*]><!-- Yandex.Metrika counter --><script type="text/javascript" >(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym([(yandex_metrika)], "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });</script><noscript><div><img src="https://mc.yandex.ru/watch/[(yandex_metrika)]" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><@ENDIF>
+				<script src="assets/templates/projectsoft/js/appjs.min.js?83417466c112579970f956db469fbb31"></script>
+				<script src="viewer/fancybox.min.js?83417466c112579970f956db469fbb31"></script>
+				<script src="assets/templates/projectsoft/js/main.min.js?83417466c112579970f956db469fbb31"></script><style>body:not(.feast) {background-color: [(background_color)];<@IF:[(background_image:isnotempty)]>background-image: url([(background_image)]);<@ENDIF><@IF:[(background_attachment:neq(" "))]>background-attachment: [(background_attachment)];<@ENDIF><@IF:[(background_position:neq(" "))]>[(background_position)]<@ENDIF><@IF:[(background_repeat:neq(" "))]>[(background_repeat)]<@ENDIF><@IF:[(background_size:neq(" "))]>[(background_size)]<@ENDIF>}</style><@IF:[*id:neq(31)*]><@IF:[*template:neq(13)*]><!-- Yandex.Metrika counter --><script type="text/javascript" >(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym([(yandex_metrika)], "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });</script><noscript><div><img src="https://mc.yandex.ru/watch/[(yandex_metrika)]" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><@ENDIF><@ENDIF>
 				<div class="preloader">
 					<div class="loader"></div>
 				</div>
