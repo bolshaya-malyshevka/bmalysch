@@ -124,11 +124,16 @@ module.exports = function(grunt) {
 			},
 			main: {
 				src: [
-					//'src/js/jquery.btn.js',
 					'bower_components/button-visually-impaired-javascript/dist/js/bvi.js',
 					'src/js/main.js'
 				],
 				dest: '<%= globalConfig.gosave %>/js/main.js'
+			},
+			emoji: {
+				src: [
+					'src/js/emoji.js'
+				],
+				dest: '<%= globalConfig.gosave %>/js/emoji.js'
 			}
 		},
 		uglify: {
@@ -145,7 +150,8 @@ module.exports = function(grunt) {
 						flatten : true,
 						src: [
 							'<%= globalConfig.gosave %>/js/appjs.js',
-							'<%= globalConfig.gosave %>/js/main.js'
+							'<%= globalConfig.gosave %>/js/main.js',
+							'<%= globalConfig.gosave %>/js/emoji.js'
 						],
 						dest: '<%= globalConfig.gosave %>/js',
 						filter: 'isFile',
@@ -214,6 +220,9 @@ module.exports = function(grunt) {
 					'<%= globalConfig.gosave %>/css/bvi.css': [
 						'src/less/bvi/scss/bvi.less'
 					],
+					'<%= globalConfig.gosave %>/css/emoji.css': [
+						'src/less/emoji.less'
+					],
 				}
 			},
 		},
@@ -231,6 +240,9 @@ module.exports = function(grunt) {
 					],
 					'test/css/prefix.tinymce.css' : [
 						'test/css/tinymce.css'
+					],
+					'<%= globalConfig.gosave %>/css/emoji.css' : [
+						'<%= globalConfig.gosave %>/css/emoji.css'
 					]
 				}
 			},
@@ -239,7 +251,8 @@ module.exports = function(grunt) {
 			group: {
 				files: {
 					'test/css/media/main.css': ['test/css/prefix.main.css'],
-					'test/css/media/tinymce.css': ['test/css/prefix.tinymce.css']
+					'test/css/media/tinymce.css': ['test/css/prefix.tinymce.css'],
+					'<%= globalConfig.gosave %>/css/emoji.css': ['<%= globalConfig.gosave %>/css/emoji.css']
 				}
 			},
 		},
@@ -294,6 +307,15 @@ module.exports = function(grunt) {
 						],
 						dest: '<%= globalConfig.gosave %>/css/',
 						filter: 'isFile'
+					},
+					{
+						expand: true,
+						flatten : true,
+						src: [
+							'<%= globalConfig.gosave %>/css/emoji.css'
+						],
+						dest: '<%= globalConfig.gosave %>/css/',
+						filter: 'isFile'
 					}
 				]
 			},
@@ -308,6 +330,7 @@ module.exports = function(grunt) {
 					'<%= globalConfig.gosave %>/css/main.min.css' : ['test/css/replace/main.css'],
 					'<%= globalConfig.gosave %>/css/tinymce.min.css' : ['test/css/replace/tinymce.css'],
 					'<%= globalConfig.gosave %>/css/bvi.min.css' : ['<%= globalConfig.gosave %>/css/bvi.css'],
+					'<%= globalConfig.gosave %>/css/emoji.min.css' : ['<%= globalConfig.gosave %>/css/emoji.css'],
 				}
 			},
 		},
