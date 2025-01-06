@@ -19,6 +19,7 @@ switch($e->name){
 <div id="help_content">
 	<div id="frame_help">
 		' . $chelp . '
+		<script src="/assets/templates/projectsoft/js/emoji.min.js?' . filemtime(MODX_BASE_PATH . 'assets/templates/projectsoft/js/emoji.min.js') . '"></script>
 	</div>
 </div>';
 		$menuindex = isset($menuindex) ? (int)$menuindex : 10;
@@ -28,7 +29,7 @@ switch($e->name){
 			'cols' => 'col-sm-12',
 			'icon' => 'fa-question-circle',
 			'title' => $ttl,
-			'body' => '<div class="card-body">'.$help_content.'<script src="/assets/templates/projectsoft/js/emoji.min.js?' . filemtime(MODX_BASE_PATH . 'assets/templates/projectsoft/js/emoji.min.js') . '"></script></div>'
+			'body' => '<div class="card-body">' . $help_content.'</div>'
 		);
 		$modx->event->output(serialize($widgets));
 		break;

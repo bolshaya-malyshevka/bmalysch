@@ -122,9 +122,14 @@ module.exports = function(grunt) {
 				],
 				dest: '<%= globalConfig.gosave %>/js/appjs.js'
 			},
-			main: {
+			bvi: {
 				src: [
 					'bower_components/button-visually-impaired-javascript/dist/js/bvi.js',
+				],
+				dest: '<%= globalConfig.gosave %>/js/bvi.js'
+			},
+			main: {
+				src: [
 					'src/js/main.js'
 				],
 				dest: '<%= globalConfig.gosave %>/js/main.js'
@@ -151,6 +156,7 @@ module.exports = function(grunt) {
 						src: [
 							'<%= globalConfig.gosave %>/js/appjs.js',
 							'<%= globalConfig.gosave %>/js/main.js',
+							'<%= globalConfig.gosave %>/js/bvi.js',
 							'<%= globalConfig.gosave %>/js/emoji.js'
 						],
 						dest: '<%= globalConfig.gosave %>/js',

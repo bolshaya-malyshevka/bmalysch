@@ -18,19 +18,20 @@
 		ZOOM: "Увеличить"
 	};
 
-	/**
-	 * BVI
-	 */
-	new isvek.Bvi({
-		target: '.eya-panel',
-		builtElements: true,
-		images: true,
-		lang: 'ru-RU',
-		panelFixed: true,
-		speech: false,
-		fontSize: 14
-	});
-
+	if(typeof isvek == 'object'){
+		/**
+		 * BVI
+		 */
+		new isvek.Bvi({
+			target: '.eya-panel',
+			builtElements: true,
+			images: true,
+			lang: 'ru-RU',
+			panelFixed: true,
+			speech: false,
+			fontSize: 14
+		});
+	}
 	/**
 	 * Slick
 	 */

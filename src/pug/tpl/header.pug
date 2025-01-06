@@ -13,10 +13,10 @@
 					|<input type="text" name="search" value="[!$_GET['search']!]" placeholder="Поиск" required="required" />
 					button.btn.icon-search(type="submit")
 	.header-slick
-		|<@IF:[*template:neq(13)*]>[[multiTV?
+		|<@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>[[multiTV?
 		|	&fromJson=`[(sliders)]`
 		|	&tvName=`sliders`
-		|]]<@ENDIF><@IF:[*id:neq(31)*]>
+		|]]<@ENDIF><@ENDIF><@IF:[*template:neq(11)*]>
 		include menu.pug
 		|<@ELSE>
 		|[!DLMenu?

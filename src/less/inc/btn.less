@@ -5,6 +5,7 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
+	outline: unset !important;
 	&-default,
 	&.more {
 		position: relative;
@@ -12,6 +13,33 @@
 		border: 1px solid @btn-box-shadow-color;
 		background-color: @btn-form-background-color;
 		border-radius: 0;
+	}
+	&-red {
+		color: @white;
+		border: 1px solid @link-color;
+		background-color: @link-color;
+		border-radius: 0;
+		&:hover {
+			background-color: @white;
+			color: @link-color;
+			border-color: @link-color;
+		}
+		&:active {
+			&,
+			&:hover {
+				color: @link-color;
+				background-color: @white;
+				border-color: @link-color;
+			}
+		}
+		&:focus {
+			&,
+			&:active {
+				color: @link-color;
+				background-color: @white;
+				border-color: @link-color;
+			}
+		}
 	}
 	&-default {
 		&:hover {

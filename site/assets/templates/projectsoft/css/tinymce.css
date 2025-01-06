@@ -1,7 +1,15 @@
 @charset "UTF-8";
 @font-face {
+  font-family: 'Apple Color Emoji';
+  src: local('Apple Color Emoji'), local('AppleColorEmoji'), local('apple-color-emoji');
+  src: url('/assets/templates/projectsoft/fonts/AppleColorEmoji.woff2') format('woff2'), url('/assets/templates/projectsoft/fonts/AppleColorEmoji.woff') format('woff'), url('/assets/templates/projectsoft/fonts/AppleColorEmoji.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "IconsSite";
-  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -293,84 +301,84 @@
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 100;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-ThinItalic.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 300;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-LightItalic.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 400;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Italic.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Italic.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Italic.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Italic.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Italic.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Italic.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 500;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-MediumItalic.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 700;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-BoldItalic.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: italic;
   font-weight: 900;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-BlackItalic.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 100;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Thin.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Thin.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Thin.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Thin.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Thin.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Thin.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Light.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Light.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Light.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Light.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Light.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Light.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Regular.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Regular.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Regular.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Regular.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Regular.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Regular.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Medium.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Medium.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Medium.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Medium.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Medium.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Medium.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Bold.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Bold.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Bold.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Bold.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Bold.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Bold.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
-  src: url("/assets/templates/projectsoft/fonts/Roboto-Black.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Black.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Black.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/Roboto-Black.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/Roboto-Black.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/Roboto-Black.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 
 @font-face {
@@ -447,7 +455,7 @@
   font-family: 'Ruslan Display';
   font-style: normal;
   font-weight: 400;
-  src: url("/assets/templates/projectsoft/fonts/RuslanDisplayRegular.woff2?75096ed8242dc711037510904d63726c") format("woff2"), url("/assets/templates/projectsoft/fonts/RuslanDisplayRegular.woff?75096ed8242dc711037510904d63726c") format("woff"), url("/assets/templates/projectsoft/fonts/RuslanDisplayRegular.ttf?75096ed8242dc711037510904d63726c") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/RuslanDisplayRegular.woff2?1c8dfe1a99f093c5a3046be6d3225882") format("woff2"), url("/assets/templates/projectsoft/fonts/RuslanDisplayRegular.woff?1c8dfe1a99f093c5a3046be6d3225882") format("woff"), url("/assets/templates/projectsoft/fonts/RuslanDisplayRegular.ttf?1c8dfe1a99f093c5a3046be6d3225882") format("truetype");
 }
 body,
 button,
@@ -455,7 +463,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: "Roboto", "Open Sans", sans-serif;
+  font-family: "Roboto", "Open Sans", "Tahoma", 'Apple Color Emoji', sans-serif;
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
   font-size: 1em;
@@ -2370,6 +2378,7 @@ input[type="button"].btn-block {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  outline: unset !important;
 }
 
 .btn-default,
@@ -2379,6 +2388,33 @@ input[type="button"].btn-block {
   border: 1px solid #3a3d41;
   background-color: #fff;
   border-radius: 0;
+}
+
+.btn-red {
+  color: #ffffff;
+  border: 1px solid #d33;
+  background-color: #d33;
+  border-radius: 0;
+}
+
+.btn-red:hover {
+  background-color: #ffffff;
+  color: #d33;
+  border-color: #d33;
+}
+
+.btn-red:active,
+.btn-red:active:hover {
+  color: #d33;
+  background-color: #ffffff;
+  border-color: #d33;
+}
+
+.btn-red:focus,
+.btn-red:focus:active {
+  color: #d33;
+  background-color: #ffffff;
+  border-color: #d33;
 }
 
 .btn-default:hover {
@@ -2694,13 +2730,15 @@ blockquote > p:last-child {
   margin-bottom: unset;
 }
 
-hr {
-  margin: -30px auto 10px;
-  padding: 0;
-  height: 50px;
-  border: none;
-  border-bottom: 1px solid #d0d0d0;
-  box-shadow: 0 20px 40px -20px #bdbdbd;
+code {
+  font-size: inherit;
+  font-family: Consolas, 'Courier New', 'Courier', monospace;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 1px 2px;
+  color: #e83e8c;
+  word-break: break-word;
+  white-space: pre-wrap;
 }
 
 body .bvi-body[data-bvi-builtelements="false"] .embed .embed-responsive {
@@ -2761,7 +2799,7 @@ h6 {
 }
 
 #content {
-  font-family: "Roboto", "Open Sans", sans-serif;
+  font-family: "Roboto", "Open Sans", "Tahoma", 'Apple Color Emoji', sans-serif;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   display: -ms-flexbox;

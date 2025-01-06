@@ -1,8 +1,13 @@
 script(src="assets/templates/projectsoft/js/appjs.min.js?" + hash)
 script(src="viewer/fancybox.min.js?" + hash)
+//- Не запускать на sitemap и help
+|<@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>
+script(src="assets/templates/projectsoft/js/bvi.min.js?" + hash)
+|<@ENDIF><@ENDIF>
 script(src="assets/templates/projectsoft/js/main.min.js?" + hash)
 include style.html
-|<@IF:[*id:neq(31)*]><@IF:[*template:neq(13)*]>
+//- Не запускать на sitemap и help
+|<@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>
 include yandex.html
 |<@ENDIF><@ENDIF>
 include screen.pug

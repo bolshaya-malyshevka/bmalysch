@@ -29,8 +29,8 @@
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
 				<meta name="apple-mobile-web-app-title" content="[(site_name)]"></meta>
 				<link rel="manifest" href="/site.webmanifest"></link>
-				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?83417466c112579970f956db469fbb31"></link>
-				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?83417466c112579970f956db469fbb31"></link><@IF:[*template:neq(11)*]>
+				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?884494551325eeb05e74031bae8bfb7e"></link>
+				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?884494551325eeb05e74031bae8bfb7e"></link><@IF:[*template:neq(11)*]>
 				<link rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="rss.xml"></link><@ENDIF><@IF:[*id:is(2)*]>
 				<link rel="canonical" href="[(site_url)][~[*id*]~]"></link><@ENDIF>
 			</head>
@@ -50,10 +50,10 @@
 								</div>
 							</div>
 							<div class="header-slick">
-								<@IF:[*template:neq(13)*]>[[multiTV?
+								<@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>[[multiTV?
 									&fromJson=`[(sliders)]`
 									&tvName=`sliders`
-								]]<@ENDIF><@IF:[*id:neq(31)*]>
+								]]<@ENDIF><@ENDIF><@IF:[*template:neq(11)*]>
 								[!DLMenu?
 									&outerTpl=`@CODE: <div class="header-navigation bvi-no-styles"><nav class="bvi-no-styles" role="navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><button type="button" class="bvi-no-styles"><i class="icon-menu-open bvi-no-styles"></i></button><ul class="[+classNames+] bvi-no-styles" itemprop="about" itemscope itemtype="http://schema.org/ItemList">[+wrap+]</ul></nav></div>`
 									&rowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]">[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
@@ -123,107 +123,46 @@
 						</div>
 					</header>
 					<div class="main">
-						<div class="primary">
-							<div id="content" role="main">
-								<article class="page page-[*id*] type-page clearfix" id="page-[*id*]">
-									<header class="entry-header">
-										<h1 class="entry-title">[*longtitle:ifempty=`[*pagetitle*]`*]</h1>
-									</header>
-									<div class="entry-content">
-										<p class="text">Количество URL: 
-											<xsl:value-of select="count( sitemap:urlset/sitemap:url )"></xsl:value-of>
-										</p>
-										<div class="table-responsive">
-											<table class="table table-bordered">
-												<thead>
+						<div id="content" role="main">
+							<article class="page page-[*id*] type-page clearfix" id="page-[*id*]">
+								<header class="entry-header">
+									<h1 class="entry-title">[*longtitle:ifempty=`[*pagetitle*]`*]</h1>
+								</header>
+								<div class="entry-content">
+									<p class="text">Количество URL: 
+										<xsl:value-of select="count( sitemap:urlset/sitemap:url )"></xsl:value-of>
+									</p>
+									<div class="table-responsive">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th class="loc">URL</th>
+													<th class="lastmod">Последнее изменение</th>
+													<th class="changefreq">Изменить частоту</th>
+													<th class="priority">Приоритет</th>
+												</tr>
+											</thead>
+											<tbody>
+												<xsl:for-each select="sitemap:urlset/sitemap:url">
 													<tr>
-														<th class="loc">URL</th>
-														<th class="lastmod">Последнее изменение</th>
-														<th class="changefreq">Изменить частоту</th>
-														<th class="priority">Приоритет</th>
+														<td class="loc"><a href="{sitemap:loc}">
+																<xsl:value-of select="sitemap:loc"></xsl:value-of></a></td>
+														<td class="lastmod">
+															<xsl:value-of select="sitemap:lastmod"></xsl:value-of>
+														</td>
+														<td class="changefreq">
+															<xsl:value-of select="sitemap:changefreq"></xsl:value-of>
+														</td>
+														<td class="priority">
+															<xsl:value-of select="sitemap:priority"></xsl:value-of>
+														</td>
 													</tr>
-												</thead>
-												<tbody>
-													<xsl:for-each select="sitemap:urlset/sitemap:url">
-														<tr>
-															<td class="loc"><a href="{sitemap:loc}">
-																	<xsl:value-of select="sitemap:loc"></xsl:value-of></a></td>
-															<td class="lastmod">
-																<xsl:value-of select="sitemap:lastmod"></xsl:value-of>
-															</td>
-															<td class="changefreq">
-																<xsl:value-of select="sitemap:changefreq"></xsl:value-of>
-															</td>
-															<td class="priority">
-																<xsl:value-of select="sitemap:priority"></xsl:value-of>
-															</td>
-														</tr>
-													</xsl:for-each>
-												</tbody>
-											</table>
-										</div>
+												</xsl:for-each>
+											</tbody>
+										</table>
 									</div>
-								</article>
-							</div>
-						</div>
-						<div class="secondary" id="secondary" role="complementary">
-							<div class="widgets"><@IF:[*id:is(1)*]>
-								<div class="widget">
-									<article class="widget_director">
-										<header class="widget_director-header"><@IF:[(director_position:isnotempty)]>
-											<h3 class="widget_director-title"><strong>[(director_position)]:</strong></h3><@ENDIF><@IF:[(director:isnotempty)]>
-											<p class="widget_director-name"><strong>[(director)]</strong></p><@ENDIF><@IF:[(director_photo:isnotempty)]>
-											<p class="widget_director-header-img"><img src="[[thumb? &input=`[(director_photo)]` &options=`w=270,h=270,zc=C`]]" alt="[(director)]" loading="lazy"></img><@IF:[(director:isnotempty}]><span class="bvi-caption-alt">[(director)]</span><@ENDIF></p><@ENDIF>
-										</header>
-										<div class="widget_director-content">
-											<dl><@IF:[(address:isnotempty)]>
-												<dt>
-													<p><strong>Адрес:</strong></p>
-												</dt>
-												<dd>
-													<p><i class="icon-home"></i>[(address)]</p>
-												</dd><@ENDIF><@IF:[(phones:isnotempty)]>
-												<dt>
-													<p><strong>Телефон:</strong></p>
-												</dt>
-												<dd>
-													<p><i class="icon-phone"></i>[(phones:nl2br)]</p>
-												</dd><@ENDIF><@IF:[(email:isnotempty)]>
-												<dt>
-													<p><strong>Электронный адрес:</strong></p>
-												</dt>
-												<dd>
-													<p><i class="icon-email"></i><a href="mailto:[(email)]" target="_blank">[(email)]</a></p>
-												</dd><@ENDIF>
-												<dt>
-													<p><strong>Сайт:</strong></p>
-												</dt>
-												<dd>
-													<p><i class="icon-home"></i><a href="[(site_url)]" target="_blank">[(site_url)]</a></p>
-												</dd>
-											</dl>
-											<p class="text-center">
-												<button class="callme-btn btn btn-default" type="button" data-trigger="sendbot">ФОРМА ОБРАТНОЙ СВЯЗИ</button>
-											</p>
-										</div>
-									</article>
-								</div><@ENDIF>
-								<div class="widget eye-widget">
-									<article class="widget-article">
-										<div class="widget-article-content">
-											<p class="eya-panel"><a>Версия для слабовидящих</a></p>
-										</div>
-									</article>
-								</div>[[multiTV?
-									&fromJson=`[(group_org)]`
-									&tvName=`group_org`
-									&display=`all`
-								]][[multiTV?
-									&fromJson=`[(widgets_bar)]`
-									&tvName=`widgets_bar`
-									&display=`all`
-								]]
-							</div>
+								</div>
+							</article>
 						</div>
 						<div class="main-footer">
 							[[multiTV? 
@@ -257,9 +196,10 @@
 					</footer>
 					<div class="fancybox__wrapper"></div>
 				</div>
-				<script src="assets/templates/projectsoft/js/appjs.min.js?83417466c112579970f956db469fbb31"></script>
-				<script src="viewer/fancybox.min.js?83417466c112579970f956db469fbb31"></script>
-				<script src="assets/templates/projectsoft/js/main.min.js?83417466c112579970f956db469fbb31"></script><style>body:not(.feast) {background-color: [(background_color)];<@IF:[(background_image:isnotempty)]>background-image: url([(background_image)]);<@ENDIF><@IF:[(background_attachment:neq(" "))]>background-attachment: [(background_attachment)];<@ENDIF><@IF:[(background_position:neq(" "))]>[(background_position)]<@ENDIF><@IF:[(background_repeat:neq(" "))]>[(background_repeat)]<@ENDIF><@IF:[(background_size:neq(" "))]>[(background_size)]<@ENDIF>}</style><@IF:[*id:neq(31)*]><@IF:[*template:neq(13)*]><!-- Yandex.Metrika counter --><script type="text/javascript" >(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym([(yandex_metrika)], "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });</script><noscript><div><img src="https://mc.yandex.ru/watch/[(yandex_metrika)]" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><@ENDIF><@ENDIF>
+				<script src="assets/templates/projectsoft/js/appjs.min.js?884494551325eeb05e74031bae8bfb7e"></script>
+				<script src="viewer/fancybox.min.js?884494551325eeb05e74031bae8bfb7e"></script><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>
+				<script src="assets/templates/projectsoft/js/bvi.min.js?884494551325eeb05e74031bae8bfb7e"></script><@ENDIF><@ENDIF>
+				<script src="assets/templates/projectsoft/js/main.min.js?884494551325eeb05e74031bae8bfb7e"></script><style>body:not(.feast) {background-color: [(background_color)];<@IF:[(background_image:isnotempty)]>background-image: url([(background_image)]);<@ENDIF><@IF:[(background_attachment:neq(" "))]>background-attachment: [(background_attachment)];<@ENDIF><@IF:[(background_position:neq(" "))]>[(background_position)]<@ENDIF><@IF:[(background_repeat:neq(" "))]>[(background_repeat)]<@ENDIF><@IF:[(background_size:neq(" "))]>[(background_size)]<@ENDIF>}</style><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]><!-- Yandex.Metrika counter --><script type="text/javascript" >(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym([(yandex_metrika)], "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });</script><noscript><div><img src="https://mc.yandex.ru/watch/[(yandex_metrika)]" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><@ENDIF><@ENDIF>
 				<div class="preloader">
 					<div class="loader"></div>
 				</div>

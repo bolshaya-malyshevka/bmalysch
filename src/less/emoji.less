@@ -3,8 +3,9 @@
 	--font-serif: 'Calibri', 'Tahoma', sans-serif;
 	--font-emoji: 'apple color emoji', 'segoe ui emoji', 'noto color emoji', 'android emoji', 'emojisymbols', 'emojione mozilla', 'twemoji mozilla', 'segoe ui symbol', 'Noto Color Emoji Compat', 'emoji', sans-serif;
 }
-
+@import "fonts/apple";
 @import "inc/hr";
+@import "inc/code";
 
 *, ::after, ::before {
 	box-sizing: border-box;
@@ -65,6 +66,8 @@
 				border: 1px solid #d6d6d6;
 				margin-bottom: 0;
 				font-weight: 700;
+				font-size: 1.3em;
+				line-height: 1;
 				> input {
 					display: none;
 				}
@@ -209,6 +212,25 @@
 	&,
 	li {
 		list-style: decimal;
+		&::marker {
+			font-weight: 700;
+		}
+	}
+}
+
+#frame_help {
+	hr {
+		+ h3 {
+			margin-top: 1.5em;
+		}
+	}
+}
+
+.entry-content {
+	hr {
+		+ h3 {
+			margin-top: 1.7em;
+		}
 	}
 }
 
