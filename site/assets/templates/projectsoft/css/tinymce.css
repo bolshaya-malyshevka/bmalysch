@@ -1,19 +1,9 @@
 @charset "UTF-8";
-@font-face {
-  font-family: 'Noto Color Emoji';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/notocoloremoji/v32/Yq6P-KqIXTD0t4D9z1ESnKM3-HpFab4.ttf) format('truetype');
-}
-
-body {
-  --google-font-color-notocoloremoji: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 
 @font-face {
   font-family: "IconsSite";
-  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?615c26ba67d17e9db4b2d57927b747fc") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?615c26ba67d17e9db4b2d57927b747fc") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?615c26ba67d17e9db4b2d57927b747fc") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?770e488b48a4f0019766833326338397") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?770e488b48a4f0019766833326338397") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?770e488b48a4f0019766833326338397") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -481,7 +471,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: "Roboto", "Open Sans", "Tahoma", 'Apple Color Emoji', sans-serif;
+  font-family: "Roboto", "Noto Color Emoji", "Tofu", "Open Sans", "Tahoma", sans-serif;
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
   font-size: 1em;
@@ -2817,7 +2807,7 @@ h6 {
 }
 
 #content {
-  font-family: "Roboto", "Open Sans", "Tahoma", 'noto color emoji', 'Apple Color Emoji', sans-serif;
+  font-family: "Roboto", "Noto Color Emoji", "Tofu", "Open Sans", "Tahoma", sans-serif;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   display: -ms-flexbox;
