@@ -44,7 +44,7 @@ ErrorDocument 404 /404/
 		ExpiresDefault "access plus 1 week"
 	</FilesMatch>
 	ExpiresByType image/x-icon "access plus 1 week"
-	<FilesMatch .(gif|png|jpg|jpeg|bmp|ogg|mp4|mkv|flv|swf|wmv|asf|asx|wma|wax|wmx|wm|svg)$>
+	<FilesMatch .(gif|png|jpg|jpeg|bmp|ogg|mp4|mkv|flv|swf|wmv|asf|asx|wma|wax|wmx|wm|svg|ttf|woff|woff2|eot)$>
 		ExpiresDefault "access plus 2 year"
 	</FilesMatch>
 	ExpiresByType image/x-icon "access plus 2592000 seconds"
@@ -56,6 +56,11 @@ ErrorDocument 404 /404/
 	ExpiresByType audio/ogg "access plus 2 year"
 	ExpiresByType video/mp4 "access plus 2 year"
 	ExpiresByType video/webm "access plus 2 year"
+	ExpiresByType application/vnd.ms-fontobject "access plus 2 year"
+	ExpiresByType font/eot "access plus 2 year"
+	ExpiresByType font/woff "access plus 2 year"
+	ExpiresByType font/woff2 "access plus 2 year"
+	ExpiresByType font/ttf "access plus 2 year"
 </IfModule>
 
 <IfModule mod_gzip.c>
@@ -73,7 +78,7 @@ ErrorDocument 404 /404/
 	<FilesMatch .(html|xhtml|xml|shtml|phtml|php|txt|pdf|zip|rar)$>
 		Header set Cache-Control "max-age=0, private, must-revalidate"
 	</FilesMatch>
-	<FilesMatch .(ico|gif|png|jpg|jpeg|ogg|mp4|mkv|flv|swf|wmv|asf|asx|wma|wax|wmx|wm)$>
+	<FilesMatch .(ico|gif|png|jpg|jpeg|ogg|mp4|mkv|flv|swf|wmv|asf|asx|wma|wax|wmx|wm|ttf|woff|woff2|eot)$>
 		Header set Cache-Control "max-age=63072000"
 	</FilesMatch>
 	<FilesMatch .(eot|ttf|otf|svg|woff)$>
