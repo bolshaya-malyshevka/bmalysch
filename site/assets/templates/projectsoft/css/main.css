@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "IconsSite";
-  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?770e488b48a4f0019766833326338397") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?770e488b48a4f0019766833326338397") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?770e488b48a4f0019766833326338397") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?2353a64d6a55cb9cb5294a75bbc9f8f6") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?2353a64d6a55cb9cb5294a75bbc9f8f6") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?2353a64d6a55cb9cb5294a75bbc9f8f6") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -471,7 +471,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: "Roboto", "Noto Color Emoji", "Tofu", "Open Sans", "Tahoma", sans-serif;
+  font-family: "Roboto", "Open Sans", "Tahoma", "Noto Color Emoji", "Tofu", sans-serif;
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
   font-size: 1em;
@@ -5461,7 +5461,7 @@ body .bvi-body .headerpage .header-group {
 }
 
 #content {
-  font-family: "Roboto", "Noto Color Emoji", "Tofu", "Open Sans", "Tahoma", sans-serif;
+  font-family: "Roboto", "Open Sans", "Tahoma", "Noto Color Emoji", "Tofu", sans-serif;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   display: -ms-flexbox;
