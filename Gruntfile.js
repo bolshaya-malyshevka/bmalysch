@@ -136,6 +136,8 @@ module.exports = function(grunt) {
 			},
 			emoji: {
 				src: [
+					//'src/js/title-tooltip.js',
+					//'src/js/position.js',
 					'src/js/emoji.js'
 				],
 				dest: '<%= globalConfig.gosave %>/js/emoji.js'

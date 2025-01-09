@@ -21,6 +21,8 @@ src/temp
 *.zip
 /**/test*.json
 site/robots.txt
+src/**/emojies.js
+src/**/index.js
 
 site/manager
 site/vendor

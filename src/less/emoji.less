@@ -1,6 +1,6 @@
 :root {
-	--font-sans-serif: 'Calibri', 'Tahoma', sans-serif;
-	--font-serif: 'Calibri', 'Tahoma', sans-serif;
+	--font-sans-serif: 'Calibri', 'Tahoma', "Noto Color Emoji", Tofu, sans-serif;
+	--font-serif: 'Calibri', 'Tahoma', "Noto Color Emoji", Tofu, sans-serif;
 	--font-emoji: "Noto Color Emoji", Tofu, sans-serif;
 }
 
@@ -105,6 +105,7 @@
 		position: relative;
 		z-index: 1;
 		.tabs-content {
+			position: relative;
 			h1, h2, h3, h4, h5, h6 {
 				padding-left: 15px;
 				padding-right: 15px;
@@ -115,6 +116,19 @@
 				margin-top: 20px;
 				font-size: 1.5rem;
 				margin-bottom: 15px;
+			}
+			span {
+				&.out {
+					position: absolute;
+					left: 32px;
+					top: 2px;
+					opacity: 1;
+					transition: opacity .5s ease;
+					&:empty {
+						transition: opacity .5s ease;
+						opacity: 0;
+					}
+				}
 			}
 		}
 		.tabs-content {
@@ -137,15 +151,15 @@
 		padding-right: 15px;
 	}
 	.emoji--icon {
+		background-color: #ffffff;
 		font-family: var(--font-emoji);
 		position: relative;
 		display: inline-block;
 		line-height: 1;
-		padding: 5px;
+		padding: 10px 5px;
 		border-radius: 4px;
 		box-shadow: 0 0 1px 1px #d3d3d3;
 		margin: 5px;
-		padding-top: 15px;
 		cursor: pointer;
 		transition: all 0.3s ease;
 		overflow: hidden;
@@ -154,6 +168,12 @@
 		text-align: center;
 		-ms-flex: 1;
 		flex: 1;
+		transition: all .3s ease;
+		transform: scale(1);
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		/*
 		&:before {
 			opacity: 0;
 			position: absolute;
@@ -168,19 +188,27 @@
 			color: #fff;
 			text-shadow: 0 0 5px #555, 0 0 2px #000, 0 0 1px #000;
 		}
+		*/
 		&:hover {
-			box-shadow: 0 0 20px 5px #bbbbbb;
+			box-shadow: 0 0 0px 3px #ffffff, 0 0 20px 5px #bbbbbb;
 			background-color: #92ff92;
+			transform: scale(1.3);
+			z-index: 100;
 		}
+		/*
 		&.copy,
 		&.error {
 			&::before {
 				opacity: 1;
 			}
 		}
+		*/
 		&.copy {
 			background-color: #92ff92;
 			box-shadow: 0 0 20px 5px #bbb, inset 0 0 10px 3px #00dcff;
+			-webkit-user-select: text;
+			-ms-user-select: text;
+			user-select: text;
 		}
 		&.error {
 			&,
@@ -188,24 +216,13 @@
 				transition: none;
 				background-color: red;
 			}
+			/*
 			&::before,
 			&:hover::before {
 				background-color: rgba(255, 0, 0, 0.7);
 				color: #fff;
 			}
-		}
-	}
-}
-
-.clipboard {
-	.emoji--icon {
-		-webkit-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		&.copy {
-			-webkit-user-select: text;
-			-ms-user-select: text;
-			user-select: text;
+			*/
 		}
 	}
 }
@@ -238,11 +255,11 @@
 
 body .bvi-body {
 	 span.emoji--icon {
-	 	font-size: 2em !important;
+		font-size: 2em !important;
 	 }
 	 &[data-bvi-images=false],
 	 &[data-bvi-images=grayscale] {
-	 	-moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+		-moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
 		-o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
 		-webkit-filter: grayscale(1);
 		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
@@ -250,4 +267,74 @@ body .bvi-body {
 		filter: grayscale(1);
 		visibility: visible;
 	 }
+}
+
+[title]{
+	cursor: help;
+}
+
+#titleTtip{
+	--radius: 6px;
+	--trans-duration: .2s;
+	max-width: 220px;
+	position: fixed;
+	z-index: max;
+	box-sizing: border-box;
+	pointer-events: none;
+	opacity: 0;
+	transition: 0s;
+	font-size: 3em;
+}
+
+#titleTtip .titleTtip__text{
+	padding: 6px 11px;
+	border-radius: var(--radius);
+	color: white;
+	transform: scale(.75);
+	transform-origin: 50% top;
+	background: black;
+	backdrop-filter: blur(3px);
+}
+
+#titleTtip::after {
+	--size: 8px;
+	content: "";
+	bottom: calc(100% - 1px);
+	/* very odd 1px gap */
+	/*
+		1. limit minimum left value to the radius of the tooltip so it starts just when thr radius curves
+		2. place the arrow exactly where the mouse pointer is
+		3. limit the right position (maximum left) to fit exactly
+	*/
+	left: ~"Clamp(var(--radius)/2, var(--mouse-pos, 0) * 1px - var(--size)/2, 100% - var(--size)*2 - var(--radius)/2 - 1px)";
+	right: 0;
+	border: solid transparent;
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-bottom-color: black;
+	border-width: var(--size);
+	font-family: var(--font-sans-serif);
+}
+
+[data-over]{
+	--x: calc(var(--pos-left) + var(--window-scroll-x));
+	--y: calc(var(--pos-top) + var(--window-scroll-y));
+	position: absolute !important;
+	z-index: 999999 !important;
+	top: 0;
+	left: 0;
+	transform: translate(calc(var(--x) * 1px),
+											 calc(var(--y) * 1px));
+}
+
+#titleTtip[data-over] > *{
+	transform: none;
+	transition: var(--trans-duration);
+}
+
+#titleTtip[data-over]{
+	opacity: 1;
+	transition: opacity var(--trans-duration);
 }
