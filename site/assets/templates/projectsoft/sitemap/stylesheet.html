@@ -29,8 +29,8 @@
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
 				<meta name="apple-mobile-web-app-title" content="[(site_name)]"></meta>
 				<link rel="manifest" href="/site.webmanifest"></link>
-				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?b99f219e56c58d97a5b53d58b4202d26"></link>
-				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?b99f219e56c58d97a5b53d58b4202d26"></link><@IF:[*template:neq(11)*]>
+				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?f055be849c998b3e282c6c108624cf4c"></link>
+				<link type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?f055be849c998b3e282c6c108624cf4c"></link><@IF:[*template:neq(11)*]>
 				<link rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="rss.xml"></link><@ENDIF><@IF:[*id:is(2)*]>
 				<link rel="canonical" href="[(site_url)][~[*id*]~]"></link><@ENDIF>
 			</head>
@@ -56,16 +56,16 @@
 								]]<@ENDIF><@ENDIF><@IF:[*template:neq(11)*]>
 								[!DLMenu?
 									&outerTpl=`@CODE: <div class="header-navigation bvi-no-styles"><nav class="bvi-no-styles" role="navigation" itemscope itemtype="http://www.schema.org/SiteNavigationElement"><button type="button" class="bvi-no-styles"><i class="icon-menu-open bvi-no-styles"></i></button><ul class="[+classNames+] bvi-no-styles" itemprop="about" itemscope itemtype="http://schema.org/ItemList">[+wrap+]</ul></nav></div>`
-									&rowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]">[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
-									&rowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]">[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
-									&parentRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]">[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
-									&parentRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]">[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
-									&parentRowActiveTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]">[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+									&rowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+									&rowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+									&parentRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+									&parentRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+									&parentRowActiveTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
 									&innerTpl=`@CODE: <ul class="[+classNames+] bvi-no-styles">[+wrap+]</ul>`
-									&innerRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]">[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
-									&innerRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]">[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+									&innerRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
+									&innerRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles" itemprop="itemListElement" itemscope itemtype="http://schema.org/ItemList"><a class="bvi-no-styles" itemprop="url" href="[+url+]" [+link_attributes+]>[+title+]</a><meta itemprop="name" content="[+title:notags:strip+]"></li>`
 									&parents=`0`
-									&addWhereList=`hidemenu = 0 AND parent NOT IN(2)`
+									&addWhereList=`hidemenu = 0 AND parent NOT IN(2) AND parent NOT IN(69)`
 									&showParent=`1`
 									&innerClass=`inner`
 									&outerClass=`outer`
@@ -88,15 +88,15 @@
 								!]<@ENDIF><@ENDIF><@ELSE>
 								[!DLMenu?
 									&outerTpl=`@CODE: <div class="header-navigation bvi-no-styles"><nav class="bvi-no-styles" role="navigation"><button type="button" class="bvi-no-styles"><i class="icon-menu-open bvi-no-styles"></i></button><ul class="[+classNames+] bvi-no-styles">[+wrap+]</ul></nav></div>`
-									&rowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]">[+title+]</a></li>`
-									&parentRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]">[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
-									&parentRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]">[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
-									&parentRowActiveTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]">[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+									&rowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+									&parentRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+									&parentRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
+									&parentRowActiveTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a><i class="icon-down bvi-no-styles"></i>[+wrap+]</li>`
 									&innerTpl=`@CODE: <ul class="[+classNames+] bvi-no-styles">[+wrap+]</ul>`
-									&innerRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]">[+title+]</a></li>`
-									&innerRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]">[+title+]</a></li>`
+									&innerRowTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
+									&innerRowHereTpl=`@CODE:<li class="[+classNames+] bvi-no-styles"><a class="bvi-no-styles" href="[+url+]" [+link_attributes+]>[+title+]</a></li>`
 									&parents=`0`
-									&addWhereList=`hidemenu = 0 AND parent NOT IN(2)`
+									&addWhereList=`hidemenu = 0 AND parent NOT IN(2) AND parent NOT IN(69)`
 									&showParent=`1`
 									&innerClass=`inner`
 									&outerClass=`outer`
@@ -196,10 +196,10 @@
 					</footer>
 					<div class="fancybox__wrapper"></div>
 				</div>
-				<script src="assets/templates/projectsoft/js/appjs.min.js?b99f219e56c58d97a5b53d58b4202d26"></script>
-				<script src="viewer/fancybox.min.js?b99f219e56c58d97a5b53d58b4202d26"></script><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>
-				<script src="assets/templates/projectsoft/js/bvi.min.js?b99f219e56c58d97a5b53d58b4202d26"></script><@ENDIF><@ENDIF>
-				<script src="assets/templates/projectsoft/js/main.min.js?b99f219e56c58d97a5b53d58b4202d26"></script><style>body:not(.feast) {background-color: [(background_color)];<@IF:[(background_image:isnotempty)]>background-image: url([(background_image)]);<@ENDIF><@IF:[(background_attachment:neq(" "))]>background-attachment: [(background_attachment)];<@ENDIF><@IF:[(background_position:neq(" "))]>[(background_position)]<@ENDIF><@IF:[(background_repeat:neq(" "))]>[(background_repeat)]<@ENDIF><@IF:[(background_size:neq(" "))]>[(background_size)]<@ENDIF>}</style><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]><!-- Yandex.Metrika counter --><script type="text/javascript" >(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym([(yandex_metrika)], "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });</script><noscript><div><img src="https://mc.yandex.ru/watch/[(yandex_metrika)]" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><@ENDIF><@ENDIF>
+				<script src="assets/templates/projectsoft/js/appjs.min.js?f055be849c998b3e282c6c108624cf4c"></script>
+				<script src="viewer/fancybox.min.js?f055be849c998b3e282c6c108624cf4c"></script><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>
+				<script src="assets/templates/projectsoft/js/bvi.min.js?f055be849c998b3e282c6c108624cf4c"></script><@ENDIF><@ENDIF>
+				<script src="assets/templates/projectsoft/js/main.min.js?f055be849c998b3e282c6c108624cf4c"></script><style>body:not(.feast) {background-color: [(background_color)];<@IF:[(background_image:isnotempty)]>background-image: url([(background_image)]);<@ENDIF><@IF:[(background_attachment:neq(" "))]>background-attachment: [(background_attachment)];<@ENDIF><@IF:[(background_position:neq(" "))]>[(background_position)]<@ENDIF><@IF:[(background_repeat:neq(" "))]>[(background_repeat)]<@ENDIF><@IF:[(background_size:neq(" "))]>[(background_size)]<@ENDIF>}</style><@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]><!-- Yandex.Metrika counter --><script type="text/javascript" >(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym([(yandex_metrika)], "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });</script><noscript><div><img src="https://mc.yandex.ru/watch/[(yandex_metrika)]" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><@ENDIF><@ENDIF>
 				<div class="preloader">
 					<div class="loader"></div>
 				</div>

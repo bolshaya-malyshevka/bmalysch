@@ -26,12 +26,12 @@
 		 */
 		new isvek.Bvi({
 			target: '.eya-panel',
-			builtElements: true,
-			images: true,
+			builtElements: !0,
+			images: !0,
 			lang: 'ru-RU',
-			panelFixed: true,
-			speech: false,
-			fontSize: 14
+			panelFixed: !0,
+			speech: !1,
+			fontSize: 16
 		});
 	}
 	/**

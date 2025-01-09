@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "IconsSite";
-  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?d50a25751c28dfcedb040b4ddc1deb1b") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?d50a25751c28dfcedb040b4ddc1deb1b") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?d50a25751c28dfcedb040b4ddc1deb1b") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?c327b066d357f304e47cd4973e434ad8") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?c327b066d357f304e47cd4973e434ad8") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?c327b066d357f304e47cd4973e434ad8") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -517,7 +517,6 @@ dl.dl-horizontal dd {
 }
 
 img {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   max-width: 100%;
   height: auto !important;
   border: 0;

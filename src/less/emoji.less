@@ -163,7 +163,7 @@
 		cursor: pointer;
 		transition: all 0.3s ease;
 		overflow: hidden;
-		font-size: 2em;
+		font-size: 1.6em;
 		min-width: 2em;
 		text-align: center;
 		-ms-flex: 1;
@@ -299,23 +299,20 @@ body .bvi-body {
 #titleTtip::after {
 	--size: 8px;
 	content: "";
-	bottom: calc(100% - 1px);
 	/* very odd 1px gap */
 	/*
 		1. limit minimum left value to the radius of the tooltip so it starts just when thr radius curves
 		2. place the arrow exactly where the mouse pointer is
 		3. limit the right position (maximum left) to fit exactly
 	*/
-	left: ~"Clamp(var(--radius)/2, var(--mouse-pos, 0) * 1px - var(--size)/2, 100% - var(--size)*2 - var(--radius)/2 - 1px)";
+	/*left: ~"Clamp(var(--radius)/2, var(--mouse-pos, 0) * 1px - var(--size)/2, 100% - var(--size)*2 - var(--radius)/2 - 1px)";
 	right: 0;
-	border: solid transparent;
 	height: 0;
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-bottom-color: black;
 	border-width: var(--size);
-	font-family: var(--font-sans-serif);
+	font-family: var(--font-sans-serif);*/
 }
 
 [data-over]{
