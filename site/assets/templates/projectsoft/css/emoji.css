@@ -137,7 +137,6 @@ code {
 .emoji-wrapp .emoji-content .tabs-content {
   position: relative;
   padding-bottom: 15px;
-  overflow: hidden;
   display: none;
 }
 
