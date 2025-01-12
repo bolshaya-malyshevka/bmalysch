@@ -151,22 +151,32 @@ code {
   -ms-user-select: none;
   user-select: none;
   font-weight: 500;
-  margin-top: 20px;
-  font-size: 1.5rem;
+  margin-top: 5px;
   margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 
 .emoji-wrapp .emoji-content .tabs-content span.out {
-  position: absolute;
-  left: 32px;
-  top: 2px;
+  position: sticky;
+  left: 30px;
+  top: 15px;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  z-index: 1000;
+  visibility: visible;
   opacity: 1;
   transition: opacity 0.5s ease;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .emoji-wrapp .emoji-content .tabs-content span.out:empty {
   transition: opacity 0.5s ease;
   opacity: 0;
+  visibility: hidden;
 }
 
 .emoji-wrapp .emoji-content .tabs-content {
@@ -270,60 +280,4 @@ body .bvi-body[data-bvi-images=grayscale] {
   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'saturate\' values=\'0\'/></filter></svg>#grayscale");
   filter: grayscale(1);
   visibility: visible;
-}
-
-[title] {
-  cursor: help;
-}
-
-#titleTtip {
-  --radius: 6px;
-  --trans-duration: 0.2s;
-  max-width: 220px;
-  position: fixed;
-  z-index: max;
-  box-sizing: border-box;
-  pointer-events: none;
-  opacity: 0;
-  transition: 0s;
-  font-size: 3em;
-}
-
-#titleTtip .titleTtip__text {
-  padding: 6px 11px;
-  border-radius: var(--radius);
-  color: white;
-  -ms-transform: scale(0.75);
-  transform: scale(0.75);
-  -ms-transform-origin: 50% top;
-  transform-origin: 50% top;
-  background: black;
-  backdrop-filter: blur(3px);
-}
-
-#titleTtip::after {
-  --size: 8px;
-  content: "";
-}
-
-[data-over] {
-  --x: calc(var(--pos-left) + var(--window-scroll-x));
-  --y: calc(var(--pos-top) + var(--window-scroll-y));
-  position: absolute !important;
-  z-index: 999999 !important;
-  top: 0;
-  left: 0;
-  -ms-transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
-  transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px));
-}
-
-#titleTtip[data-over] > * {
-  -ms-transform: none;
-  transform: none;
-  transition: var(--trans-duration);
-}
-
-#titleTtip[data-over] {
-  opacity: 1;
-  transition: opacity var(--trans-duration);
 }
