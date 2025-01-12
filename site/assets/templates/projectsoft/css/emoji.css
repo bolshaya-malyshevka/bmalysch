@@ -130,13 +130,15 @@ code {
 .emoji-wrapp .emoji-content {
   background-color: white;
   box-shadow: 0 0 1px #000;
-  padding-bottom: 15px;
   position: relative;
   z-index: 1;
 }
 
 .emoji-wrapp .emoji-content .tabs-content {
   position: relative;
+  padding-bottom: 15px;
+  overflow: hidden;
+  display: none;
 }
 
 .emoji-wrapp .emoji-content .tabs-content h1,
@@ -177,10 +179,6 @@ code {
   transition: opacity 0.5s ease;
   opacity: 0;
   visibility: hidden;
-}
-
-.emoji-wrapp .emoji-content .tabs-content {
-  display: none;
 }
 
 .emoji-wrapp .emoji-content .tabs-content.active {
@@ -239,9 +237,6 @@ code {
   -webkit-user-select: text;
   -ms-user-select: text;
   user-select: text;
-}
-
-.emoji-wrapp .emoji--icon.error {
 }
 
 .emoji-wrapp .emoji--icon.error,

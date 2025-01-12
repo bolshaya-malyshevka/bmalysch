@@ -101,11 +101,13 @@
 	.emoji-content {
 		background-color: white;
 		box-shadow: 0 0 1px #000;
-		padding-bottom: 15px;
 		position: relative;
 		z-index: 1;
 		.tabs-content {
 			position: relative;
+			padding-bottom: 15px;
+			overflow: hidden;
+			display: none;
 			h1, h2, h3, h4, h5, h6 {
 				padding-left: 15px;
 				padding-right: 15px;
@@ -138,9 +140,6 @@
 					}
 				}
 			}
-		}
-		.tabs-content {
-			display: none;
 			&.active {
 				display: block;
 			}
@@ -181,36 +180,12 @@
 		-webkit-user-select: none;
 		-ms-user-select: none;
 		user-select: none;
-		/*
-		&:before {
-			opacity: 0;
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			width: 100%;
-			text-align: center;
-			content: attr(data-copy);
-			font-size: 14px;
-			color: black;
-			font-weight: 200;
-			color: #fff;
-			text-shadow: 0 0 5px #555, 0 0 2px #000, 0 0 1px #000;
-		}
-		*/
 		&:hover {
 			box-shadow: 0 0 0px 3px #ffffff, 0 0 20px 5px #bbbbbb;
 			background-color: #92ff92;
 			transform: scale(1.3);
 			z-index: 100;
 		}
-		/*
-		&.copy,
-		&.error {
-			&::before {
-				opacity: 1;
-			}
-		}
-		*/
 		&.copy {
 			background-color: #92ff92;
 			box-shadow: 0 0 20px 5px #bbb, inset 0 0 10px 3px #00dcff;
@@ -224,13 +199,6 @@
 				transition: none;
 				background-color: red;
 			}
-			/*
-			&::before,
-			&:hover::before {
-				background-color: rgba(255, 0, 0, 0.7);
-				color: #fff;
-			}
-			*/
 		}
 	}
 }
