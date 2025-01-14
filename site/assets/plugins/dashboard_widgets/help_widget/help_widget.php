@@ -19,6 +19,7 @@ switch($e->name){
 <div id="help_content">
 	<div id="frame_help">
 		' . $chelp . '
+		<div data-plugin="emoji"></div>
 		<script src="/assets/templates/projectsoft/js/emoji.min.js?' . filemtime(MODX_BASE_PATH . 'assets/templates/projectsoft/js/emoji.min.js') . '#hr=true&title=true&content=true"></script>
 	</div>
 </div>';

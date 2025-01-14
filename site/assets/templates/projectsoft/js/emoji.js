@@ -5977,21 +5977,45 @@
 	];
 
 	const main = () => {
+
+		/**
+		 * Блок вставки плагина
+		 */
+		const plugin = document.querySelector("[data-plugin=emoji]");
+
+		if(!plugin){
+			return !1;
+		}
+
+		/**
+		 * Подключаем стили
+		 */
 		const link = document.createElement("link");
 		link.rel = "stylesheet";
 		link.type = "text/css";
 		link.href = "/assets/templates/projectsoft/css/emoji.min.css?" + (new Date()).getTime();
 
+		/**
+		 * Блок для всего плагина
+		 */
 		const block = document.createElement("div");
 		block.classList.add("emoji-wrapp");
-		
+
+		/**
+		 * Блок для табов
+		 */
 		const tabs = document.createElement("div");
 		tabs.classList.add("emoji-tabs");
 
+		/**
+		 * Блок для иконок
+		 */
 		const content = document.createElement("div");
 		content.classList.add("emoji-content");
 
-		const script = document.querySelector("[data-plugin=emoji]");
+		/**
+		 * Опции
+		 */
 		let h3Title,
 			pContent,
 			hrOption = false,
@@ -6012,89 +6036,91 @@
 				pOption = (strOptions.get(`content`) === 'true')
 			);
 		}
-		if(script) {
+		hrOption && plugin.append(document.createElement("hr"));
+		h3Option && (
+			h3Title = document.createElement("h3"),
+			h3Title.innerText = "Включена поддержка текстовых EMOJI",
+			h3Title.classList.add("red"),
+			plugin.append(h3Title)
+		);
+		pOption && (
+			pContent = document.createElement("p"),
+			pContent.innerText = "Кликните по иконке Emoji и она скопируется в буфер.",
+			plugin.append(pContent)
+		);
 
-			hrOption && script.append(document.createElement("hr"));
-			h3Option && (
-				h3Title = document.createElement("h3"),
-				h3Title.innerText = "Включена поддержка текстовых EMOJI",
-				h3Title.classList.add("red"),
-				script.append(h3Title)
+		/**
+		 * Построение
+		 */
+		let active = !0;
+		for(let index in emojies){
+			let emo = emojies[index];
+			let title = emo.title;
+			let id = emo.id;
+			// Tab
+			let tab = document.createElement("div");
+			tab.classList.add("tabs-item");
+			// Label
+			let label = document.createElement("label");
+			label.innerText = title;
+			label.setAttribute('for', "emoji-radio-" + id);
+			// Input
+			let input = document.createElement("input");
+			input.id = "emoji-radio-" + id;
+			input.type = "radio";
+			input.name = "emoji";
+			input.value = id;
+			// Emoji`s
+			let content_emoji = document.createElement("div");
+			content_emoji.classList.add("tabs-content");
+			content_emoji.classList.add("clearfix");
+			content_emoji.id = "emoji-" + id;
+			// Title
+			let h = document.createElement("h2");
+			h.classList.add("text-center");
+			h.innerText = title;
+			// Icons wrapp
+			let wrapp = document.createElement("div");
+			wrapp.classList.add("emoji-icons-wrapp");
+			active && (
+				tab.classList.add("active"),
+				content_emoji.classList.add("active"),
+				input.setAttribute("checked", "checked")
 			);
-			pOption && (
-				pContent = document.createElement("p"),
-				pContent.innerText = "Кликните по иконке Emoji и она скопируется в буфер.",
-				script.append(pContent)
-			);
 
-			let active = !0;
-
-			for(let index in emojies){
-				let emo = emojies[index];
-				let title = emo.title;
-				let id = emo.id;
-				// Tab
-				let tab = document.createElement("div");
-				tab.classList.add("tabs-item");
-				// Label
-				let label = document.createElement("label");
-				label.innerText = title;
-				label.setAttribute('for', "emoji-radio-" + id);
-				// Input
-				let input = document.createElement("input");
-				input.id = "emoji-radio-" + id;
-				input.type = "radio";
-				input.name = "emoji";
-				input.value = id;
-				// Emoji`s
-				let content_emoji = document.createElement("div");
-				content_emoji.classList.add("tabs-content");
-				content_emoji.classList.add("clearfix");
-				content_emoji.id = "emoji-" + id;
-				// Title
-				let h = document.createElement("h2");
-				h.classList.add("text-center");
-				h.innerText = title;
-				// Icons wrapp
-				let wrapp = document.createElement("div");
-				wrapp.classList.add("emoji-icons-wrapp");
-				active && (
-					tab.classList.add("active"),
-					content_emoji.classList.add("active"),
-					input.setAttribute("checked", "checked")
-				);
-				for(let icon_index in emo.icons){
-					let ttl = emo.icons[icon_index].title;
-					let emoji = emo.icons[icon_index].value;
-					let span = document.createElement("span");
-					span.classList.add("emoji--icon");
-					span.innerHTML = emoji;
-					span.setAttribute("data-title", span.innerText);
-					span.setAttribute("title", span.innerText);
-					ttl && (
-						span.setAttribute("title", ttl),
-						span.setAttribute("data-title", ttl)
-					)
-					span.setAttribute("data-copy", "");
-					wrapp.append(span);
-				}
-				label.append(input);
-				tab.append(label);
-				tabs.append(tab);
-				let out = document.createElement('span');
-				out.classList.add('out');
-				content_emoji.append(out);
-				content_emoji.append(h);
-				content_emoji.append(wrapp);
-				content.append(content_emoji);
-				active = !1;
+			/**
+			 * Заполнение
+			 */
+			for(let icon_index in emo.icons){
+				let ttl = emo.icons[icon_index].title;
+				let emoji = emo.icons[icon_index].value;
+				let span = document.createElement("span");
+				span.classList.add("emoji--icon");
+				span.innerHTML = emoji;
+				span.setAttribute("data-title", span.innerText);
+				span.setAttribute("title", span.innerText);
+				ttl && (
+					span.setAttribute("title", ttl),
+					span.setAttribute("data-title", ttl)
+				)
+				span.setAttribute("data-copy", "");
+				wrapp.append(span);
 			}
-			block.append(tabs);
-			block.append(content);
-			script.append(block);
-			script.append(link);
+			label.append(input);
+			tab.append(label);
+			tabs.append(tab);
+			let out = document.createElement('span');
+			out.classList.add('out');
+			content_emoji.append(out);
+			content_emoji.append(h);
+			content_emoji.append(wrapp);
+			content.append(content_emoji);
+			active = !1;
 		}
-
+		block.append(tabs);
+		block.append(content);
+		plugin.append(block);
+		plugin.append(link);
 	};
 
 	/**

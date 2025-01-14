@@ -15,6 +15,7 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 						|<@ENDIF>
 						.entry-content
 							|[*content*]
+							div(data-plugin="emoji")
 							script(src="/assets/templates/projectsoft/js/emoji.min.js?" + hash + "#hr=true&title=true&content=true")
 							p.clearfix
 					include inc/share.pug
