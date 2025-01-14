@@ -6002,13 +6002,13 @@
 		if(url.hash) {
 			let strOptions = `?` + url.hash.replace(/#/g, ``);
 			strOptions = new URLSearchParams(strOptions);
-			strOptions.get(`hr`) && (
+			strOptions.has(`hr`) && (
 				hrOption = (strOptions.get(`hr`) === 'true')
 			);
-			strOptions.get(`title`) && (
+			strOptions.has(`title`) && (
 				h3Option = (strOptions.get(`title`) === 'true')
 			);
-			strOptions.get(`content`) && (
+			strOptions.has(`content`) && (
 				pOption = (strOptions.get(`content`) === 'true')
 			);
 		}
@@ -6207,7 +6207,6 @@
 	let idHash = window.location.hash;
 	if(idHash){
 		idHash = idHash.replace(/#/g, ``);
-		console.log(idHash);
 		let inp = window.document.querySelector("#emoji-radio-" + idHash);
 		if(Boolean(inp)){
 			if(inp.tagName == 'INPUT'){
