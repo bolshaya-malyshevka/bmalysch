@@ -5992,16 +5992,43 @@
 		content.classList.add("emoji-content");
 
 		const script = document.querySelector("[data-plugin=emoji]");
+		let h3Title,
+			pContent,
+			hrOption = false,
+			h3Option = false,
+			pOption = false,
+			url = document.currentScript.src;
+		url = new URL(url);
+		if(url.hash) {
+			let strOptions = `?` + url.hash.replace(/#/g, ``);
+			strOptions = new URLSearchParams(strOptions);
+			strOptions.get(`hr`) && (
+				hrOption = (strOptions.get(`hr`) === 'true')
+			);
+			strOptions.get(`title`) && (
+				h3Option = (strOptions.get(`title`) === 'true')
+			);
+			strOptions.get(`content`) && (
+				pOption = (strOptions.get(`content`) === 'true')
+			);
+		}
 		if(script) {
-			script.append(document.createElement("hr"));
-			let h3Title = document.createElement("h3");
-			let pContent = document.createElement("p");
-			h3Title.innerText = "Включена поддержка текстовых EMOJI";
-			pContent.innerText = "Кликните по иконке Emoji и она скопируется в буфер.";
-			h3Title.classList.add("red");
-			script.append(h3Title);
-			script.append(pContent);
+
+			hrOption && script.append(document.createElement("hr"));
+			h3Option && (
+				h3Title = document.createElement("h3"),
+				h3Title.innerText = "Включена поддержка текстовых EMOJI",
+				h3Title.classList.add("red"),
+				script.append(h3Title)
+			);
+			pOption && (
+				pContent = document.createElement("p"),
+				pContent.innerText = "Кликните по иконке Emoji и она скопируется в буфер.",
+				script.append(pContent)
+			);
+
 			let active = !0;
+
 			for(let index in emojies){
 				let emo = emojies[index];
 				let title = emo.title;
@@ -6152,7 +6179,8 @@
 			let emoji_tabs = input.closest('.emoji-tabs');
 			let tab = input.closest('.tabs-item');
 			let tabs_item = [...emoji_tabs.querySelectorAll('.tabs-item')];
-			let tabs_content = [...wrap.querySelectorAll('.tabs-content')]
+			let tabs_content = [...wrap.querySelectorAll('.tabs-content')];
+			let tab_active = emoji_tabs.querySelectorAll('.active');
 			tabs_item.forEach(function(a, b, c){
 				a.classList.remove('active');
 			});
@@ -6160,27 +6188,17 @@
 				a.classList.remove('active');
 			});
 			let tb = wrap.querySelector("#emoji-" + value);
-			tb && tb.classList.add('active');
-			tab.classList.add('active');
+			tb && (
+				tb.classList.add('active'),
+				tab.classList.add('active'),
+				window.location.hash = value,
+				wrap.scrollIntoView({ behavior: 'smooth' })
+			);
 			return !1;
 		}
 	});
 
 	main();
-
-	if(typeof titleTooltip != 'undefined') {
-		titleTooltip({ 
-			onShow: function(reference, popper){
-					position.default({ 
-					target    : popper, 
-					useRaf    : false, 
-					ref       : reference, 
-					offset    : [0, 8],
-					placement : "center below",
-				})
-			}
-		});
-	}
 
 	/**
 	 * location.hash при загрузке
@@ -6188,7 +6206,9 @@
 	 */
 	let idHash = window.location.hash;
 	if(idHash){
-		let inp = window.document.querySelector(idHash);
+		idHash = idHash.replace(/#/g, ``);
+		console.log(idHash);
+		let inp = window.document.querySelector("#emoji-radio-" + idHash);
 		if(Boolean(inp)){
 			if(inp.tagName == 'INPUT'){
 				inp.checked = true;

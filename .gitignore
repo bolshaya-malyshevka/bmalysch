@@ -11,6 +11,7 @@ SOSH_composer
 
 # test or temp
 test
+test.*
 tests
 temp
 src/temp
