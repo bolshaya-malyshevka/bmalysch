@@ -1,5 +1,5 @@
 (function(){
-	const emojies = [
+	let emojies = [
 		{
 			"title": "Смайлики",
 			"id": "smiles",
@@ -5976,7 +5976,7 @@
 		}
 	];
 
-	const main = () => {
+	const main = (emotics) => {
 
 		/**
 		 * Блок вставки плагина
@@ -6053,8 +6053,8 @@
 		 * Построение
 		 */
 		let active = !0;
-		for(let index in emojies){
-			let emo = emojies[index];
+		for(let index in emotics){
+			let emo = emotics[index];
 			let title = emo.title;
 			let id = emo.id;
 			// Tab
@@ -6224,7 +6224,7 @@
 		}
 	});
 
-	main();
+	main(emojies);
 
 	/**
 	 * location.hash при загрузке
