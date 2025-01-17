@@ -20,8 +20,6 @@ switch($e->name){
 		$help_content .=  '
 <div id="help_content">
 	<div id="frame_help">
-		' . $modx->config["site_url"] . '<br>
-		' . $base . '<br>
 		' . $chelp . '
 		<div data-plugin="emoji"></div>
 		<script src="' . $url . 'js/emoji.min.js?' . filemtime($base . 'js/emoji.min.js') . '#hr=true&title=true&content=true"></script>
