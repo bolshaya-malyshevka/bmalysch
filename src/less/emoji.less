@@ -1,26 +1,17 @@
-:root {
-	--font-sans-serif: 'Calibri', 'Tahoma', "Noto Color Emoji", Tofu, sans-serif;
-	--font-serif: 'Calibri', 'Tahoma', "Noto Color Emoji", Tofu, sans-serif;
-	--font-emoji: "Noto Color Emoji", Tofu, sans-serif;
-}
+@charset "UTF-8";
 
 @import (css) url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
-
-@import "inc/hr";
-@import "inc/code";
-
-*, ::after, ::before {
-	box-sizing: border-box;
-}
-
-.red {
-	color: red;
-}
 
 .emoji-wrapp {
 	margin-bottom: 15px;
 	font-size: 14px;
-	font-family: var(--font-sans-serif);
+	font-family: 'Calibri', 'Tahoma', 'Noto Color Emoji', Tofu, sans-serif;
+	*, ::after, ::before {
+		box-sizing: border-box;
+	}
+	.red {
+		color: red;
+	}
 	&,
 	* {
 		.clearfix::after,
@@ -31,7 +22,7 @@
 		}
 	}
 	.emoji-tabs {
-		font-family: var(--font-sans-serif);
+		font-family: 'Calibri', 'Tahoma', 'Noto Color Emoji', Tofu, sans-serif;
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-direction: row;
@@ -105,7 +96,6 @@
 		z-index: 1;
 		.tabs-content {
 			position: relative;
-			padding-bottom: 15px;
 			display: none;
 			h1, h2, h3, h4, h5, h6 {
 				padding-left: 15px;
@@ -117,6 +107,7 @@
 				margin-top: 5px;
 				margin-bottom: 15px;
 				font-size: 1.5rem;
+				text-align: center;
 			}
 			span {
 				&.out {
@@ -157,10 +148,12 @@
 		justify-content: flex-start;
 		padding-left: 15px;
 		padding-right: 15px;
+		padding-bottom: 15px;
+		overflow: hidden;
 	}
 	.emoji--icon {
 		background-color: #ffffff;
-		font-family: var(--font-emoji);
+		font-family: 'Noto Color Emoji', Tofu, sans-serif;
 		position: relative;
 		display: inline-block;
 		line-height: 1;
@@ -202,46 +195,4 @@
 			}
 		}
 	}
-}
-
-.list-decimal {
-	&,
-	li {
-		list-style: decimal;
-		&::marker {
-			font-weight: 700;
-		}
-	}
-}
-
-#frame_help {
-	hr {
-		+ h3 {
-			margin-top: 1.5em;
-		}
-	}
-}
-
-.entry-content {
-	hr {
-		+ h3 {
-			margin-top: 1.7em;
-		}
-	}
-}
-
-body .bvi-body {
-	 span.emoji--icon {
-		font-size: 2em !important;
-	 }
-	 &[data-bvi-images=false],
-	 &[data-bvi-images=grayscale] {
-		-moz-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-		-o-filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-		-webkit-filter: grayscale(1);
-		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-		filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'saturate\' values=\'0\'/></filter></svg>#grayscale");
-		filter: grayscale(1);
-		visibility: visible;
-	 }
 }
