@@ -141,6 +141,14 @@ module.exports = function(grunt) {
 					'src/js/emoji.js'
 				],
 				dest: '<%= globalConfig.gosave %>/js/emoji.js'
+			},
+			emoji_mod: {
+				src: [
+					//'src/js/title-tooltip.js',
+					//'src/js/position.js',
+					'src/js/emoji.js'
+				],
+				dest: 'site/assets/plugins/dashboard_widgets/help_widget/js/emoji.js'
 			}
 		},
 		uglify: {
@@ -169,9 +177,21 @@ module.exports = function(grunt) {
 						rename: function (dst, src) {
 							return dst + '/' + src.replace('.js', '.min.js');
 						}
+					},
+					{
+						expand: true,
+						flatten : true,
+						src: [
+							'site/assets/plugins/dashboard_widgets/help_widget/js/emoji.js'
+						],
+						dest: 'site/assets/plugins/dashboard_widgets/help_widget/js/',
+						filter: 'isFile',
+						rename: function (dst, src) {
+							return dst + '/' + src.replace('.js', '.min.js');
+						}
 					}
 				]
-			}
+			},
 		},
 		webfont: {
 			icons: {
@@ -234,6 +254,9 @@ module.exports = function(grunt) {
 					'<%= globalConfig.gosave %>/css/emoji.css': [
 						'src/less/emoji.less'
 					],
+					'site/assets/plugins/dashboard_widgets/help_widget/css/emoji.css': [
+						'src/less/emoji.less'
+					],
 				}
 			},
 		},
@@ -254,6 +277,9 @@ module.exports = function(grunt) {
 					],
 					'<%= globalConfig.gosave %>/css/emoji.css' : [
 						'<%= globalConfig.gosave %>/css/emoji.css'
+					],
+					'site/assets/plugins/dashboard_widgets/help_widget/css/emoji.css' : [
+						'site/assets/plugins/dashboard_widgets/help_widget/css/emoji.css'
 					]
 				}
 			},
@@ -263,7 +289,8 @@ module.exports = function(grunt) {
 				files: {
 					'test/css/media/main.css': ['test/css/prefix.main.css'],
 					'test/css/media/tinymce.css': ['test/css/prefix.tinymce.css'],
-					'<%= globalConfig.gosave %>/css/emoji.css': ['<%= globalConfig.gosave %>/css/emoji.css']
+					'<%= globalConfig.gosave %>/css/emoji.css': ['<%= globalConfig.gosave %>/css/emoji.css'],
+					'site/assets/plugins/dashboard_widgets/help_widget/css/emoji.css': ['site/assets/plugins/dashboard_widgets/help_widget/css/emoji.css']
 				}
 			},
 		},
@@ -327,6 +354,15 @@ module.exports = function(grunt) {
 						],
 						dest: '<%= globalConfig.gosave %>/css/',
 						filter: 'isFile'
+					},
+					{
+						expand: true,
+						flatten : true,
+						src: [
+							'site/assets/plugins/dashboard_widgets/help_widget/css/emoji.css'
+						],
+						dest: 'site/assets/plugins/dashboard_widgets/help_widget/css/',
+						filter: 'isFile'
 					}
 				]
 			},
@@ -342,6 +378,7 @@ module.exports = function(grunt) {
 					'<%= globalConfig.gosave %>/css/tinymce.min.css' : ['test/css/replace/tinymce.css'],
 					'<%= globalConfig.gosave %>/css/bvi.min.css' : ['<%= globalConfig.gosave %>/css/bvi.css'],
 					'<%= globalConfig.gosave %>/css/emoji.min.css' : ['<%= globalConfig.gosave %>/css/emoji.css'],
+					'site/assets/plugins/dashboard_widgets/help_widget/css/emoji.min.css' : ['site/assets/plugins/dashboard_widgets/help_widget/css/emoji.css'],
 				}
 			},
 		},

@@ -3185,7 +3185,35 @@
 				{
 					"title": "Клубок пряжи",
 					"value": "&#129526;"
-				}
+				},
+				{
+					"title": "Ё-ё",
+					"value": "&#129664;"
+				},
+				{
+					"title": "Воздушный змей",
+					"value": "&#129665;"
+				},
+				{
+					"title": "Парашутист",
+					"value": "&#129666;"
+				},
+				{
+					"title": "Бумеранг",
+					"value": "&#129667;"
+				},
+				{
+					"title": "Волшебная палочка",
+					"value": "&#129668;"
+				},
+				{
+					"title": "Пиньята",
+					"value": "&#129669;"
+				},
+				{
+					"title": "Матрешки",
+					"value": "&#129670;"
+				},
 			]
 		},
 		{
@@ -5971,7 +5999,11 @@
 				{
 					"title": "Флаг: Уэльс",
 					"value": "&#127988;&#917607;&#917602;&#917623;&#917612;&#917619;&#917631;"
-				},
+				},/*
+				{
+					"title": "test",
+					"value": "✋🏿"
+				}*/
 			]
 		}
 	];
@@ -5979,21 +6011,38 @@
 	const main = (emotics) => {
 
 		/**
-		 * Блок вставки плагина
+		 * Опции
 		 */
-		const plugin = document.querySelector("[data-plugin=emoji]");
-
-		if(!plugin){
-			return !1;
-		}
+		let h3Title,
+			pContent,
+			hrOption = false,
+			h3Option = false,
+			pOption = false,
+			url = document.currentScript.src;
+		url = new URL(url);
 
 		/**
 		 * Подключаем стили
 		 */
+		const head = document.querySelector('head');
+		const regex = /js\/emoji(?:\.min)?\.js/g;
+		const subst = `css/emoji.min.css`;
+		const css = url.origin + url.pathname.replace(regex, subst) + "?" + (new Date()).getTime();
 		const link = document.createElement("link");
 		link.rel = "stylesheet";
 		link.type = "text/css";
-		link.href = "/assets/templates/projectsoft/css/emoji.min.css?" + (new Date()).getTime();
+		link.href = css;
+		if(head){
+			head.append(link);
+		}
+
+		/**
+		 * Блок вставки плагина
+		 */
+		const plugin = document.querySelector("[data-plugin=emoji]");
+		if(!plugin){
+			return !1;
+		}
 
 		/**
 		 * Блок для всего плагина
@@ -6012,17 +6061,6 @@
 		 */
 		const content = document.createElement("div");
 		content.classList.add("emoji-content");
-
-		/**
-		 * Опции
-		 */
-		let h3Title,
-			pContent,
-			hrOption = false,
-			h3Option = false,
-			pOption = false,
-			url = document.currentScript.src;
-		url = new URL(url);
 		if(url.hash) {
 			let strOptions = `?` + url.hash.replace(/#/g, ``);
 			strOptions = new URLSearchParams(strOptions);
@@ -6120,7 +6158,27 @@
 		block.append(tabs);
 		block.append(content);
 		plugin.append(block);
-		plugin.append(link);
+
+		/**
+		 * location.hash при загрузке
+		 * Не идеальна. Нужна дороботка
+		 */
+		let idHash = window.location.hash;
+		if(idHash){
+			idHash = idHash.replace(/#/g, ``);
+			let inp = window.document.querySelector("#emoji-radio-" + idHash);
+			if(Boolean(inp)){
+				if(inp.tagName == 'INPUT'){
+					inp.checked = true;
+					let event = new Event('input', {
+						bubbles: true,
+						cancelable: true,
+						target: inp
+					});
+					inp.dispatchEvent(event);
+				}
+			}
+		}
 	};
 
 	/**
@@ -6225,26 +6283,5 @@
 	});
 
 	main(emojies);
-
-	/**
-	 * location.hash при загрузке
-	 * Не идеальна. Нужна дороботка
-	 */
-	let idHash = window.location.hash;
-	if(idHash){
-		idHash = idHash.replace(/#/g, ``);
-		let inp = window.document.querySelector("#emoji-radio-" + idHash);
-		if(Boolean(inp)){
-			if(inp.tagName == 'INPUT'){
-				inp.checked = true;
-				let event = new Event('input', {
-					bubbles: true,
-					cancelable: true,
-					target: inp
-				});
-				inp.dispatchEvent(event);
-			}
-		}
-	}
 
 }());

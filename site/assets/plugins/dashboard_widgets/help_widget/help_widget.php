@@ -9,7 +9,9 @@ $ttl = "";
 $chelp = "";
 $id_help = isset($id_help) ? intval($id_help) : 1;
 switch($e->name){
-	case 'OnManagerWelcomeHome': 
+	case 'OnManagerWelcomeHome':
+		$base = str_replace('\\', '/', dirname(__FILE__)) . '/';
+		$url = $modx->config["site_url"] . str_replace(MODX_BASE_PATH, '', $base);
 		$tbl_site_content = $modx->getFullTableName('site_content');
 		$rs = $modx->db->select('content', $tbl_site_content, "id='{$id_help}'");
 		$chelp = $modx->db->getValue($rs);
@@ -18,9 +20,11 @@ switch($e->name){
 		$help_content .=  '
 <div id="help_content">
 	<div id="frame_help">
+		' . $modx->config["site_url"] . '<br>
+		' . $base . '<br>
 		' . $chelp . '
 		<div data-plugin="emoji"></div>
-		<script src="/assets/templates/projectsoft/js/emoji.min.js?' . filemtime(MODX_BASE_PATH . 'assets/templates/projectsoft/js/emoji.min.js') . '#hr=true&title=true&content=true"></script>
+		<script src="' . $url . 'js/emoji.min.js?' . filemtime($base . 'js/emoji.min.js') . '#hr=true&title=true&content=true"></script>
 	</div>
 </div>';
 		$menuindex = isset($menuindex) ? (int)$menuindex : 10;
