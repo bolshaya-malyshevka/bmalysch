@@ -85,6 +85,9 @@ site/assets/plugins/*
 !site/assets/plugins/help_widget
 !site/assets/plugins/mcecss
 !site/assets/plugins/dashboard_widgets
+!site/assets/plugins/school
+site/assets/plugins/school/*.txt
+site/assets/plugins/school/*.css
 
 # Plugin PageBuilder
 !site/assets/plugins/pagebuilder

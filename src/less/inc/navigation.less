@@ -54,6 +54,24 @@
 							top: 0;
 							min-width: 300px;
 						}
+						a[target="_blank"] {
+							display: flex;
+							&::after {
+								font-family: IconsSite !important;
+								speak: none;
+								font-style: normal;
+								font-weight: 400;
+								font-variant: normal;
+								text-transform: none;
+								line-height: 1;
+								text-rendering: auto;
+								-webkit-font-smoothing: antialiased;
+								-moz-osx-font-smoothing: grayscale;
+								content: @icon-external-link;
+								padding: .5em 15px;
+								margin-right: -15px;
+							}
+						}
 					}
 				}
 				i,
