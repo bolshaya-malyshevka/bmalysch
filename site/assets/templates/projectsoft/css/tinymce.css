@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "IconsSite";
-  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?82e9e62e546f62c512c74c8244a85994") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?82e9e62e546f62c512c74c8244a85994") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?82e9e62e546f62c512c74c8244a85994") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?2cb860d1a983782547784ce99d6069f3") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?2cb860d1a983782547784ce99d6069f3") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?2cb860d1a983782547784ce99d6069f3") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -510,6 +510,7 @@ dl.dl-horizontal dt {
   width: 170px;
   font-weight: 600;
   white-space: normal;
+  margin-bottom: 10px;
 }
 
 p.dl-horizontal dd,
@@ -3130,6 +3131,7 @@ body .bvi-body[data-bvi-fontsize] p.ruslan {
   dl.dl-horizontal dt {
     text-align: left;
     width: unset;
+    margin-bottom: unset;
   }
 
   p.dl-horizontal dd,
