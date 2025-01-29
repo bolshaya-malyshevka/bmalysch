@@ -166,3 +166,6 @@ site/food/*
 !site/food/.htaccess
 site/food-individual/*
 !site/food-individual/.htaccess
+
+# Module School Folders
+!site/assets/modules/school_folders

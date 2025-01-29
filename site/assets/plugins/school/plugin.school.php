@@ -126,9 +126,8 @@ switch ($e->name) {
 			endif;
 		endif;
 		/**
-		 * Минификацию отключаем.
-		 * Она не нужна
+		 * Минификация.
 		 */
-		//PluginEvolution::minifyHTML($modx);
+		PluginEvolution::minifyHTML($modx);
 		break;
 }
