@@ -138,7 +138,6 @@
 			ZOOM: "Увеличить"
 		};
 		$(document).on('click', 'a[data-file]', e => {
-			console.log(e);
 			let base = window.location.origin,
 				element = e.target,
 				href = element.getAttribute('data-file'),
@@ -205,7 +204,39 @@
 			}
 			return !1;
 		});
+		$(document).on('click', 'a[data-mod]', e => {
+			let element = e.target,
+				form_mode = document.querySelector('[name=modifed] [name=mode]'),
+				form_file = document.querySelector('[name=modifed] [name=file]'),
+				form_newfile = document.querySelector('[name=modifed] [name=newfile]'),
+				file = element.getAttribute('data-mod'),
+				newfile = element.getAttribute('data-newfile'),
+				mode = element.getAttribute('data-mode');
+			switch(mode) {
+				case "delete":
+					e.preventDefault();
+					form_mode.value = mode;
+					form_file.value = file;
+					form_newfile.value = newfile;
+					//document.modifed.submit();
+					return !1;
+					break;
+				case "rename":
+					e.preventDefault();
+					form_mode.value = mode;
+					form_file.value = file;
+					form_newfile.value = newfile;
+					//document.modifed.submit();
+					return !1;
+					break;
+			}
+		});
 	}
+
+	window.deleteFile = function(e) {
+
+	}
+
 	window.uploadFiles = function(el) {
 		let p = $("#p_uploads"),
 			files = [...el.files],

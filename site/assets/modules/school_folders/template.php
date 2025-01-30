@@ -6,10 +6,20 @@ if( ! defined('IN_MANAGER_MODE') || IN_MANAGER_MODE !== true) {
 $modPath = str_replace(MODX_BASE_PATH, '', dirname(__FILE__));
 $upload_maxsize = $modx->config['upload_maxsize'];
 ?>
+<style type="text/css">
+	.evo-popup-close.close {
+		cursor: pointer;
+	}
+	.alert:empty {
+		display: none;
+	}
+</style>
 <div class="container">
 	<h1 class="text-left"><i class="<?= $module["icon"];?>"></i><?= $title;?></h1>
 	<div id="actions"><div class="btn-group"></div></div>
 	<div id="ManageFiles">
+		<div class="alert alert-danger" role="alert"><?= $all['error'];?></div>
+		<div class="alert alert-success" role="alert"><?= $all['success'];?></div>
 <?php
 	// Форма загрузки
 	if (((@ini_get("file_uploads") == true) || get_cfg_var("file_uploads") == 1) && is_writable($startpath) && checkedPath($startpath, $access_path)):
@@ -30,6 +40,12 @@ $upload_maxsize = $modx->config['upload_maxsize'];
 <?php
 	endif;
 ?>
+		<form name="modifed" method="post" action="index.php?a=112&id=<?= $module['id']; ?>&mode=dir&path=<?= $startpath; ?>/" enctype="multipart/form-data">
+			<input type="hidden" name="mode" value="">
+			<input type="hidden" name="path" value="<?= $startpath; ?>/">
+			<input type="hidden" name="file" value="">
+			<input type="hidden" name="newfile" value="">
+		</form>
 		<div class="container breadcrumbs">
 			<i class="fa fa-folder-open-o FilesTopFolder"></i>
 			<a href="index.php?a=112&id=5&mode=dir&path=<?= urlencode(MODX_BASE_PATH); ?>">Top</a><?= $file_path ? "/<span>" . $file_path . "</span>" : "";?>
@@ -81,8 +97,8 @@ if($files):
 						else: ?>
 							<a href="/<?= $file_path . '/' . $file;?>" title="<?= $_lang['file_download_file'];?>" download><i class="<?= $_style['files_download'];?>"></i></a><?php
 						endif;?>
-							<a href="javascript:;" title="<?= $_lang['rename'];?>"><i class="<?= $_style['files_rename'];?>"></i></a>
-							<a href="javascript:;" title="<?= $_lang['file_delete_file'];?>"><i class="<?= $_style['files_delete'];?>"></i></a>
+							<a href="/<?= $file_path . '/' . $file;?>" title="<?= $_lang['rename'];?>" data-mod="<?= $file;?>" data-mode="rename" data-newfile="<?= $file;?>"><i class="<?= $_style['files_rename'];?>"></i></a>
+							<a href="/<?= $file_path . '/' . $file;?>" title="<?= $_lang['file_delete_file'];?>" data-mod="<?= $file;?>" data-mode="delete"><i class="<?= $_style['files_delete'];?>"></i></a>
 						</td>
 					</tr>
 <?php
@@ -100,7 +116,6 @@ endif;
 				</tbody>
 			</table>
 		</div>
-		<pre><code><?= $upload_maxsize; ?></code></pre>
 	</div>
 </div>
 <?php
@@ -147,6 +162,9 @@ $ljs_time = filemtime($js);
 		cursor: pointer;
 	}
 	label.btn [type=file] {
+		display: none;
+	}
+	.alert:empty {
 		display: none;
 	}
 </style>
