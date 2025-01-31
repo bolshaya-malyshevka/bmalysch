@@ -217,24 +217,43 @@
 					e.preventDefault();
 					form_mode.value = mode;
 					form_file.value = file;
-					form_newfile.value = newfile;
-					//document.modifed.submit();
+					form_newfile.value = "";
+					if(confirm(`Удалить файл?\n${file}`)) {
+						document.modifed.submit();
+					}else{
+						form_mode.value = "";
+						form_file.value = "";
+						form_newfile.value = "";
+					}
 					return !1;
 					break;
 				case "rename":
 					e.preventDefault();
+					let fname = file.split("/").pop();
+					const [...segments] = file.split('.');
+					// get the file extension
+					const fileExtension = segments.pop();
+					// get the name of the file without extension
+					let fileName = segments.join('.');
+					nwfile = prompt("Укажите новое имя для файла:", fileName);
+					if(!nwfile) {
+						return !1
+					}
 					form_mode.value = mode;
 					form_file.value = file;
-					form_newfile.value = newfile;
-					//document.modifed.submit();
+					form_newfile.value = nwfile + `.${fileExtension}`;
+					if(form_file.value != form_newfile.value){
+						document.modifed.submit();
+					}else{
+						form_mode.value = "";
+						form_file.value = "";
+						form_newfile.value = "";
+						document.modifed.reset();
+					}
 					return !1;
 					break;
 			}
 		});
-	}
-
-	window.deleteFile = function(e) {
-
 	}
 
 	window.uploadFiles = function(el) {
@@ -259,4 +278,26 @@
 		p.html(out.join("<br>"));
 		return !1;
 	}
+
+	setTimeout(() => {
+		let p = $("#ManageFiles > .alert");
+		p.animate({
+			height: 0
+		},
+		{
+			duration: 300,
+			easing: "linear",
+			complete: function(){
+				p.html("");
+				p.removeAttr("style");
+			},
+			queue: false
+		});
+
+		//300, "linear", function(a, b, c, d) {
+		//	console.log(arguments);
+		//	p.html("");
+		//	p.removeAttr("style");
+		//});
+	}, 5000);
 })(jQuery);

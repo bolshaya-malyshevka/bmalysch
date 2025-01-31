@@ -41,6 +41,20 @@ $all = [];
 $all['error'] = "";
 $all['success'] = "";
 
+// path join
+function path_join(...$base) {
+	$result = [];
+	foreach ($base as $n):
+		$result[] = rtrim( $n, '/' );
+	endforeach;
+	return implode('/', $result);
+}
+
+function string_join(...$string) {
+	$result = implode("<br>", $string);
+    return $result;
+}
+
 // Удаление предыдущей директории из строки.
 function removeLastPath($string)
 {
@@ -102,38 +116,85 @@ function getModule() {
 	return false;
 }
 
-function renameFile($string){
-	$modx = evolutionCMS();
+function renameFile($new_file="", $file=""){
+
 	global $_lang, $startpath, $new_file_permissions, $exts;
+	$modx = evolutionCMS();
 	$msg = '';
 	$all = [];
 	$all['error'] = "";
 	$all['success'] = "";
-	if(is_file($string)):
-		$pathinfo = pathinfo($string);
-		$ext = $pathinfo['extension'] ? $pathinfo['extension'] : '';
-		$ext = strtolower($ext);
-		$filename = strtolower($pathinfo['filename'] ? $pathinfo['filename'] : '');
-		if($ext):
-			if(in_array($ext, $exts)):
-				$filename = implode('.', array($filename, $ext));
-				$filename_full = implode('/', array($startpath, $filename));
-				$all['success'] = $filename_full;
+	// Если имена одинаковые - ничего не делаем. Выходим
+	if($file == $new_file):
+		return $all;
+	endif;
+	// Исходный файл
+	$old_pathinfo = pathinfo($file);
+	$old_pathinfo['extension'] = trim($old_pathinfo['extension']);
+	// Переименование только pdf или xlsx
+	if(!in_array($old_pathinfo['extension'], $exts)):
+		$all['error'] = string_join("<strong>Запрет на переименование файла</strong>", $file);
+		return $all;
+	endif;
+	// Транслит имени файла
+	$pthinfo = pathinfo($new_file);
+	$f_name = $pthinfo['filename'];
+	$f_name = $modx->stripAlias($f_name);
+	// На всякий случай
+	// Удаляет специальные символы
+	$f_name = preg_replace('/[^A-Za-z0-9\-\_.]/', '', $f_name);
+	// Заменяет несколько тире на одно
+	$f_name = preg_replace('/-+/', '-', $f_name);
+	// Заменяет несколько нижних тире на одно
+	$f_name = preg_replace('/_+/', '_', $f_name);
+	// Запрещаем переименовывать расширение.
+	// Объединяем новое имя с расширением исходного файла
+	$new_file = $f_name . "." . $old_pathinfo['extension'];
+	// Если имена одинаковые - выходим c ошибкой
+	if($file == $new_file):
+		$all['error'] = string_join("<strong>$new_file</strong>", $_lang["sch_file_duble"]);
+		return $all;
+	endif;
+	$oFile = path_join($startpath, $file);
+	$nFile = path_join($startpath, $new_file);
+	// Существование исходного файла
+	if(is_file($oFile)):
+		// Продолжаем
+		if(!is_file($nFile)):
+			// Продолжаем
+			// Переименовываем
+			if(@rename($oFile, $nFile)):
+				// Удачно
+				$all['success'] = string_join("<strong>" . $_lang['sch_file_rename'] . "</strong>", "$file => $new_file");
 			else:
-				// Нельзя использовать расширение
+				// Не удачно
+				$all['error'] = string_join("<strong>" . $_lang['sch_file_error_rename'] . "</strong>", "$file => $new_file");
 			endif;
 		else:
-			// Нельзя переименовывать расширения
+			// Уже есть данный файл
+			$all['error'] = string_join("<strong>$new_file</strong>", $_lang["sch_file_duble"]);
 		endif;
-		/*
-		Array
-		(
-		    [dirname] => /path
-		    [basename] => emptyextension.sdfsdf
-		    [extension] => sdfsdf
-		    [filename] => emptyextension
-		)
-	*/
+	else:
+		// Не существует
+		$all['error'] = string_join("<strong>$file</strong>", $_lang["sch_file_notfound"]);
+	endif;
+	return $all;
+}
+
+function deleteFile($file) {
+	global $_lang, $startpath, $new_file_permissions, $exts;
+	$all = [];
+	$all['error'] = "";
+	$all['success'] = "";
+	$old_file = path_join($startpath, $file);
+	if(is_file($old_file)):
+		if(@unlink($old_file)):
+			$all['success'] = "<strong>Файл удалён</strong><br>$file";
+		else:
+			$all['error'] = "<strong>Файл не удалён</strong><br>$file";
+		endif;
+	else:
+		$all['error'] = "<strong>Файл не существует</strong><br>$file";
 	endif;
 	return $all;
 }
@@ -152,6 +213,13 @@ function fileupload()
 		$userfile= array();
 		$name = strtolower($_FILES['userfiles']['name'][$i]);
 		$name = $modx->stripAlias($name);
+		// На всякий случай
+		// Удаляет специальные символы
+		$name = preg_replace('/[^A-Za-z0-9\-\_.]/', '', $name);
+		// Заменяет несколько тире на одно
+		$name = preg_replace('/-+/', '-', $name);
+		// Заменяет несколько нижних тире на одно
+		$name = preg_replace('/_+/', '_', $name);
 		$extension = pathinfo($name, PATHINFO_EXTENSION);
 		$userfile['name'] = $name;
 		$userfile['type'] = $_FILES['userfiles']['type'][$i];
@@ -236,34 +304,37 @@ if (!is_readable($startpath)) {
 	$modx->webAlertAndQuit($_lang["not_readable_dir"]);
 }
 
+// Разрешённые файлы
 $exts = ["xlsx", "pdf"];
 
 setlocale(LC_NUMERIC, 'C');
 
-
-
 ob_start();
 
-// Files upload
+// Загрузка файлов
 if($_REQUEST['mode'] == 'upload'):
 	if(checkedPath($path, $access_path)):
 		$print = $path;
 		$all = fileupload();
-		if($all['error']):
-			$_SESSION['SystemAlertMsgQueque'][] = $all['error'];
-		endif;
 	endif;
 endif;
 
+// Переименовывание файла
 if($_REQUEST['mode'] == 'rename'):
 	if($_REQUEST['newfile'] && $_REQUEST['file']):
 		$all = renameFile($_REQUEST['newfile'], $_REQUEST['file']);
-		if($all['error']):
-			$_SESSION['SystemAlertMsgQueque'][] = $all['error'];
-		endif;
 	endif;
 endif;
 
+// Удаление файла
+if($_REQUEST['mode'] == 'delete'):
+	if($_REQUEST['file']):
+		$all = deleteFile($_REQUEST['file']);
+	endif;
+endif;
+
+// Чтение директории
+// Выводим директории только в корне
 $file_path = ltrim($startpath, MODX_BASE_PATH);
 $dir = new DirectoryIterator($startpath);
 
@@ -275,6 +346,7 @@ foreach ($dir as $fileinfo):
 				$directorys[] = $fileinfo->getFilename();
 			endif;
 		else:
+			// Выводим только нужные файлы (pdf, xlsx)
 			if(checkedPath($startpath, $access_path)):
 				// Файлы
 				$ext = strtolower($fileinfo->getExtension());
@@ -285,12 +357,20 @@ foreach ($dir as $fileinfo):
 		endif;
 	endif;
 endforeach;
+
+// Сортировка директорий
 sort($directorys);
+// Сортировка файлов
 rsort($files);
+// Имя директории
 $title_path = pathinfo($startpath, PATHINFO_BASENAME);
+// Заголовок
 $title = checkedPath($startpath, $access_path) ? 'Директория: ' . $title_path : 'Директории';
 
+// Подключение файлов
 include_once MODX_MANAGER_PATH . 'includes/header.inc.php';
 include_once SCHOOL_FOLDERS_BASE_PATH . 'template.php';
 include_once MODX_MANAGER_PATH . 'includes/footer.inc.php';
+
+// Вывод
 echo ob_get_clean();
