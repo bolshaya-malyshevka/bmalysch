@@ -154,7 +154,11 @@ site/.*
 site/*.md
 site/*.php
 site/*.txt
-site/food/*.xlsx
+
+# Food
+site/food
+site/food-*
+site/icons-full
 
 !site/.editorconfig
 !.gitignore
