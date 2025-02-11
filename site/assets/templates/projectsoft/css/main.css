@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "IconsSite";
-  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?dd594f109e1efd9d933be879c1ee3570") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?dd594f109e1efd9d933be879c1ee3570") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?dd594f109e1efd9d933be879c1ee3570") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?62db2f2aa0d3292d9e2f1cdaa1b8b6c5") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?62db2f2aa0d3292d9e2f1cdaa1b8b6c5") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?62db2f2aa0d3292d9e2f1cdaa1b8b6c5") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -537,11 +537,11 @@ a {
 
 a,
 a:focus {
-  color: #d33;
+  color: #0098ff;
 }
 
 a:hover {
-  color: #a81c1c;
+  color: #006ab3;
 }
 
 p {
@@ -3464,7 +3464,7 @@ fieldset[disabled] .btn-danger.focus {
 
 .btn-link {
   font-weight: 400;
-  color: #d33;
+  color: #0098ff;
   border-radius: 0;
 }
 
@@ -3486,7 +3486,7 @@ fieldset[disabled] .btn-link {
 
 .btn-link:hover,
 .btn-link:focus {
-  color: #a81c1c;
+  color: #006ab3;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4182,29 +4182,29 @@ html body .bvi-panel.bvi-fixed-top {
 
 .btn-red {
   color: #ffffff;
-  border: 1px solid #d33;
-  background-color: #d33;
+  border: 1px solid #0098ff;
+  background-color: #0098ff;
   border-radius: 0;
 }
 
 .btn-red:hover {
   background-color: #ffffff;
-  color: #d33;
-  border-color: #d33;
+  color: #0098ff;
+  border-color: #0098ff;
 }
 
 .btn-red:active,
 .btn-red:active:hover {
-  color: #d33;
+  color: #0098ff;
   background-color: #ffffff;
-  border-color: #d33;
+  border-color: #0098ff;
 }
 
 .btn-red:focus,
 .btn-red:focus:active {
-  color: #d33;
+  color: #0098ff;
   background-color: #ffffff;
-  border-color: #d33;
+  border-color: #0098ff;
 }
 
 .btn-default:hover {
@@ -5339,7 +5339,7 @@ body .bvi-body[data-bvi-images=false] .widget_director-header .bvi-caption-alt {
 .headerpage .header-page .site-description,
 .headerpage .header-page .site-title a,
 .headerpage .header-page .site-description a {
-  color: #dd3333 !important;
+  color: #00497b !important;
   text-decoration: none !important;
 }
 
