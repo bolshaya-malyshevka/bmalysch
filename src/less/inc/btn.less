@@ -15,29 +15,29 @@
 		border-radius: 0;
 	}
 	&-red {
-		color: @white;
-		border: 1px solid @link-color;
-		background-color: @link-color;
+		color: var(--white);
+		border: 1px solid var(--link-color);
+		background-color: var(--link-color);
 		border-radius: 0;
 		&:hover {
-			background-color: @white;
-			color: @link-color;
-			border-color: @link-color;
+			background-color: var(--white);
+			color: var(--link-color);
+			border-color: var(--link-color);
 		}
 		&:active {
 			&,
 			&:hover {
-				color: @link-color;
-				background-color: @white;
-				border-color: @link-color;
+				color: var(--link-color);
+				background-color: var(--white);
+				border-color: var(--link-color);
 			}
 		}
 		&:focus {
 			&,
 			&:active {
-				color: @link-color;
-				background-color: @white;
-				border-color: @link-color;
+				color: var(--link-color);
+				background-color: var(--white);
+				border-color: var(--link-color);
 			}
 		}
 	}
@@ -80,14 +80,14 @@
 			display: flex;
 			width: 100%;
 			height: 100%;
-			content: "\e929"!important;
+			content: @icon-more !important;
 			left: -100%;
 			top: 0;
 			padding: 0em 12px;
 			position: absolute;
 			transition: left .4s ease;
 			background-color: #3a3d41;
-			color: #fff;
+			color: var(--white);
 			line-height: 1;
 			justify-content: center;
 			flex-wrap: wrap;

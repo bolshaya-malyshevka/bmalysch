@@ -1,9 +1,17 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
 
+:root {
+  --link-color: #0098ff;
+  --link-hover-color: #006ab3;
+  --bg-color: #333;
+  --white: #ffffff;
+  --pd: 15px;
+  --header_color: #00497b;
+}
 @font-face {
   font-family: "IconsSite";
-  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?7905977cb072bdeb35efbfcffff32e3f") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?7905977cb072bdeb35efbfcffff32e3f") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?7905977cb072bdeb35efbfcffff32e3f") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?c6de2263b48f7e6ac61e52e0a96380fc") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?c6de2263b48f7e6ac61e52e0a96380fc") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?c6de2263b48f7e6ac61e52e0a96380fc") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -516,7 +524,7 @@ dl.dl-horizontal dt {
 p.dl-horizontal dd,
 dl.dl-horizontal dd {
   width: calc(100% - 170px);
-  padding-left: 15px;
+  padding-left: var(--pd);
   margin-left: unset;
   margin-right: unset;
 }
@@ -2403,30 +2411,30 @@ input[type="button"].btn-block {
 }
 
 .btn-red {
-  color: #ffffff;
-  border: 1px solid #0098ff;
-  background-color: #0098ff;
+  color: var(--white);
+  border: 1px solid var(--link-color);
+  background-color: var(--link-color);
   border-radius: 0;
 }
 
 .btn-red:hover {
-  background-color: #ffffff;
-  color: #0098ff;
-  border-color: #0098ff;
+  background-color: var(--white);
+  color: var(--link-color);
+  border-color: var(--link-color);
 }
 
 .btn-red:active,
 .btn-red:active:hover {
-  color: #0098ff;
-  background-color: #ffffff;
-  border-color: #0098ff;
+  color: var(--link-color);
+  background-color: var(--white);
+  border-color: var(--link-color);
 }
 
 .btn-red:focus,
 .btn-red:focus:active {
-  color: #0098ff;
-  background-color: #ffffff;
-  border-color: #0098ff;
+  color: var(--link-color);
+  background-color: var(--white);
+  border-color: var(--link-color);
 }
 
 .btn-default:hover {
@@ -2464,14 +2472,14 @@ input[type="button"].btn-block {
   display: flex;
   width: 100%;
   height: 100%;
-  content: "\e929" !important;
+  content: "\e92a" !important;
   left: -100%;
   top: 0;
   padding: 0em 12px;
   position: absolute;
   transition: left 0.4s ease;
   background-color: #3a3d41;
-  color: #fff;
+  color: var(--white);
   line-height: 1;
   -ms-flex-pack: center;
   justify-content: center;
@@ -3047,8 +3055,8 @@ body .bvi-body[data-bvi-images=false] .news-container-item-description p.photo a
 
 .videos--list-item {
   max-width: 390px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: var(--pd);
+  padding-right: var(--pd);
   width: 100%;
   margin-bottom: 1.2em;
 }
@@ -3216,7 +3224,7 @@ body .bvi-body[data-bvi-fontsize] p.ruslan {
 
 @media screen and (max-width: 810px) {
   .container {
-    padding: 0 15px;
+    padding: 0 var(--pd);
   }
 }
 

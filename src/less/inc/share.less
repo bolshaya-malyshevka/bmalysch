@@ -4,8 +4,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-		padding-left: @pd;
-		padding-right: @pd;
+		padding-left: var(--pd);
+		padding-right: var(--pd);
 		margin-top: 30px;
 		&-menu {
 			display: block;
@@ -77,13 +77,13 @@
 					&:hover,
 					&:focus,
 					&:active {;
-						background-color: @white;
-						color: @bg-color;
+						background-color: var(--white);
+						color: var(--bg-color);
 						text-decoration: none !important;
 					}
 					&:hover {
 						transform: scale(1.2);
-						box-shadow: 0 0 3px 1px @white, inset 0 0 1px 1px @bg-color;
+						box-shadow: 0 0 3px 1px var(--white), inset 0 0 1px 1px var(--bg-color);
 					}
 					&::before {
 						font-size: 22.2px!important;

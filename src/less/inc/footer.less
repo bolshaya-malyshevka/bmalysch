@@ -19,8 +19,8 @@ footer {
 			}
 		}
 		@media screen and (max-width: 810px) {
-			padding-top: @pd;
-			padding-bottom: @pd;
+			padding-top: var(--pd);
+			padding-bottom: var(--pd);
 		}
 	}
 	&.footer{}
@@ -42,8 +42,13 @@ footer {
 		&-left,
 		&-center,
 		&-right {
-			padding-left: @pd;
-			padding-right: @pd;
+			padding-left: var(--pd);
+			padding-right: var(--pd);
+			p {
+				&:last-child {
+					margin-bottom: unset;
+				}
+			}
 		}
 		&-left,
 		&-right {
@@ -82,15 +87,16 @@ footer {
 		}
 		&-col {
 			&-left,
-			&-right ,
-			&-center {
-				width: unset;
-				flex: 1;
-			}
-			&-left,
 			&-center,
 			&-right {
+				width: unset;
+				flex: 1;
 				text-align: center;
+				p {
+					&:last-child {
+						margin-bottom: 0.65em;
+					}
+				}
 			}
 		}
 	}
