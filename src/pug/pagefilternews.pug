@@ -11,14 +11,15 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 						article(id!="page-[*id*]" class!="page page-[*id*] type-page")
 							header.entry-header
 								h1.entry-title
-									|[*pagetitle*]
+									|[*longtitle:ifempty=`[*pagetitle*]`*]
 							.entry-content
-								|[*content*]
+								|[*content*][*EvoVideo:is=``:then=` `:else=`{{@FILE assets/templates/projectsoft/tpl/get_evo_video.html}}`*][[PageBuilder]]
 								//- Новости
 							|[[DocLister?
 							|   &parents=`[(news_id)]`
-							|   &display=`[(news_count)]`
-							|   &tvList=`imageSoc, news_date`
+							|   &display=`[(news_count_home)]`
+							|   &tvList=`imageSoc, news_date, typeNews`
+							|	&filters=`AND(tv:typeNews:is:[*typeNews*])`
 							|   &tvPrefix=``
 							|   &orderBy=`news_date DESC`
 							|   &sortBy=`news_date`
