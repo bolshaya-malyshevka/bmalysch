@@ -504,10 +504,7 @@ module.exports = function(grunt) {
 							"tem_path" : "/assets/templates/projectsoft",
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
-							//"hash": uniqid(),
-							"hash_css": versions,
-							"hash_js": versions,
-							"hash_appjs": versions,
+							"hash": versions + update,
 						}
 					}
 				},
@@ -533,10 +530,7 @@ module.exports = function(grunt) {
 							"tem_path" : "/assets/templates/projectsoft",
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
-							//"hash": uniqid(),
-							"hash_css": versions,
-							"hash_js": versions,
-							"hash_appjs": versions,
+							"hash": versions + update,
 						}
 					}
 				},
@@ -562,10 +556,7 @@ module.exports = function(grunt) {
 							"tem_path" : "/assets/templates/projectsoft",
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
-							//"hash": uniqid(),
-							"hash_css": versions,
-							"hash_js": versions,
-							"hash_appjs": versions,
+							"hash": versions + update,
 						}
 					}
 				},
@@ -591,10 +582,7 @@ module.exports = function(grunt) {
 							"tem_path" : "/assets/templates/projectsoft",
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
-							//"hash": uniqid(),
-							"hash_css": versions,
-							"hash_js": versions,
-							"hash_appjs": versions,
+							"hash": versions + update,
 						}
 					}
 				},

@@ -30,11 +30,11 @@ head
 	meta(name="twitter:card" content="summary_large_image")
 	//- Favicons
 	include ../inc/favicon.pug
-	link(type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/bvi.min.css?" + hash_css)
-	link(type="text/css" rel="stylesheet" href="assets/templates/projectsoft/css/main.min.css?" + hash_css)
+	link(type="text/css" rel="stylesheet" href="/assets/templates/projectsoft/css/bvi.min.css?" + hash)
+	link(type="text/css" rel="stylesheet" href="/assets/templates/projectsoft/css/main.min.css?" + hash)
 	|<@IF:[*template:neq(11)*]>
 	//- RSS
-	link(rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="rss.xml")
+	link(rel="alternate" type="application/rss+xml" title="RSS-лента [(site_name)]" href="/rss.xml")
 	|<@ENDIF><@IF:[*id:is(2)*]>
 	//- Canonical
 	link(rel="canonical" href="[(site_url)][~[*id*]~]")
