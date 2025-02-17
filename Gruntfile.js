@@ -49,6 +49,8 @@ module.exports = function(grunt) {
 		],
 		speed: [
 			//"clean:all",
+			"imagemin",
+			"tinyimg",
 			"concat",
 			"uglify",
 			"less",

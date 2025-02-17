@@ -11,7 +11,7 @@
 }
 @font-face {
   font-family: "IconsSite";
-  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?c6de2263b48f7e6ac61e52e0a96380fc") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?c6de2263b48f7e6ac61e52e0a96380fc") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?c6de2263b48f7e6ac61e52e0a96380fc") format("truetype");
+  src: url("/assets/templates/projectsoft/fonts/iconssite.woff2?70303806e47cc3d301fb2af540eb9804") format("woff2"), url("/assets/templates/projectsoft/fonts/iconssite.woff?70303806e47cc3d301fb2af540eb9804") format("woff"), url("/assets/templates/projectsoft/fonts/iconssite.ttf?70303806e47cc3d301fb2af540eb9804") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
