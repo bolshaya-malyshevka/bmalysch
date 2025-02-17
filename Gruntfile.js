@@ -7,37 +7,9 @@ module.exports = function(grunt) {
 		util = require('util'),
 		chalk = require('chalk'),
 		PACK = grunt.file.readJSON('package.json'),
-		hashFiles = [
-			"appjs.min.js",
-			"main.min.js",
-			"main.min.css"
-		],
-		uniqid = function (file = '0') {
-			file = path.normalize(file);
-			let md5 = require('md5');
-			if(fs.existsSync(file)) {
-				let cnt = fs.readFileSync(file).toString(),
-					md = crypto.createHash("sha1").update(cnt).digest("hex");
-				let longestStr = hashFiles.reduce((max, n) => max.length > n.length ? max : n, '');``
-				grunt.log.writeln(util.styleText('greenBright', path.basename(file).padEnd(++longestStr.length, " ")) + util.styleText('yellowBright', '=> ') + util.styleText('cyan', md) + util.styleText('yellowBright', " >>> OK"));
-				return  md;
-			}else{
-				result = md5((new Date()).getTime()).toString();
-				grunt.log.writeln("Generate hash: " + chalk.cyan(result) + util.styleText('yellowBright', " >>> OK"));
-				return result;
-			}
-		};
-	
-	String.prototype.hashCode = function() {
-		var hash = 0, i, chr;
-		if (this.length === 0) return hash;
-		for (i = 0; i < this.length; i++) {
-			chr   = this.charCodeAt(i);
-			hash  = ((hash << 5) - hash) + chr;
-			hash |= 0; // Convert to 32bit integer
-		}
-		return hash;
-	};
+		versions = "1739789903848",
+		update = "2";
+
 	var gc = {
 		fontvers: `${PACK.version}`,
 		assets: "assets/templates/projectsoft",
@@ -248,7 +220,7 @@ module.exports = function(grunt) {
 						new NpmImportPlugin({prefix: '~'})
 					],
 					modifyVars: {
-						'hashes': '\'' + uniqid() + '\'',
+						'hashes': versions + update,
 						'fontpath': '/<%= globalConfig.assets %>/fonts',
 						'imgpath': '/<%= globalConfig.assets %>/images',
 						'white': '#ffffff',
@@ -533,9 +505,9 @@ module.exports = function(grunt) {
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
 							//"hash": uniqid(),
-							"hash_css": uniqid(__dirname + `/site/assets/templates/projectsoft/css/main.min.css`),
-							"hash_js": uniqid(__dirname + `/site/assets/templates/projectsoft/js/main.min.js`),
-							"hash_appjs": uniqid(__dirname + `/site/assets/templates/projectsoft/js/appjs.min.js`),
+							"hash_css": versions,
+							"hash_js": versions,
+							"hash_appjs": versions,
 						}
 					}
 				},
@@ -562,9 +534,9 @@ module.exports = function(grunt) {
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
 							//"hash": uniqid(),
-							"hash_css": uniqid(__dirname + `/site/assets/templates/projectsoft/css/main.min.css`),
-							"hash_js": uniqid(__dirname + `/site/assets/templates/projectsoft/js/main.min.js`),
-							"hash_appjs": uniqid(__dirname + `/site/assets/templates/projectsoft/js/appjs.min.js`),
+							"hash_css": versions,
+							"hash_js": versions,
+							"hash_appjs": versions,
 						}
 					}
 				},
@@ -591,9 +563,9 @@ module.exports = function(grunt) {
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
 							//"hash": uniqid(),
-							"hash_css": uniqid(__dirname + `/site/assets/templates/projectsoft/css/main.min.css`),
-							"hash_js": uniqid(__dirname + `/site/assets/templates/projectsoft/js/main.min.js`),
-							"hash_appjs": uniqid(__dirname + `/site/assets/templates/projectsoft/js/appjs.min.js`),
+							"hash_css": versions,
+							"hash_js": versions,
+							"hash_appjs": versions,
 						}
 					}
 				},
@@ -620,9 +592,9 @@ module.exports = function(grunt) {
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
 							//"hash": uniqid(),
-							"hash_css": uniqid(__dirname + `/site/assets/templates/projectsoft/css/main.min.css`),
-							"hash_js": uniqid(__dirname + `/site/assets/templates/projectsoft/js/main.min.js`),
-							"hash_appjs": uniqid(__dirname + `/site/assets/templates/projectsoft/js/appjs.min.js`),
+							"hash_css": versions,
+							"hash_js": versions,
+							"hash_appjs": versions,
 						}
 					}
 				},
