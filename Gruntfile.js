@@ -1,17 +1,31 @@
 module.exports = function(grunt) {
 	require('dotenv').config();
 	const DEBUG = parseInt(process.env.DEBUG) || false;
+	const crypto = require("crypto");
 	var fs = require('fs'),
+		path = require('path'),
+		util = require('util'),
 		chalk = require('chalk'),
 		PACK = grunt.file.readJSON('package.json'),
-		uniqid = function () {
-			//if(DEBUG){
-				var md5 = require('md5');
+		hashFiles = [
+			"appjs.min.js",
+			"main.min.js",
+			"main.min.css"
+		],
+		uniqid = function (file = '0') {
+			file = path.normalize(file);
+			let md5 = require('md5');
+			if(fs.existsSync(file)) {
+				let cnt = fs.readFileSync(file).toString(),
+					md = crypto.createHash("sha1").update(cnt).digest("hex");
+				let longestStr = hashFiles.reduce((max, n) => max.length > n.length ? max : n, '');``
+				grunt.log.writeln(util.styleText('greenBright', path.basename(file).padEnd(++longestStr.length, " ")) + util.styleText('yellowBright', '=> ') + util.styleText('cyan', md) + util.styleText('yellowBright', " >>> OK"));
+				return  md;
+			}else{
 				result = md5((new Date()).getTime()).toString();
-				grunt.verbose.writeln("Generate hash: " + chalk.cyan(result) + " >>> OK");
+				grunt.log.writeln("Generate hash: " + chalk.cyan(result) + util.styleText('yellowBright', " >>> OK"));
 				return result;
-			//}
-			//return `v${PACK.version}`;
+			}
 		};
 	
 	String.prototype.hashCode = function() {
@@ -49,8 +63,8 @@ module.exports = function(grunt) {
 		],
 		speed: [
 			//"clean:all",
-			"imagemin",
-			"tinyimg",
+			//"imagemin",
+			//"tinyimg",
 			"concat",
 			"uglify",
 			"less",
@@ -63,29 +77,28 @@ module.exports = function(grunt) {
 			"lineending"
 		]
 	};
-	NpmImportPlugin = require("less-plugin-npm-import");
+
+	/**
+	 * Конфигурация FTP соединения.
+	 * Формат файла .ftppass
+		```json
+		{
+			"bmalysh": {
+				"username": "",
+				"password": ""
+			}
+		}
+		```
+	 */
+	try {
+		let ftppass = grunt.file.readJSON('.ftppass');
+		gc.default.push("ftp_upload");
+		gc.speed.push("ftp_upload");
+	}catch(e){}
+
+	const NpmImportPlugin = require("less-plugin-npm-import");
 	require('load-grunt-tasks')(grunt);
 	require('time-grunt')(grunt);
-	var optionsPug = {
-			doctype: 'html',
-			client: false,
-			pretty: "",//'\t',
-			separator:  "",//'\n',
-			//pretty: '\t',
-			//separator:  '\n',
-			data: function(dest, src) {
-				return {
-					"base": "[(site_url)]",
-					"tem_path" : "/assets/templates/projectsoft",
-					"img_path" : "assets/templates/projectsoft/images/",
-					"site_name": "[(site_name)]",
-					"hash": uniqid(),
-					"hash_css": uniqid(),
-					"hash_js": uniqid(),
-					"hash_appjs": uniqid(),
-				}
-			}
-		};
 	grunt.initConfig({
 		globalConfig : gc,
 		pkg : PACK,
@@ -508,7 +521,24 @@ module.exports = function(grunt) {
 		},
 		pug: {
 			serv: {
-				options: optionsPug,
+				options: {
+					doctype: 'transitional',
+					client: false,
+					pretty: "",
+					separator:  "",
+					data: function(dest, src) {
+						return {
+							"base": "[(site_url)]",
+							"tem_path" : "/assets/templates/projectsoft",
+							"img_path" : "assets/templates/projectsoft/images/",
+							"site_name": "[(site_name)]",
+							//"hash": uniqid(),
+							"hash_css": uniqid(__dirname + `/site/assets/templates/projectsoft/css/main.min.css`),
+							"hash_js": uniqid(__dirname + `/site/assets/templates/projectsoft/js/main.min.js`),
+							"hash_appjs": uniqid(__dirname + `/site/assets/templates/projectsoft/js/appjs.min.js`),
+						}
+					}
+				},
 				files: [
 					{
 						expand: true,
@@ -523,20 +553,18 @@ module.exports = function(grunt) {
 				options: {
 					doctype: 'transitional',
 					client: false,
-					pretty: "",//'\t',
-					separator:  "",//'\n',
-					//pretty: '\t',
-					//separator:  '\n',
+					pretty: "",
+					separator:  "",
 					data: function(dest, src) {
 						return {
 							"base": "[(site_url)]",
 							"tem_path" : "/assets/templates/projectsoft",
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
-							"hash": uniqid(),
-							"hash_css": uniqid(),
-							"hash_js": uniqid(),
-							"hash_appjs": uniqid(),
+							//"hash": uniqid(),
+							"hash_css": uniqid(__dirname + `/site/assets/templates/projectsoft/css/main.min.css`),
+							"hash_js": uniqid(__dirname + `/site/assets/templates/projectsoft/js/main.min.js`),
+							"hash_appjs": uniqid(__dirname + `/site/assets/templates/projectsoft/js/appjs.min.js`),
 						}
 					}
 				},
@@ -562,10 +590,10 @@ module.exports = function(grunt) {
 							"tem_path" : "/assets/templates/projectsoft",
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
-							"hash": uniqid(),
-							"hash_css": uniqid(),
-							"hash_js": uniqid(),
-							"hash_appjs": uniqid(),
+							//"hash": uniqid(),
+							"hash_css": uniqid(__dirname + `/site/assets/templates/projectsoft/css/main.min.css`),
+							"hash_js": uniqid(__dirname + `/site/assets/templates/projectsoft/js/main.min.js`),
+							"hash_appjs": uniqid(__dirname + `/site/assets/templates/projectsoft/js/appjs.min.js`),
 						}
 					}
 				},
@@ -591,10 +619,10 @@ module.exports = function(grunt) {
 							"tem_path" : "/assets/templates/projectsoft",
 							"img_path" : "assets/templates/projectsoft/images/",
 							"site_name": "[(site_name)]",
-							"hash": uniqid(),
-							"hash_css": uniqid(),
-							"hash_js": uniqid(),
-							"hash_appjs": uniqid(),
+							//"hash": uniqid(),
+							"hash_css": uniqid(__dirname + `/site/assets/templates/projectsoft/css/main.min.css`),
+							"hash_js": uniqid(__dirname + `/site/assets/templates/projectsoft/js/main.min.js`),
+							"hash_appjs": uniqid(__dirname + `/site/assets/templates/projectsoft/js/appjs.min.js`),
 						}
 					}
 				},
@@ -608,6 +636,18 @@ module.exports = function(grunt) {
 					}
 				]
 			},
+		},
+		ftp_upload: {
+			default: {
+				auth: {
+					host: "bmalysch.minobr63.ru",
+					port: 21,
+					authKey: 'default',
+					authPath: '.ftppass'
+				},
+				src: 'site/assets/templates/projectsoft',
+				dest: 'www/bmalysch.minobr63.ru/assets/templates/projectsoft',
+			}
 		},
 	});
 	grunt.registerTask('default',	gc.default);

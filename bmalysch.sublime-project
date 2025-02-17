@@ -22,7 +22,7 @@
 		{
 			"name": "Запуск скоростной сборки проекта",
 			"working_dir": "${project_path}",
-			"cmd": ["start", "/wait", "grunt", "-v", "speed"],
+			"cmd": ["start", "/wait", "grunt", "speed"],
 			"shell": true
 		}
 	]

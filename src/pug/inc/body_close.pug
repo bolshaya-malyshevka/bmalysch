@@ -1,10 +1,10 @@
-script(src="assets/templates/projectsoft/js/appjs.min.js?" + hash)
-script(src="viewer/fancybox.min.js?" + hash)
+script(src="assets/templates/projectsoft/js/appjs.min.js?" + hash_appjs)
+script(src="viewer/fancybox.min.js?" + hash_appjs)
 //- Не запускать на sitemap и help
 |<@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>
-script(src="assets/templates/projectsoft/js/bvi.min.js?" + hash)
+script(src="assets/templates/projectsoft/js/bvi.min.js?" + hash_appjs)
 |<@ENDIF><@ENDIF>
-script(src="assets/templates/projectsoft/js/main.min.js?" + hash)
+script(src="assets/templates/projectsoft/js/main.min.js?" + hash_js)
 include style.html
 //- Не запускать на sitemap и help
 |<@IF:[*template:neq(11)*]><@IF:[*template:neq(13)*]>
