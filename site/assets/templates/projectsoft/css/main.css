@@ -5093,12 +5093,15 @@ body .bvi-body[data-bvi-builtelements="false"] .embed .embed-responsive {
   z-index: 1000;
 }
 
+body {
+  padding-bottom: 40px;
+}
+
 .body {
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
-  margin-bottom: 40px;
   min-height: calc(100vh - 80px);
   background-color: white;
   display: -ms-flexbox;
@@ -6685,10 +6688,13 @@ body .bvi-body[data-bvi-fontsize] p.ruslan {
   }
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1150px) {
+  body {
+    padding-bottom: unset;
+  }
+
   .body {
     margin-top: unset;
-    margin-bottom: unset;
     min-height: 100vh;
   }
 

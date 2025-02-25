@@ -1,12 +1,14 @@
 body {
-	//background-color: @bgcolor;
+	padding-bottom: 40px;
+	@media screen and (max-width: 1150px) {
+		padding-bottom: unset;
+	}
 }
 .body {
 	max-width: 1140px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 40px;
-	margin-bottom: 40px;
 	min-height: ~'calc(100vh - 80px)';
 	background-color: white;
 	display: flex;
@@ -26,9 +28,8 @@ body {
 		padding-bottom: 2em;
 		transition: padding .3s ease;
 	}
-	@media screen and (max-width: 1140px) {
+	@media screen and (max-width: 1150px) {
 		margin-top: unset;
-		margin-bottom: unset;
 		min-height: 100vh;
 		> .main {
 			padding-left: unset;
