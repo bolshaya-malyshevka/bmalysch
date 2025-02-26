@@ -3129,6 +3129,11 @@ body .bvi-body[data-bvi-fontsize] p.ruslan {
   color: blue;
 }
 
+dl.dl-horizontal dt,
+dl.dl-horizontal dd {
+  margin-bottom: 10px;
+}
+
 @media (max-width: 767px) {
   p.dl-horizontal,
   dl.dl-horizontal {
