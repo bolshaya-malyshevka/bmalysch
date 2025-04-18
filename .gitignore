@@ -122,6 +122,9 @@ site/assets/plugins/tinymce4/tinymce/plugins/*
 # Plugin Global
 !site/assets/plugins/global
 
+# Plugin Obfuscate
+!site/assets/plugins/obfuscate
+
 # Templates
 site/assets/templates/*
 

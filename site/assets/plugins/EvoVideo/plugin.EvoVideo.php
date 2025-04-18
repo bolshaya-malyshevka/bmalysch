@@ -6,7 +6,6 @@ if (!defined('MODX_BASE_PATH')) {
 use ProjectSoft\Video;
 $e =& $modx->event;
 $params = $e->params;
-$regexp = '/^((?:https?:\/\/(?:www\.)?(?:rutube|youtube|youtu)\.(?:com|ru)\/))/i';
 switch ($e->name) {
 	case 'OnBeforeDocFormSave':
 		/**
@@ -17,6 +16,7 @@ switch ($e->name) {
 		$vd = new Video(null, true);
 		foreach($_POST as $key=>$value):
 			if(is_string($value)):
+				$regexp = '/^((?:https?:\/\/(?:www\.)?(?:rutube|youtube|youtu)\.(?:com|ru)\/))/i';
 				$url = trim($value);
 				/*
 				* Проверяем все $_POST параметры на присутствие ссылки на видео YouTube
