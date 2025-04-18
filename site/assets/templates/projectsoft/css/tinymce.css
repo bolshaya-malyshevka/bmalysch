@@ -255,52 +255,56 @@
   content: "\e937";
 }
 
-.icon-search:before {
+.icon-rutube:before {
   content: "\e938";
 }
 
-.icon-share:before {
+.icon-search:before {
   content: "\e939";
 }
 
-.icon-success:before {
+.icon-share:before {
   content: "\e93a";
 }
 
-.icon-telegram:before {
+.icon-success:before {
   content: "\e93b";
 }
 
-.icon-twitter:before {
+.icon-telegram:before {
   content: "\e93c";
 }
 
-.icon-tws:before {
+.icon-twitter:before {
   content: "\e93d";
 }
 
-.icon-up:before {
+.icon-tws:before {
   content: "\e93e";
 }
 
-.icon-viber:before {
+.icon-up:before {
   content: "\e93f";
 }
 
-.icon-vk:before {
+.icon-viber:before {
   content: "\e940";
 }
 
-.icon-vks:before {
+.icon-vk:before {
   content: "\e941";
 }
 
-.icon-zoom-in:before {
+.icon-vks:before {
   content: "\e942";
 }
 
-.icon-zoom-out:before {
+.icon-zoom-in:before {
   content: "\e943";
+}
+
+.icon-zoom-out:before {
+  content: "\e944";
 }
 
 @font-face {
@@ -3129,7 +3133,9 @@ body .bvi-body[data-bvi-fontsize] p.ruslan {
   color: blue;
 }
 
+p.dl-horizontal dt,
 dl.dl-horizontal dt,
+p.dl-horizontal dd,
 dl.dl-horizontal dd {
   margin-bottom: 10px;
 }

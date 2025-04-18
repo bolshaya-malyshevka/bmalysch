@@ -45,8 +45,7 @@
 				dd
 					p
 						i.icon-email
-						a(href="mailto:[(email)]" target="_blank")
-							|[(email)]
+						|{obfuscate}[(email)]{/obfuscate}
 				|<@ENDIF>
 				dt
 					p
@@ -57,6 +56,30 @@
 						i.icon-home
 						a(href="[(site_url)]" target="_blank")
 							|[(site_url)]
+					|<@IF:[(vk_link_group:isnotempty)]>
+					p
+						i.icon-vk
+						a(href="[(vk_link_group)]" target="_blank")
+							|Группа в ВКонтакте
+					|<@ENDIF>
+					|<@IF:[(ok_link_group:isnotempty)]>
+					p
+						i.icon-ok
+						a(href="[(ok_link_group)]" target="_blank")
+							|Группа в Одноклассеиках
+					|<@ENDIF>
+					|<@IF:[(rutube_link_group:isnotempty)]>
+					p
+						i.icon-rutube
+						a(href="[(rutube_link_group)]" target="_blank")
+							|Канал на RUTUBE
+					|<@ENDIF>
+					|<@IF:[(tlg_link_group:isnotempty)]>
+					p
+						i.icon-telegram
+						a(href="[(tlg_link_group)]" target="_blank")
+							|Канал в Telegram
+					|<@ENDIF>
 			p.text-center
 				button.callme-btn.btn.btn-default(type="button" data-trigger="sendbot")
 					|ФОРМА ОБРАТНОЙ СВЯЗИ
