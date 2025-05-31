@@ -1,4 +1,4 @@
-name: Залить файлы на СП ДС ГБОУ ООШ с. Большая Малышевка
+name: Залить файлы на ГБОУ ООШ с. Большая Малышевка
 on:
   push:
     branches: [ "main" ]
@@ -32,6 +32,8 @@ jobs:
           state-name: .status.json
           exclude: |
             **/viewer/**
+            **/food/**
+            **/icons-full/**
       - name: Удаление статус файла c ГБОУ ООШ с. Большая Малышевка
         uses: StephanThierry/ftp-delete-action@v2.1
         with:
