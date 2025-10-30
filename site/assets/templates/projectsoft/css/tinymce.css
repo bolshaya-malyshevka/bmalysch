@@ -1991,6 +1991,14 @@ input[type="button"].btn-block {
 .hidden {
   display: none !important;
 }
+
+body,
+body *,
+body ::before,
+body ::after {
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
 .btn-any {
   position: relative;
   overflow: hidden;
