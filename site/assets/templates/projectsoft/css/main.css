@@ -4851,6 +4851,7 @@ blockquote > p:last-child {
 
 .share-icons-menu > li {
   margin-bottom: 0 !important;
+  white-space: nowrap !important;
 }
 
 .share-icons-menu > li > a::after {

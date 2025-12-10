@@ -1,4 +1,5 @@
 !(function($){
+
 	// Default fancybox options
 	$.fancybox.defaults.parentEl = ".fancybox__wrapper";
 	$.fancybox.defaults.transitionEffect = "circular";
@@ -94,94 +95,100 @@
 				arr = href.split('.'),
 				ext = arr.at(-1).toLowerCase(),
 				options = {};
-/*
-			console.log(ext);
-			console.log(href);
-			console.log(base);
-			console.log(reg);
-*/
+	/*
+				console.log(ext);
+				console.log(href);
+				console.log(base);
+				console.log(reg);
+	*/
 			if(reg.test(href)){
-/*
+	/*
 				console.log("Test");
-*/
+	*/
 				$(this).data('google', go);
 				$(this).data('options', options);
 				switch (ext){
 					case "pdf":
-						href = href.replace(base, '');
-						go = window.location.origin + '/viewer/pdf_viewer/?file=/' + href;
-						options = {
-							src: go,
-							opts : {
-								afterShow : function( instance, current ) {
-									$(".fancybox-content").css({
-										height: '100% !important',
-										overflow: 'hidden'
-									}).addClass('pdf_viewer');
-								},
-								afterLoad : function( instance, current ) {
-									$(".fancybox-content").css({
-										height: '100% !important',
-										overflow: 'hidden'
-									}).addClass('pdf_viewer');
-								},
-								afterClose: function() {
-									Cookies.remove('pdfjs.history', { path: '' });
-									window.localStorage.removeItem('pdfjs.history');
+						if(!this.hasAttribute("data-fancybox")) {
+							href = href.replace(base, '');
+							go = window.location.origin + '/viewer/pdf_viewer/?file=/' + href;
+							options = {
+								src: go,
+								opts : {
+									afterShow : function( instance, current ) {
+										$(".fancybox-content").css({
+											height: '100% !important',
+											overflow: 'hidden'
+										}).addClass('pdf_viewer');
+									},
+									afterLoad : function( instance, current ) {
+										$(".fancybox-content").css({
+											height: '100% !important',
+											overflow: 'hidden'
+										}).addClass('pdf_viewer');
+									},
+									afterClose: function() {
+										Cookies.remove('pdfjs.history', { path: '' });
+										window.localStorage.removeItem('pdfjs.history');
+									}
 								}
-							}
-						};
-						e.preventDefault();
-						$.fancybox.open(options);
-						return !1;
+							};
+							e.preventDefault();
+							$.fancybox.open(options);
+							return !1;
+						}
 						break;
 					case "xlsx":
-						go = window.location.origin + '/viewer/xlsx_viewer/?file=' + test;
-						options = {
-							src: go,
-							type: 'iframe',
-							opts : {
-								afterShow : function( instance, current ) {
-									$(".fancybox-content").css({
-										height: '100% !important',
-										overflow: 'hidden'
-									}).addClass('xlsx_viewer');
-								},
-								afterLoad : function( instance, current ) {
-									$(".fancybox-content").css({
-										height: '100% !important',
-										overflow: 'hidden'
-									}).addClass('xlsx_viewer');
-								},
-							}
-						};
-						e.preventDefault();
-						$.fancybox.open(options);
-						return !1;
+						if(!this.hasAttribute("data-fancybox")) {
+							go = window.location.origin + '/viewer/xlsx_viewer/?file=' + test;
+							options = {
+								src: go,
+								type: 'iframe',
+								opts : {
+									afterShow : function( instance, current ) {
+										$(".fancybox-content").css({
+											height: '100% !important',
+											overflow: 'hidden'
+										}).addClass('xlsx_viewer');
+									},
+									afterLoad : function( instance, current ) {
+										$(".fancybox-content").css({
+											height: '100% !important',
+											overflow: 'hidden'
+										}).addClass('xlsx_viewer');
+									},
+								}
+							};
+							e.preventDefault();
+							$.fancybox.open(options);
+							return !1;
+						}
 						break;
 					case "docx":
-						go = window.location.origin + '/viewer/docx_viewer/?file=' + test;
-						options = {
-							src: go,
-							type: 'iframe',
-							opts : {
-								afterShow : function( instance, current ) {
-									$(".fancybox-content").css({
-										height: '100% !important',
-										overflow: 'hidden'
-									}).addClass('docx_viewer');
-								},
-								afterLoad : function( instance, current ) {
-									$(".fancybox-content").css({
-										height: '100% !important',
-										overflow: 'hidden'
-									}).addClass('docx_viewer');
-								},
-							}
-						};
-						e.preventDefault();
-						$.fancybox.open(options);
-						return !1;
+						if(!this.hasAttribute("data-fancybox")) {
+							go = window.location.origin + '/viewer/docx_viewer/?file=' + test;
+							options = {
+								src: go,
+								type: 'iframe',
+								opts : {
+									afterShow : function( instance, current ) {
+										$(".fancybox-content").css({
+											height: '100% !important',
+											overflow: 'hidden'
+										}).addClass('docx_viewer');
+									},
+									afterLoad : function( instance, current ) {
+										$(".fancybox-content").css({
+											height: '100% !important',
+											overflow: 'hidden'
+										}).addClass('docx_viewer');
+									},
+								}
+							};
+							e.preventDefault();
+							$.fancybox.open(options);
+							return !1;
+						}
 						break;
 				}
 			}else {
@@ -191,7 +198,7 @@
 				return !1;
 			}
 	})
-	/** 
+	/**
 	 * Изображения  на сервере
 	 **/
 	.on("click", "a[href$='.jpg'], a[href$='.jpeg'], a[href$='.png'], a[href$='.gif']", function(e){
@@ -412,7 +419,7 @@
 		/**
 		 * new_year prazdnik                01
 		 * defender_day prazdnik            23
-		 
+
 			https://media.tenor.com/xiJZlZtHNrUAAAAM/field-of.gif
 			assets/images/background/0010-bg.jpg
 		 *
@@ -440,8 +447,8 @@
 	})();
 }(jQuery));
 /**
- * 
+ *
  * https://partner.market.yandex.ru/business-accept-invite?digest=7fa59b120675efacc5b3293581aeda&bId=80522589&bName=%D0%9E%D0%9E%D0%9E%20%22%D0%A1%D0%9A%D0%90%D0%A2%22%20%D0%A1%D0%BF%D0%B5%D1%86%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82
  * https://partner.market.yandex.ru/business-accept-invite?digest=36053d01464b24cf63833916ee80c655&bId=80522589&bName=%D0%9E%D0%9E%D0%9E%20%22%D0%A1%D0%9A%D0%90%D0%A2%22%20%D0%A1%D0%BF%D0%B5%D1%86%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82
- * 
+ *
  */

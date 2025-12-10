@@ -13,12 +13,13 @@ html(lang="ru" prefix="og: http://ogp.me/ns#")
 								h1.entry-title
 									|[*longtitle:ifempty=`[*pagetitle*]`*]
 							.entry-content
-								|[*content*][!evoSearch?
+								|[*content*]
+								|[!evoSearch?
 								|	&display=`5`
 								|	&paginate=`pages`
 								|	&statTpl= `<p class="srch_res_info">По запросу <strong>[+stat_request+]</strong> найдено <strong>[+stat_total+]</strong> документов.</p>`
 								|	&noResult=`<p class="srch_res_info">По запросу <u>[+stat_request+]</u> ничего не найдено. Смягчите условия поиска</p>`
-								|	&ownerTPL=`@CODE: <p class="srch_res_info">По запросу <u>[+stat_request+]</u></p><div class="srch_res">[+dl.wrap+]</div>`
+								//- |	&ownerTPL=`@CODE: <p class="srch_res_info">По запросу <u>[+stat_request+]</u></p><div class="srch_res">[+dl.wrap+]</div>`
 								|	&tpl=`@CODE: <article class="srch_res_one"><header><h4><a href="[+url+]">[+title+]</a></h4></header><div class="srch_res_one_content"><p class="srch_ext">[+extract+]</p></div></article>`
 								|	&TplNextP=``
 								|	&TplPrevP=``
