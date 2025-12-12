@@ -9,7 +9,7 @@
 
 //      'hide_in_docs' => [ 10, 63 ],
 
-        'order' => 2,
+        'order' => 1,
 
 //      'container' => ['programms'],
 
@@ -24,7 +24,7 @@
             ',
             'documents' => '
                 <li class="documents--list-item">
-                    <a target="_blank" href="[+file+]" download="[+text+][[FileExt? &file=`[+file+]`]]" data-fancybox="[+file+]">[+text+]</a>
+                    <a target="_blank" href="[+file+]" download="[+text+][[FileExt? &file=`[+file+]`]]">[+text+]</a>
                 </li>
             ',
         ],

@@ -1,5 +1,21 @@
 !(function($){
 
+	/*$("a[href$='.pdf'], a[href$='.docx'], a[href$='.xlsx']").each((a, b, c) => {
+		var base = window.location.origin + '/',
+			reg = new RegExp("^" + base),
+			href = b.href,
+			go = false,
+			arr = href.split('.'),
+			ext = arr.at(-1).toLowerCase(),
+			options = {};
+		if(reg.test(href)){
+			$(this).data('google', go);
+			$(this).data('options', options);
+			go = `${window.location.origin}/viewer/${ext}_viewer/?file=${href}`;
+			b.href = go;
+		}
+	});*/
+
 	// Default fancybox options
 	$.fancybox.defaults.parentEl = ".fancybox__wrapper";
 	$.fancybox.defaults.transitionEffect = "circular";
@@ -86,7 +102,7 @@
 		/**
 		 * Просмотр документов
 		 **/
-		.on("click", "a[href$='.pdf'], a[href$='.docx'], a[href$='.xlsx']", function(e){
+		.on("click", "a[href$='.pdf'], a[href$='.xlsx']", function(e){
 			var base = window.location.origin + '/',
 				reg = new RegExp("^" + base),
 				href = this.href,
@@ -101,6 +117,7 @@
 				console.log(base);
 				console.log(reg);
 	*/
+				console.log(href);
 			if(reg.test(href)){
 	/*
 				console.log("Test");
@@ -136,6 +153,8 @@
 							e.preventDefault();
 							$.fancybox.open(options);
 							return !1;
+						}else{
+							//
 						}
 						break;
 					case "xlsx":
@@ -164,6 +183,7 @@
 							return !1;
 						}
 						break;
+					/*
 					case "docx":
 						if(!this.hasAttribute("data-fancybox")) {
 							go = window.location.origin + '/viewer/docx_viewer/?file=' + test;
@@ -190,6 +210,7 @@
 							return !1;
 						}
 						break;
+					*/
 				}
 			}else {
 				//console.log("NO Test");
@@ -407,7 +428,6 @@
 			return !1;
 		}
 	});
-
 
 	/**
 	** New Year

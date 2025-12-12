@@ -1,51 +1,51 @@
 <?php
 
-	return [
-		'title' => 'Page Richtext',
+    return [
+        'title' => 'Page Richtext',
 
-//		'show_in_templates' => [5, 7, 8, 9],
+//      'show_in_templates' => [5, 7, 8, 9],
 
-//		'show_in_docs' => [ 82 ],
+//      'show_in_docs' => [ 82 ],
 
-//		'hide_in_docs' => [ 10, 63 ],
+//      'hide_in_docs' => [ 10, 63 ],
 
-		'order' => 2,
+        'order' => 3,
 
-//		'container' => ['programms'],
+//      'container' => ['programms'],
 
-		'templates' => [
-			'owner' => '
-				<div class="richtext">
-				[+text:ifnotempty=`<h3 class="text-center news-title">`+][+text+][+text:ifnotempty=`</h3>`+]
-					[+documents+]
-				</div>
-			',
-			'documents' => '
-				[+title:ifnotempty=`<h4 class="text-center news-title">`+][+title+][+title:ifnotempty=`</h4>`+]
-				[+richtext+]
-			',
-		],
-		'fields' => [
-			'text' => [
-				'caption' => 'Название блока (необязательно)',
-				'type'    => 'text',
-				'evoSearchIndex' => true,
-			],
-			'documents' => [
-				'caption' => 'Текстовые блоки',
-				'type'    => 'group',
-				'fields'  => [
-					'title' => [
-						'caption' => 'Заголовок блока (необязательно)',
-						'type'    => 'text',
-						'evoSearchIndex' => true,
-					],
-					'richtext' => [
-						'caption' => 'Текст',
-						'type'    => 'richtext',
-						'evoSearchIndex' => true,
-					]
-				]
-			]
-		]
-	];
+        'templates' => [
+            'owner' => '
+                <div class="richtext">
+                [+text:ifnotempty=`<h3 class="text-center news-title">`+][+text+][+text:ifnotempty=`</h3>`+]
+                    [+documents+]
+                </div>
+            ',
+            'documents' => '
+                [+title:ifnotempty=`<h4 class="text-center news-title">`+][+title+][+title:ifnotempty=`</h4>`+]
+                [+richtext+]
+            ',
+        ],
+        'fields' => [
+            'text' => [
+                'caption' => 'Название блока (необязательно)',
+                'type'    => 'text',
+                'evoSearchIndex' => true,
+            ],
+            'documents' => [
+                'caption' => 'Текстовые блоки',
+                'type'    => 'group',
+                'fields'  => [
+                    'title' => [
+                        'caption' => 'Заголовок блока (необязательно)',
+                        'type'    => 'text',
+                        'evoSearchIndex' => true,
+                    ],
+                    'richtext' => [
+                        'caption' => 'Текст',
+                        'type'    => 'richtext',
+                        'evoSearchIndex' => true,
+                    ]
+                ]
+            ]
+        ]
+    ];
