@@ -24,7 +24,7 @@
             ',
             'documents' => '
                 <li class="documents--list-item">
-                    <a target="_blank" href="[+file+]" download="[+text+][[FileExt? &file=`[+file+]`]]">[+text+]</a>
+                    <a target="_blank" href="[+file+]" download="[+text+][[FileExt? &file=`[+file+]`]]"[[PathInfo? &file=`[+file+]` &data=`fancybox`]]>[+text+]</a>
                 </li>
             ',
         ],

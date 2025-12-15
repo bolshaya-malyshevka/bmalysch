@@ -27,9 +27,9 @@
                     <a target="_blank" href="[+EvoVideo+]" data-fancybox="video" savefrom_lm="0" target="_blank">
                         <span class="overflow">
                             <img src="[[GetEvoVideo? &url=`[+EvoVideo+]` &type=`image`]]" alt="[+text:notags:strip+]">
-                            <span class="bvi-caption-alt">[+text:notags:strip+]</span>
+                            <span class="bvi-caption-alt">[+text+]</span>
                         </span>
-                        <span class="text-center">[+text:notags:strip+]</span>
+                        <span class="text-center">[+text+]</span>
                     </a>
                 </div>
             ',

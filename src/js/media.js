@@ -47,6 +47,26 @@
 			url: 'https://rutube.ru/play/embed/$2',
 		},
 
+		viewer: {
+			matcher: /^(https?:\/\/[a-zа-я\d.\-_]+\/)?(.*(pdf|xlsx))$/i,
+			// matcher: /^(.+bmalysch.minobr63\.ru\/)?(.*\.(pdf|xlsx))$/i,
+			paramPlace: 3,
+			type: 'iframe',
+			url: function(rez) {
+				let urlViewer;
+				urlViewer = new URL(rez[0], window.location.origin);
+				if(urlViewer.origin == window.location.origin){
+					// Файл местный
+					let out = `${window.location.origin}/viewer/${rez[3].toLowerCase()}_viewer/?file=${urlViewer.pathname}`;
+					console.log('MEDIA urlViewer2', out);
+					return out;
+				} else {
+					// Файл с внешнего
+					return $rez[0];
+				}
+			}
+		},
+
 		instagram: {
 			matcher: /(instagr\.am|instagram\.com)\/p\/([a-zA-Z0-9_\-]+)\/?/i,
 			type: 'image',
@@ -124,6 +144,7 @@
 	};
 
 	$(document).on('objectNeedsType.fb', function (e, instance, item) {
+		console.log('objectNeedsType.fb');
 		var url = item.src || '',
 			type = false,
 			media,
@@ -135,7 +156,6 @@
 			provider;
 
 		media = $.extend(true, {}, defaults, item.opts.media);
-
 		// Look for any matching media type
 		$.each(media, function (providerName, providerOpts) {
 			rez = url.match(providerOpts.matcher);
@@ -183,7 +203,8 @@
 				$.type(providerOpts.thumb) === 'function'
 					? providerOpts.thumb.call(this, rez, params, item)
 					: format(providerOpts.thumb, rez);
-
+			// console.log(providerName);
+			// console.log(url);
 			if (providerName === 'youtube') {
 				url = url.replace(/&t=((\d+)m)?(\d+)s/, function (match, p1, m, s) {
 					return '&start=' + ((m ? parseInt(m, 10) * 60 : 0) + parseInt(s, 10));
@@ -192,11 +213,13 @@
 				url = url.replace('&%23', '#');
 			} else if (providerName === 'rutube') {
 				url = url.replace('&%23', '#');
+			} else if (providerName === 'viewer') {
+				url = url;
 			}
 
 			return false;
 		});
-
+		console.log('type', type);
 		// If it is found, then change content type and update the url
 
 		if (type) {
@@ -225,6 +248,8 @@
 						? 'image'
 						: provider == 'gmap_place' || provider == 'gmap_search'
 						? 'map'
+						: provider == 'viewer'
+						? 'iframe'
 						: 'video',
 			});
 		} else if (url) {

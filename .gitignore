@@ -60,6 +60,7 @@ site/assets/snippets/phpthumb/*
 !site/assets/snippets/GetEvoVideo
 !site/assets/snippets/GetScreenShot
 !site/assets/snippets/FileExt
+!site/assets/snippets/PathInfo
 
 !site/assets/snippets/DocLister
 site/assets/snippets/DocLister/*

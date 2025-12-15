@@ -5141,6 +5141,8 @@ body .bvi-body[data-bvi-builtelements="false"] .embed .embed-responsive {
   user-select: none;
   font-weight: 300;
   cursor: pointer;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 .header-navigation nav li a,

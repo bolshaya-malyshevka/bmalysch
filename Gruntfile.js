@@ -15,13 +15,13 @@ module.exports = function(grunt) {
 		assets: "assets/templates/projectsoft",
 		gosave: "site/assets/templates/projectsoft",
 		default: [
-			"clean:all",
-			"webfont",
-			//"ttf2eot",
-			"ttf2woff",
-			"ttf2woff2",
-			"imagemin",
-			"tinyimg",
+			//"clean:all",
+			//"webfont",
+				//"ttf2eot",
+			//"ttf2woff",
+			//"ttf2woff2",
+			//"imagemin",
+			//"tinyimg",
 			"concat",
 			"uglify",
 			"less",
@@ -91,16 +91,16 @@ module.exports = function(grunt) {
 				src: [
 					'bower_components/jquery/dist/jquery.js',
 
-					//"bower_components/fancybox/src/js/core.js",
+					"src/js/core.js",
 
-					//'src/js/media.js',
+					"src/js/media.js",
 
-					//"bower_components/fancybox/src/js/guestures.js",
-					//"bower_components/fancybox/src/js/slideshow.js",
-					//"bower_components/fancybox/src/js/fullscreen.js",
-					//"bower_components/fancybox/src/js/thumbs.js",
-					//"bower_components/fancybox/src/js/hash.js",
-					//"bower_components/fancybox/src/js/wheel.js",
+					"bower_components/fancybox/src/js/guestures.js",
+					"bower_components/fancybox/src/js/slideshow.js",
+					"bower_components/fancybox/src/js/fullscreen.js",
+					"bower_components/fancybox/src/js/thumbs.js",
+					"bower_components/fancybox/src/js/hash.js",
+					"bower_components/fancybox/src/js/wheel.js",
 
 					'bower_components/slick-carousel/slick/slick.js',
 					'bower_components/js-cookie/src/js.cookie.js',
@@ -605,8 +605,8 @@ module.exports = function(grunt) {
 					authKey: 'bmalysh',
 					authPath: '.ftppass'
 				},
-				src: 'site/assets/templates/projectsoft',
-				dest: 'assets/templates/projectsoft',
+				src: 'site/assets',
+				dest: 'assets',
 			}
 		},
 	});
