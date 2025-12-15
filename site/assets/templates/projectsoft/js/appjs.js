@@ -10782,7 +10782,7 @@ return jQuery;
 			//"share",
 			"slideShow",
 			//"fullScreen",
-			//"download",
+			//"download"
 			"thumbs",
 			"close"
 		],
@@ -14209,12 +14209,12 @@ return jQuery;
 				let urlViewer;
 				urlViewer = new URL(rez[0], window.location.origin);
 				if(urlViewer.origin == window.location.origin){
-					console.log('MEDIA urlViewer');
-					console.log('urlViewer', urlViewer);
+					// Файл местный
 					let out = `${window.location.origin}/viewer/${rez[3].toLowerCase()}_viewer/?file=${urlViewer.pathname}`;
 					console.log('MEDIA urlViewer2', out);
 					return out;
 				} else {
+					// Файл с внешнего
 					return $rez[0];
 				}
 			}

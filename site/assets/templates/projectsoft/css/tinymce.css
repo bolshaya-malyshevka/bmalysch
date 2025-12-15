@@ -2623,6 +2623,318 @@ body ::after {
 .btn.more:hover::before {
   left: 0;
 }
+
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles) {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid #000000;
+}
+
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles):hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles)::before {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+body .bvi-body[data-bvi-theme=white] .btn {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid #000000;
+}
+
+body .bvi-body[data-bvi-theme=white] .btn:hover {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+body .bvi-body[data-bvi-theme=white] .btn.more,
+body .bvi-body[data-bvi-theme=white] .btn.more:hover {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+  border: 1px solid #000000;
+}
+
+body .bvi-body[data-bvi-theme=white] .btn.more::before,
+body .bvi-body[data-bvi-theme=white] .btn.more:hover::before {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) .btn:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles) {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #FFFFFF;
+}
+
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) .btn:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles):hover {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) .btn:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=black] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles)::before {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+body .bvi-body[data-bvi-theme=black] .btn {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #FFFFFF;
+}
+
+body .bvi-body[data-bvi-theme=black] .btn:hover {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+body .bvi-body[data-bvi-theme=black] .btn.more {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #FFFFFF;
+}
+
+body .bvi-body[data-bvi-theme=black] .btn.more::before {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) .btn:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles) {
+  background-color: #9dd1ff !important;
+  color: #063462 !important;
+  border: 1px solid #063462;
+}
+
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) .btn:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles):hover {
+  background-color: #063462 !important;
+  color: #9dd1ff !important;
+}
+
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) .btn:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=blue] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles)::before {
+  background-color: #063462 !important;
+  color: #9dd1ff !important;
+}
+
+body .bvi-body[data-bvi-theme=blue] .btn {
+  background-color: #9dd1ff !important;
+  color: #063462 !important;
+  border: 1px solid #063462;
+}
+
+body .bvi-body[data-bvi-theme=blue] .btn:hover {
+  background-color: #063462 !important;
+  color: #9dd1ff !important;
+}
+
+body .bvi-body[data-bvi-theme=blue] .btn.more {
+  background-color: #9dd1ff !important;
+  color: #063462 !important;
+  border: 1px solid #063462;
+}
+
+body .bvi-body[data-bvi-theme=blue] .btn.more::before {
+  background-color: #063462 !important;
+  color: #9dd1ff !important;
+}
+
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) .btn:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles) {
+  background-color: #f7f3d6 !important;
+  color: #4d4b43 !important;
+  border: 1px solid #4d4b43;
+}
+
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) .btn:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles):hover {
+  background-color: #4d4b43 !important;
+  color: #f7f3d6 !important;
+}
+
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) .btn:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=brown] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles)::before {
+  background-color: #4d4b43 !important;
+  color: #f7f3d6 !important;
+}
+
+body .bvi-body[data-bvi-theme=brown] .btn {
+  background-color: #f7f3d6 !important;
+  color: #4d4b43 !important;
+  border: 1px solid #4d4b43;
+}
+
+body .bvi-body[data-bvi-theme=brown] .btn:hover {
+  background-color: #4d4b43 !important;
+  color: #f7f3d6 !important;
+}
+
+body .bvi-body[data-bvi-theme=brown] .btn.more {
+  background-color: #f7f3d6 !important;
+  color: #4d4b43 !important;
+  border: 1px solid #4d4b43;
+}
+
+body .bvi-body[data-bvi-theme=brown] .btn.more::before {
+  background-color: #4d4b43 !important;
+  color: #f7f3d6 !important;
+}
+
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) .btn:not(.bvi-no-styles),
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles) {
+  background-color: #3b2716 !important;
+  color: #a9e44d !important;
+  border: 1px solid #a9e44d;
+}
+
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) .btn:not(.bvi-no-styles):hover,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles):hover {
+  background-color: #a9e44d !important;
+  color: #3b2716 !important;
+}
+
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) button[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) input[type=button]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) input[type=submit]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) input[type=reset]:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) .btn:not(.bvi-no-styles)::before,
+body .bvi-body[data-bvi-theme=green] :not(.bvi-no-styles) .btn-more:not(.bvi-no-styles)::before {
+  background-color: #a9e44d !important;
+  color: #3b2716 !important;
+}
+
+body .bvi-body[data-bvi-theme=green] .btn {
+  background-color: #3b2716 !important;
+  color: #a9e44d !important;
+  border: 1px solid #a9e44d;
+}
+
+body .bvi-body[data-bvi-theme=green] .btn:hover {
+  background-color: #a9e44d !important;
+  color: #3b2716 !important;
+}
+
+body .bvi-body[data-bvi-theme=green] .btn.more {
+  background-color: #3b2716 !important;
+  color: #a9e44d !important;
+  border: 1px solid #a9e44d;
+}
+
+body .bvi-body[data-bvi-theme=green] .btn.more::before {
+  background-color: #a9e44d !important;
+  color: #3b2716 !important;
+}
 .bvi-caption-alt {
   display: none;
 }

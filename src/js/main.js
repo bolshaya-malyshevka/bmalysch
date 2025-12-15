@@ -117,7 +117,7 @@
 			if(urlViewer.origin == base) {
 				if(!this.hasAttribute("data-fancybox")) {
 					go =  `${window.location.origin}/viewer/${ext}_viewer/?file=${urlViewer.pathname}`;
-					console.log('click go not has', go);
+					//console.log('click go not has', go);
 					e.preventDefault();
 					$.fancybox.open({
 						src: urlViewer.href,
@@ -139,78 +139,6 @@
 					return !1;
 				}
 			}
-			/*let urlViewer = new URL(href, window.location.origin);
-			if(urlViewer.origin == window.location.origin) {
-				if(!this.hasAttribute("data-fancybox")) {
-					switch(ext) {
-						//case 'pdf':
-						case 'xlsx':
-							go =  `${window.location.origin}/viewer/${ext}_viewer/?file=${urlViewer.pathname}`;
-							console.log('click go not has', go);
-							options = {
-								src: go,
-								opts : {
-									afterShow : function( instance, current ) {
-										$(".fancybox-content").css({
-											height: '100% !important',
-											overflow: 'hidden'
-										}).addClass('pdf_viewer');
-									},
-									afterLoad : function( instance, current ) {
-										$(".fancybox-content").css({
-											height: '100% !important',
-											overflow: 'hidden'
-										}).addClass('pdf_viewer');
-									},
-									afterClose: function() {
-										Cookies.remove('pdfjs.history', { path: '' });
-										window.localStorage.removeItem('pdfjs.history');
-									}
-								}
-							};
-							e.preventDefault();
-							$.fancybox.open(options);
-							return !1;
-							break;
-					}
-				}else{
-					switch(ext) {
-						//case 'pdf':
-						case 'xlsx':
-							go =  `${window.location.origin}/viewer/${ext}_viewer/?file=${urlViewer.pathname}`;
-							console.log('click go yes has', go);
-							options = {
-								src: go,
-								opts : {
-									afterShow : function( instance, current ) {
-										$(".fancybox-content").css({
-											height: '100% !important',
-											overflow: 'hidden'
-										}).addClass('pdf_viewer');
-									},
-									afterLoad : function( instance, current ) {
-										$(".fancybox-content").css({
-											height: '100% !important',
-											overflow: 'hidden'
-										}).addClass('pdf_viewer');
-									},
-									afterClose: function() {
-										Cookies.remove('pdfjs.history', { path: '' });
-										window.localStorage.removeItem('pdfjs.history');
-									}
-								}
-							};
-							//e.preventDefault();
-							//$.fancybox.open(options);
-							return !1;
-							break;
-					}
-				}
-			} else {
-				//e.preventDefault();
-				//window.open(href);
-				//return !1;
-			}*/
 		})
 		/**
 		 * Изображения  на сервере
@@ -374,50 +302,17 @@
 			}else if(download) {
 				// Если ссылки нет - скриншот
 				// Запрос на скриншот страницы
-				let ms = (new Date()).getTime();
-				let turl = new URL(link);
-				let sm = turl.search == "" ? `?time=${ms}` : `&time=${ms}`;
-				$("body").addClass('screen');
-				var laad_screen = false,
-					jq_xhr = $.ajax({
-						url: window.location.origin + '/screenshot/',
-						type: 'POST',
-						data: 'shot=' + encodeURIComponent(link + sm) + '&title=' + download,
-						responseType: 'blob',
-						processData: false,
-						xhr:function(){
-							let xhr = new XMLHttpRequest();
-							xhr.responseType= 'blob'
-							return xhr;
-						},
-					}).done(
-						function(blob, status, xhr){
-							let disposition = JSON.parse(xhr.getResponseHeader('content-disposition').split("filename=")[1]);
-							let a = $("<a>click</a>");
-							let regex = /((?:ScreenShot-)|(?:-+)+)/gmi;
-							a[0].href = URL.createObjectURL(blob);
-							a[0].download = $.trim(disposition.fname.replace(regex, " "));
-							$("body").append(a);
-							a[0].click();
-							$("body").removeClass('screen');
-							setTimeout(function(){
-								URL.revokeObjectURL(a[0].href);
-								a.remove();
-							}, 500);
-						}
-					).fail(
-						function(){
-							console.log(arguments);
-							$("body").removeClass('screen');
-							setTimeout(function(){
-								alert("Не удалось обработать операцию");
-							}, 500);
-						}
-					).always(
-						function(data){
-							$("body").removeClass('screen');
-						}
-					);
+				let region = document.querySelector("body");
+				html2canvas(region).then(function(canvas) {
+					canvas.toBlob(function(blob) {
+						// после того, как Blob создан, загружаем его
+						let link = document.createElement('a');
+						link.download = document.querySelector('title').textContent + '.png';
+						link.href = URL.createObjectURL(blob);
+						link.click();
+						URL.revokeObjectURL(link.href);
+					}, 'image/png');
+				});
 				return !1;
 			}
 		});
@@ -459,9 +354,3 @@
 		}
 	})();
 }(jQuery));
-/**
- *
- * https://partner.market.yandex.ru/business-accept-invite?digest=7fa59b120675efacc5b3293581aeda&bId=80522589&bName=%D0%9E%D0%9E%D0%9E%20%22%D0%A1%D0%9A%D0%90%D0%A2%22%20%D0%A1%D0%BF%D0%B5%D1%86%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82
- * https://partner.market.yandex.ru/business-accept-invite?digest=36053d01464b24cf63833916ee80c655&bId=80522589&bName=%D0%9E%D0%9E%D0%9E%20%22%D0%A1%D0%9A%D0%90%D0%A2%22%20%D0%A1%D0%BF%D0%B5%D1%86%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B8%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82
- *
- */

@@ -135,3 +135,25 @@
 		}
 	}
 }
+
+body .bvi-body :not(.bvi-no-styles) {
+	.form-group-item-control {
+		border: 1px solid;
+		&:focus,
+		&:not(:placeholder-shown) {
+			 ~ label {
+			 	top: .7em;
+				background-color: transparent !important;
+				font-size: .7em !important;
+			 }
+		}
+	}
+	button:not(.bvi-no-styles).fancybox-button--close {
+		&,
+		&:hover,
+		&:focus {
+			background-color: transparent !important;
+			border: 1px solid;
+		}
+	}
+}
