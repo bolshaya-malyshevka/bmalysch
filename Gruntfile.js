@@ -109,12 +109,6 @@ module.exports = function(grunt) {
 				],
 				dest: '<%= globalConfig.gosave %>/js/appjs.js'
 			},
-			bvi: {
-				src: [
-					'bower_components/button-visually-impaired-javascript/dist/js/bvi.js',
-				],
-				dest: '<%= globalConfig.gosave %>/js/bvi.js'
-			},
 			main: {
 				src: [
 					'src/js/main.js'

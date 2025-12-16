@@ -1,13 +1,12 @@
 {
 	"name": "bmalysch",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "ГБОУ ООШ с. Большая Малышевка",
 	"main": "Grunfile.js",
 	"scripts": {
 		"inst": "npm i",
 		"build": "grunt -v",
-		"preinstall": "npm i -g less less-plugin-sass2less pug-cli bower && bower install && npm run convert",
-		"convert": "sass2less bower_components/button-visually-impaired-javascript/src/scss/**/*.scss src/less/bvi/dist/{dir}/{name}.less && copy /Y bower_components\\button-visually-impaired-javascript\\dist\\img src\\img"
+		"preinstall": "npm i -g less pug-cli bower && bower install"
 	},
 	"repository": {
 		"type": "git",

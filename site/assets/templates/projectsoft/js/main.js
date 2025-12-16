@@ -1,21 +1,4 @@
 !(function($){
-/**
-	$("a[href$='.pdf'], a[href$='.xlsx']").each((a, b, c) => {
-		var base = window.location.origin + '/',
-			reg = new RegExp("^" + base),
-			href = b.href,
-			go = false,
-			arr = href.split('.'),
-			ext = arr.at(-1).toLowerCase(),
-			options = {};
-		if(reg.test(href)){
-			$(this).data('google', go);
-			$(this).data('options', options);
-			go = `${window.location.origin}/viewer/${ext}_viewer/?file=${href}`;
-			b.href = go;
-		}
-	});
-*/
 	// Default fancybox options
 	$.fancybox.defaults.parentEl = ".fancybox__wrapper";
 	$.fancybox.defaults.transitionEffect = "circular";
