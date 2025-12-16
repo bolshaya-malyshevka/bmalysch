@@ -113,6 +113,7 @@ body .bvi-body {
 			input[type=reset],
 			.btn,
 			.btn-more {
+				transition: unset;
 				&:not(.bvi-no-styles) {
 					background-color: #FFFFFF !important;
 					color: #000000 !important;
@@ -138,15 +139,12 @@ body .bvi-body {
 				color: #FFFFFF !important;
 			}
 			&.more {
-				&,
-				&:hover {
-					background-color: #FFFFFF !important;
-					color: #000000 !important;
-					border: 1px solid #000000;
-					&::before {
-						background-color: #000000 !important;
-						color: #FFFFFF !important;
-					}
+				background-color: #FFFFFF !important;
+				color: #000000 !important;
+				border: 1px solid #000000;
+				&::before {
+					background-color: #000000 !important;
+					color: #FFFFFF !important;
 				}
 			}
 		}

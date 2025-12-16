@@ -4402,6 +4402,18 @@ html body .bvi-panel.bvi-fixed-top {
   left: 0;
 }
 
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=button],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=submit],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=reset],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=button],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=submit],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=reset],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn-more {
+  transition: unset;
+}
+
 body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button:not(.bvi-no-styles),
 body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles),
 body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles),
@@ -4453,15 +4465,13 @@ body .bvi-body[data-bvi-theme=white] .btn:hover {
   color: #FFFFFF !important;
 }
 
-body .bvi-body[data-bvi-theme=white] .btn.more,
-body .bvi-body[data-bvi-theme=white] .btn.more:hover {
+body .bvi-body[data-bvi-theme=white] .btn.more {
   background-color: #FFFFFF !important;
   color: #000000 !important;
   border: 1px solid #000000;
 }
 
-body .bvi-body[data-bvi-theme=white] .btn.more::before,
-body .bvi-body[data-bvi-theme=white] .btn.more:hover::before {
+body .bvi-body[data-bvi-theme=white] .btn.more::before {
   background-color: #000000 !important;
   color: #FFFFFF !important;
 }
@@ -6122,6 +6132,51 @@ body .bvi-body .footer-col-left .bvi-no-styles {
 
 body .bvi-body .footer-col-right .bvi-no-styles {
   font-size: 12px !important;
+}
+
+body .bvi-body[data-bvi-theme=white] footer.footer {
+  background-color: #000000 !important;
+}
+
+body .bvi-body[data-bvi-theme=white] footer.footer,
+body .bvi-body[data-bvi-theme=white] footer.footer * {
+  color: #ffffff !important;
+}
+
+body .bvi-body[data-bvi-theme=black] footer.footer {
+  background-color: #ffffff !important;
+}
+
+body .bvi-body[data-bvi-theme=black] footer.footer,
+body .bvi-body[data-bvi-theme=black] footer.footer * {
+  color: #000000 !important;
+}
+
+body .bvi-body[data-bvi-theme=blue] footer.footer {
+  background-color: #063462 !important;
+}
+
+body .bvi-body[data-bvi-theme=blue] footer.footer,
+body .bvi-body[data-bvi-theme=blue] footer.footer * {
+  color: #9dd1ff !important;
+}
+
+body .bvi-body[data-bvi-theme=brown] footer.footer {
+  background-color: #4d4b43 !important;
+}
+
+body .bvi-body[data-bvi-theme=brown] footer.footer,
+body .bvi-body[data-bvi-theme=brown] footer.footer * {
+  color: #f7f3d6 !important;
+}
+
+body .bvi-body[data-bvi-theme=green] footer.footer {
+  background-color: #a9e44d !important;
+}
+
+body .bvi-body[data-bvi-theme=green] footer.footer,
+body .bvi-body[data-bvi-theme=green] footer.footer * {
+  color: #3b2716 !important;
 }
 .news_person {
   padding-top: 1em;

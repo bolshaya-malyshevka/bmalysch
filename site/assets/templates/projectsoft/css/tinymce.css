@@ -2624,6 +2624,18 @@ body ::after {
   left: 0;
 }
 
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=button],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=submit],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=reset],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=button],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=submit],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) input[type=reset],
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn,
+body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) .btn-more {
+  transition: unset;
+}
+
 body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button:not(.bvi-no-styles),
 body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=button]:not(.bvi-no-styles),
 body .bvi-body[data-bvi-theme=white] :not(.bvi-no-styles) button[type=submit]:not(.bvi-no-styles),
@@ -2675,15 +2687,13 @@ body .bvi-body[data-bvi-theme=white] .btn:hover {
   color: #FFFFFF !important;
 }
 
-body .bvi-body[data-bvi-theme=white] .btn.more,
-body .bvi-body[data-bvi-theme=white] .btn.more:hover {
+body .bvi-body[data-bvi-theme=white] .btn.more {
   background-color: #FFFFFF !important;
   color: #000000 !important;
   border: 1px solid #000000;
 }
 
-body .bvi-body[data-bvi-theme=white] .btn.more::before,
-body .bvi-body[data-bvi-theme=white] .btn.more:hover::before {
+body .bvi-body[data-bvi-theme=white] .btn.more::before {
   background-color: #000000 !important;
   color: #FFFFFF !important;
 }
